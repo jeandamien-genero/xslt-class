@@ -1,0 +1,367 @@
+\documentclass{beamer}
+\usepackage[french]{babel}
+\usepackage{inputenc}
+\usetheme{metropolis}
+\usecolortheme{cormorant}
+\usepackage{minted}
+\usepackage {ifthen}
+\newboolean{printCode}
+\setboolean{printCode}{true}
+% \usemintedstyle{trac}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ulem}  % texte barré
+
+% texte surligné
+\usepackage{soul}
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
+
+\title{Technique et chaîne de publication électronique avec XSLT}
+\date{2023, 9 janv. - 13 fev.}
+\author{Jean-Damien Généro}
+\institute{École nationale des chartes -- M2 TNAH}
+
+\begin{document}
+
+  \maketitle
+  
+  \begin{frame}{Contact}
+  \Large
+      \begin{itemize}
+          \item \textbf{jean-damien.genero@cnrs.fr}
+      \end{itemize}
+  \end{frame}
+
+
+    \begin{frame}{Objectifs}
+  \Large
+      \begin{itemize}
+          \item \textbf{XPath}
+          \begin{itemize}
+              \item Naviguer dans un arbre XML
+              \item Manipuler les principales fonctions XPath
+          \end{itemize}
+          \item \textbf{XSLT}
+          \begin{itemize}
+              \item Manipuler les règles (\textit{templates}) basiques
+              \item Manipuler les conditions et les boucles
+          \end{itemize}
+          \item \textbf{Édition numérique}
+          \begin{itemize}
+              \item Transformer un document XML en un autre document XML
+              \item Transformer un document XML en un document HTML
+              \item Transformer un document XML en un document \LaTeX
+          \end{itemize}
+      \end{itemize}
+  \end{frame}
+   
+
+  \section{Écosystème XML}
+  \begin{frame}{Écosystème XML/ Principes généraux}
+  \Large
+  \begin{itemize}
+      \item \textbf{XML $\rightarrow$} \textit{a markup language that encodes a description of a doc's storage layout and logical structure} ; %% + provides a mechanism to impose constraints on the storage layout and logical structure%%
+      \begin{itemize}
+          \item \textbf{XPath $\rightarrow$} \textit{use a path notation for navigating through the hierarchical structure of an XML doc} ;
+      \end{itemize}
+      \bigskip
+      \item \textbf{XSL $\rightarrow$} \textit{a language for expressing stylesheets} ;
+      \begin{itemize}
+          \item \textit{stylesheet} $\rightarrow$ \textit{express intentions about how a structured content [i. e. XML doc] should be presented} ;
+      \end{itemize}
+      \bigskip
+      \item \textbf{XSLT $\rightarrow$} \textit{a language designed for transforming XML documents into other XML documents}.
+  \end{itemize}
+   
+   \footnotesize W3C Recommendations : \href{https://www.w3.org/TR/xml11/}{XML}, \href{https://www.w3.org/TR/xpath-31/}{XPath}, \href{https://www.w3.org/TR/xsl/}{XSL}, \href{https://www.w3.org/TR/xslt-30/}{XSLT}
+   
+  \end{frame}
+  
+  \begin{frame}{Écosystème XML/ Schéma}
+      \begin{center}
+          \includegraphics[width=8cm, height=7cm]{img/schema_eco_xml.jpg}
+      \end{center}
+  \end{frame}
+  
+  \begin{frame}{Écosystème XML/ Navigation XPath et de règles XSL}
+  \Large
+  \begin{itemize}
+      \item \textbf{Navigation XPath} :
+      \begin{itemize}
+          \item Doc XML = structuré, on parle d'\og \textbf{arbre} \fg{} (\textit{XML tree}) ; 
+          \item \textbf{Itinéraire} vers une balise (\og \textbf{parent} \fg{} $\rightarrow$ \og \textbf{enfant} \fg{}) ; % comparable au chemin dans une arborescence de fichiers avec la commande cd + sens ascendant et descendant ;
+          \item Rédaction dans une \textbf{syntaxe propre}. % (langage intégré)
+      \end{itemize}
+      \bigskip
+      \item \textbf{Règle XSL (\textit{template})} :
+      \begin{itemize}
+          \item \textbf{Agir} sur une ou plusieurs balises (\textit{transform}) ;
+          \item Exemples : \textbf{copier} balise + contenu, copier uniquement le contenu et l'\textbf{insérer} dans une nouvelle balise, \textbf{ajouter} ou \textbf{supprimer} un attribut, etc. ;
+          \item Rédaction dans une \textbf{syntaxe XML} (langage à balises).
+      \end{itemize}
+      \bigskip
+      \item \textbf{Utilisation avec d'autres langages}
+      
+      \normalsize (\texttt{Python} :  \texttt{lxml}).
+  \end{itemize}
+   
+  \end{frame}
+  
+\begin{frame}[fragile]
+\frametitle{Écosystème XML/ Exemple d'un chemin XPath}
+% définir le concept de "navigation dans un arbre xml" (passe par les balises)
+% Soit un arbre XML (\textit{XML tree}) :
+\begin{itemize}
+    \item Comment accéder aux balises \texttt{<p>} avec XPath ?
+\end{itemize}
+\small
+\begin{minted}{xml}
+    <TEI>
+        <teiHeader/>
+        <text>
+            <body>
+                <p>title</p>
+                <p>text</p>
+            </body>
+        </text>
+    </TEI>
+\end{minted}
+\normalsize
+\begin{itemize}
+          \item \texttt{<TEI>} $\rightarrow$ \texttt{<text>} $\rightarrow$ \texttt{<body>} $\rightarrow$ \texttt{<p>}
+          \item Traduction XPath : \texttt{/TEI/text/body/p}
+          \begin{itemize}
+              \item Simplification : \texttt{//body/p} (\texttt{/\sout{TEI/text}/body/p})
+          \end{itemize}
+      \end{itemize}
+\end{frame}
+  
+    \begin{frame}[fragile]
+   \frametitle{Écosystème XML/ Exemple d'une règle XSL}
+        \begin{itemize}
+            \item Comment appliquer une règle XSL aux balises \texttt{<p>} ?
+            \begin{itemize}
+                \item Une règle XSL est toujours contenue dans une balise \texttt{<xsl:template/>} possédant un \texttt{@match}.
+            \end{itemize}
+            \item Indiquer le chemin XPath vers les \texttt{<p>} dans  l'\texttt{@match}.
+        \end{itemize}
+        \bigskip
+        \begin{minted}{xslt}
+        <xsl:template match="/TEI/text/body/p">
+            <xsl:copy-of select="."/>
+        </xsl:template>
+        \end{minted}
+        ou
+        \begin{minted}{xslt}
+        <xsl:template match="//body/p">
+            <xsl:copy-of select="."/>
+        </xsl:template>
+        \end{minted}
+   \end{frame}
+
+    \section{XPath}
+    
+    \begin{frame}{XPath/ Syntaxe}
+        \Large
+        \begin{itemize}
+            \item \textbf{N\oe ud} (\textit{node}) = un composant de l'arbre XML. Sept types, dont : \textbf{balise}, \textbf{attribut}, \textbf{\textit{text}}, \textit{namespace}.
+            %% Peut être inclus dans un chemin XPath. 7 noeuds : https://www.w3schools.com/xml/xpath_nodes.asp
+            \bigskip
+            \item Écrire un chemin (\textit{expression}) : succession de n\oe uds séparés par l'\textbf{opérateur /} ;
+            \begin{itemize}
+            \Large
+                \item \texttt{/TEI/text/body/p}
+            \end{itemize}
+            \bigskip
+            \item Axe (direction) basique : \textbf{parent $\rightarrow$ enfant}
+        \end{itemize}
+        
+    \end{frame}
+    
+    \begin{frame}{XPath/ Exercice n°1. \textit{Saint Julien l'hospitalier}, II.}
+        \Large
+        \begin{itemize}
+            \item Donner le chemin de la racine vers le premier paragraphe.
+            \bigskip
+            \item Donner le chemin de la racine vers \texttt{<author>} dans le \texttt{<sourceDesc>}.
+        \end{itemize}
+    \end{frame}
+
+        \begin{frame}{XPath/ Axes de relation}
+        \Large
+        \begin{itemize}
+            \item Un axe permet de qualifier la \textbf{relation} entre le \textbf{n\oe ud de contexte} et un ou des \textbf{autre(s) n\oe ud(s)}.
+
+            \bigskip
+
+            \item 13 axes XPath, dont :
+            \begin{itemize}
+            \large
+                \item \texttt{parent::} $\rightarrow$ n\oe ud immédiatement au-dessus ;
+                \item \texttt{child::} $\rightarrow$ n\oe ud immédiatement en-dessous ;
+                \item \texttt{following-sibling::} $\rightarrow$ n\oe ud(s) après celui de contexte et qui ne fait/font pas partie de ses descendants ;
+                \item \texttt{ancestor}, \texttt{descendant}, \texttt{preceding}, etc.
+                %% https://developer.mozilla.org/fr/docs/Web/XPath/Axes
+                %% https://spip.teluq.ca/inf6450/spip.php?article111
+                %% https://svground.fr/xpath-axes.php#following-sibling
+                %% preceding-sibling : que les noeuds de même niveau
+                %% folloxing : les noeuds de même niveau + leurs descendants
+            \end{itemize}
+        \end{itemize}
+        
+    \end{frame}
+
+    \begin{frame}{XPath/ Axe \texttt{ancestor::}}
+        \begin{center}
+            \includegraphics[width=7cm]{img/ancestor.png}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}{XPath/ Axe \texttt{child::}}
+        \begin{center}
+            \includegraphics[width=7cm]{img/xslt_child.png}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}{XPath/ Axe \texttt{following-sibling::}}
+        \begin{center}
+            \includegraphics[width=9cm]{img/xslt_following_sibling.png}
+        \end{center}
+    \end{frame}
+
+    \begin{frame}{XPath/ Exercice n°2. \textit{Saint Julien l'hospitalier}, II.}
+        \Large
+        \begin{itemize}
+            \item Donner le chemin le plus court de la racine au titre du chapitre.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XPath/ Prédicats : définition}
+        \Large
+        \begin{itemize}
+            \item Prédicat (filtre) = \textbf{condition} qui doit être satisfaite par le n\oe ud courant (existence d'un attribut, valeur d'un attribut, position d'une balise, etc.).
+            \item Écrit entre crochets \texttt{[ ]}.
+            \bigskip
+            \item \texttt{//div[@n='2']/head} = le \texttt{<head>} de la \texttt{<div>} avec un \texttt{@n} de valeur \texttt{2}.
+            \bigskip
+            \item \texttt{//body/div[@n='2']/p[2]} = \textbf{?}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XPath/ Prédicats : exemples}
+        \Large
+        \begin{itemize}
+            \item \texttt{//tag[position()=1]} ou \texttt{//tag[2]} $\rightarrow$ condition de position (\texttt{<tag>} n°2) ;
+            \bigskip
+            \item \texttt{//tag[last()]} $\rightarrow$ idem (dernier \texttt{<tag>}) ;
+            \bigskip
+            \item \texttt{//tag[@foo='bar']} $\rightarrow$ expression logique (\texttt{<tag>} avec un \texttt{@foo} dont la valeur est \texttt{bar}) ;
+            \bigskip
+            \item \texttt{//tag[@foo='bar' and @baz='qux']} $\rightarrow$ \texttt{<tag>} avec un \texttt{@foo} dont la valeur est \texttt{bar} \textbf{et} un \texttt{@baz} dont la valeur est \texttt{qux}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XPath/ Exercice n°3. \textit{Saint Julien l'hospitalier}, II.}
+        \Large
+        \begin{itemize}
+            \item Utiliser un prédicat pour sélectionner les \texttt{<title>} ayant pour texte \texttt{Trois Comtes}.
+            \bigskip
+            \item Utiliser un prédicat pour sélectionner le \textbf{deuxième} ou le \textbf{cinquième paragraphe} du \textbf{premier chapitre} (deux solutions).
+            \bigskip
+            
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XPath/ Notions essentielles}
+        \Large
+        \begin{itemize}
+            \item Arbre XML, racine, n\oe uds (7) ;
+            \item Chemin XPath, opérateur / ;
+            \item Axes de relation (13) ;
+            \item Prédicats.
+        \end{itemize}
+    \end{frame}
+
+    \section{XSLT : première approche}
+
+    \begin{frame}{XSLT/ Définition}
+        \Large
+        \begin{itemize}
+            \item XSLT $\rightarrow$ un \textbf{langage de programmation déclaratif} ;
+            \item Permet de \textbf{transformer un doc XML} en un autre doc  (, \texttt{.xml}, \texttt{.html}, \texttt{.tex}, etc.) ;
+            \item Transformation opérée par un \textbf{processeur XSLT}
+            \begin{itemize}
+                \item \textbf{Lit} et \textbf{transforme} le document d'entrée selon les \textbf{règles} de la feuille de style XSL ;
+                \item Le plus connu $\rightarrow$ \textbf{Saxon} (en ligne de commande) ;
+                \item Généralement \textbf{intégrés} à des logiciels (\textbf{Oxygen}) ou des navigateurs.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ La feuille de style}
+    \Large
+        \begin{itemize}
+            \item Feuille de style XSL == un doc XML \texttt{.xsl} ;
+            \item Contient des instructions ou règles (\textit{templates})  ;
+            \item Élément racine : \texttt{<xsl:stylesheet>}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Attributs de \texttt{xsl:stylesheet}}
+    \Large
+    Présents de base dans Oxygen :
+        \begin{itemize}
+            \item \texttt{@xmlns:xsl} : espace de nom (\textit{namespace}) XSL ;
+            \item \texttt{@xmlns:xs} : espace de nom XML ;
+            \item \texttt{@xmlns:tei} : espace de nom TEI ;
+            \item \textbf{!} \texttt{@exclude-result-prefixes} : liste des préfixes qui ne seront pas copiés dans l'output (\texttt{xs}, \textit{à ajouter :} \texttt{tei}) ;
+            \item \texttt{@version} : version de XSL (1, 2 ou 3).
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Attributs de \texttt{xsl:stylesheet}}
+    \Large
+    À ajouter dans Oxygen :
+    \bigskip
+        \begin{itemize}
+            \item \texttt{@xmlns} : espace de nom de l'élément racine de l'output ;
+            \begin{itemize}
+            \large
+                \item évite l'ajout de cet espace de nom sur chaque élément "matché" par une règle (contenu dans le \texttt{@match} de \texttt{<xsl:template>}).
+            \end{itemize}
+            \bigskip
+            \item \texttt{@xpath-default-namespace} :  espace de nom des chemins XPath.
+            \begin{itemize}
+            \large
+                \item évite de devoir écrire le préfix \texttt{tei:} devant chaque n\oe ud d'une expression XPath.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}[fragile]{XSLT/ Ordre d'application des règles}
+    \Large
+        \begin{itemize}
+            \item L'ordre d'écriture des règles n'a aucune importance ;
+            \item XSLT lit chaque n\oe ud du doc XML et applique la règle associée ; s'il n'y a pas de règle, il passe au suivant.
+            \item Donc  $\rightarrow$ vous avez la possibilité de vous organisez comme vous le souhaitez dans votre feuille de style.
+        \end{itemize}
+    \end{frame}
+
+        \begin{frame}[fragile]{XSLT/ Élément \texttt{template}}
+    \Large
+        \begin{itemize}
+            \item \texttt{<xsl:template>} $\rightarrow$ définir une règle ;
+            \item Toujours accompagnée d'un \texttt{@match} ;
+            \item \texttt{@match} a pour valeur un chemin XPath qui donne l'emplacement du n\oe ud sur lequel sera appliquée la règle.
+        \end{itemize}
+    \end{frame}
+
+        \begin{frame}[fragile]{XSLT/ Élément \texttt{apply-template}}
+    \Large
+        \begin{itemize}
+            \item \texttt{<xsl:apply-template>}
+        \end{itemize}
+    \end{frame}
+\end{document}
