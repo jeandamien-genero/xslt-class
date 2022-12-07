@@ -81,7 +81,7 @@
   
   \begin{frame}{Écosystème XML/ Schéma}
       \begin{center}
-          \includegraphics[width=8cm, height=7cm]{img/schema_eco_xml.jpg}
+          \includegraphics[width=8cm, height=7cm]{img/ecosysteme_xml.jpeg}
       \end{center}
   \end{frame}
   
@@ -290,28 +290,37 @@
         \Large
         \begin{itemize}
             \item XSLT $\rightarrow$ un \textbf{langage de programmation déclaratif} ;
-            \item Permet de \textbf{transformer un doc XML} en un autre doc  (, \texttt{.xml}, \texttt{.html}, \texttt{.tex}, etc.) ;
+            \item Permet de \textbf{transformer un doc XML} en un autre doc  (\texttt{.xml}, \texttt{.html}, \texttt{.tex}, etc.) ;
             \item Transformation opérée par un \textbf{processeur XSLT}
             \begin{itemize}
-                \item \textbf{Lit} et \textbf{transforme} le document d'entrée selon les \textbf{règles} de la feuille de style XSL ;
+                \item \textbf{Construit} l'arbre output, \textbf{transforme} l'arbre input et \textbf{sérialise} le document output ;
+                % sérialisation = processus de génération du document de sortie selon les spécifications données (= templates xslt)
+                % https://www.w3.org/TR/xslt-xquery-serialization-31/
                 \item Le plus connu $\rightarrow$ \textbf{Saxon} (en ligne de commande) ;
                 \item Généralement \textbf{intégrés} à des logiciels (\textbf{Oxygen}) ou des navigateurs.
             \end{itemize}
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]{XSLT/ La feuille de style}
+    \begin{frame}{XSLT/ La feuille de style}
     \Large
         \begin{itemize}
             \item Feuille de style XSL == un doc XML \texttt{.xsl} ;
             \item Contient des instructions ou règles (\textit{templates})  ;
             \item Élément racine : \texttt{<xsl:stylesheet>}
+            % balises xsl commencent toujours par xsl: pour ne pas les confondre avec des balises d'autres langages (notamment celui de l'output)
+        \end{itemize}
+        \bigskip
+        \bigskip
+        \begin{itemize}
+            \item \textbf{Dans Oxygen $\rightarrow$ ouvrir un nouveau doc \og XSLT Stylesheet \fg.}
+            \item \textbf{Observer les attributs de l'élément racine.}
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]{XSLT/ Attributs de \texttt{xsl:stylesheet}}
+    \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (1/2)}
     \Large
-    Présents de base dans Oxygen :
+    Attributs présents de base dans Oxygen :
         \begin{itemize}
             \item \texttt{@xmlns:xsl} : espace de nom (\textit{namespace}) XSL ;
             \item \texttt{@xmlns:xs} : espace de nom XML ;
@@ -321,9 +330,9 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]{XSLT/ Attributs de \texttt{xsl:stylesheet}}
+    \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (2/2)}
     \Large
-    À ajouter dans Oxygen :
+    Attributs à ajouter dans Oxygen :
     \bigskip
         \begin{itemize}
             \item \texttt{@xmlns} : espace de nom de l'élément racine de l'output ;
@@ -339,29 +348,82 @@
             \end{itemize}
         \end{itemize}
     \end{frame}
-    
-    \begin{frame}[fragile]{XSLT/ Ordre d'application des règles}
+
+    \begin{frame}[fragile]{XSLT/ Élémént \texttt{<xsl:output>}}
     \Large
         \begin{itemize}
-            \item L'ordre d'écriture des règles n'a aucune importance ;
-            \item XSLT lit chaque n\oe ud du doc XML et applique la règle associée ; s'il n'y a pas de règle, il passe au suivant.
-            \item Donc  $\rightarrow$ vous avez la possibilité de vous organisez comme vous le souhaitez dans votre feuille de style.
+            \item Instruction de premier niveau ;
+            \item \og \textbf{contrôle les caractéristiques du document de sortie} \fg.
         \end{itemize}
+
+        \begin{minted}{xml}
+<xsl:output
+    method="xml | html | text"
+    indent="yes | no"
+    omit-xml-declaration="yes | no"
+    encoding="UTF-8"
+/>
+        \end{minted}
     \end{frame}
 
-        \begin{frame}[fragile]{XSLT/ Élément \texttt{template}}
-    \Large
+    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (1/3)}
+        \Large
         \begin{itemize}
             \item \texttt{<xsl:template>} $\rightarrow$ définir une règle ;
-            \item Toujours accompagnée d'un \texttt{@match} ;
-            \item \texttt{@match} a pour valeur un chemin XPath qui donne l'emplacement du n\oe ud sur lequel sera appliquée la règle.
+            \bigskip
+            \item Possède un \texttt{@match} avec pour valeur un chemin XPath qui donne l'emplacement du n\oe ud sur lequel sera appliquée la règle.
+            \bigskip
+            \item Appliquer une règle vide en sélectionnant la racine :
+        \end{itemize}
+
+        \begin{minted}{xslt}
+    <xsl:template match="/">
+    </xsl:template>
+        \end{minted}
+        % deux constats : pas d'erreur (la transformation a lieu) + il ne se passe rien, le doc output est vide.
+        % conclusion : une règle vide ne copie rien, utile si je ne veux pas qu'un élément de l'input pour l'output
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (2/3)}
+        \Large
+        \begin{itemize}
+            \item Appliquer la règle \texttt{copy-of} sur la racine :
+        \end{itemize}
+
+        \begin{minted}{xslt}
+    <xsl:template match="/">
+        <xsl:copy-of select="."/>
+    </xsl:template>
+        \end{minted}
+        % constats : doc input est copié sans modiffication
+        % donc : copy-of >> copie de tout l'élément (balises, attributs, texte) dans le @select
+
+        \begin{itemize}
+            \item Comment copier le \texttt{<body>} dans l'output, mais sans le \texttt{<teiHeader>} ?
         \end{itemize}
     \end{frame}
 
-        \begin{frame}[fragile]{XSLT/ Élément \texttt{apply-template}}
+    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (3/3)}
     \Large
         \begin{itemize}
-            \item \texttt{<xsl:apply-template>}
+            \item Comment obtenir cet arbre en output ?
         \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+    <div>
+        <head>Trois comtes</head>
+        <!-- copie de la div n°1 de l'input -->
+        <div n="1">
+            <head>I.</head>
+            ...
+        </div>
+        <!-- copie de la div n°2 de l'input -->
+        <div n="2">
+            <head>II.</head>
+            ...
+        </div>
+    </div>
+        \end{minted}
+        
     \end{frame}
 \end{document}
