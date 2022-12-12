@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="m">Trois Comtes</title>
+            <title level="a">La Légende de Saint Julien l’Hospitalier</title>
+            <author>Gustave Flaubert</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>From <ref target="https://fr.wikisource.org/wiki/Trois_Contes_(Flaubert)/La_L%C3%A9gende_de_Saint_Julien_l%E2%80%99Hospitalier">Wikisource</ref>.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <biblStruct xml:lang="fr">
+               <monogr>
+                  <author>Gustave Flaubert</author>
+                  <title level="m">Trois Comtes</title>
+                  <title level="a">La Légende de Saint Julien l’Hospitalier</title>
+                  <imprint>
+                     <pubPlace>Paris</pubPlace>
+                     <publisher>G. Charpentier</publisher>
+                     <date when="1877">1877</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div n="1">
+            <head>I.</head>
+            <p n="1">Le père et la mère de Julien habitaient un château, au milieu des bois, sur la pente d’une colline.</p>
+            <p n="2">Les quatre tours aux angles avaient des toits pointus recouverts d’écailles de plomb, et la base des murs s’appuyait sur les quartiers de rocs, qui dévalaient abruptement jusqu’au fond des douves.</p>
+            <p n="3">Les pavés de la cour étaient nets comme le dallage d’une église. De longues gouttières, figurant des dragons la gueule en bas, crachaient l’eau des pluies vers la citerne ; et sur le bord des fenêtres, à tous les étages, dans un pot d’argile peinte, un basilic ou un héliotrope s’épanouissait.</p>
+            <p n="4">Une seconde enceinte, faite de pieux, comprenait d’abord un verger d’arbres à fruits, ensuite un parterre où des combinaisons de fleurs dessinaient des chiffres, puis une treille avec des berceaux pour prendre le frais, et un jeu de mail qui servait au divertissement des pages. De l’autre côté se trouvaient le chenil, les écuries, la boulangerie, le pressoir et les granges. Un pâturage de gazon vert se développait tout autour, enclos lui-même d’une forte haie d’épines.</p>
+            <p n="5">On vivait en paix depuis si longtemps que la herse ne s’abaissait plus ; les fossés étaient pleins d’herbe ; des hirondelles faisaient leur nid dans la fente des créneaux ; et l’archer qui tout le long du jour se promenait sur la courtine, dès que le soleil brillait trop fort, rentrait dans l’échauguette, et s’endormait comme un moine.</p>
+            <p n="6">À l’intérieur, les ferrures partout reluisaient ; des tapisseries dans les chambres protégeaient du froid ; et les armoires regorgeaient de linge, les tonnes de vin s’empilaient dans les celliers, les coffres de chêne craquaient sous le poids des sacs d’argent. </p>
+         </div>
+         <div n="2">
+            <head>II.</head>
+            <p>Il s’engagea dans une troupe d’aventuriers qui passaient.</p>
+            <p>Il connut la faim, la soif, les fièvres et la vermine. Il s’accoutuma au fracas des mêlées, à l’aspect des moribonds. Le vent tanna sa peau. Ses membres se durcirent par le contact des armures ; et comme il était très fort, courageux, tempérant, avisé, il obtint sans peine le commandement d’une compagnie.</p>
+            <p>Au début des batailles, il enlevait ses soldats d’un grand geste de son épée. Avec une corde à nœuds, il grimpait aux murs des citadelles, la nuit, balancé par l’ouragan, pendant que les flammèches du feu grégeois se collaient à sa cuirasse, et que la résine bouillante et le plomb fondu ruisselaient des créneaux. Souvent le heurt d’une pierre fracassa son bouclier. Des ponts trop chargés d’hommes croulèrent sous lui. En tournant sa masse d’armes, il se débarrassa de quatorze cavaliers. Il défit, en champ clos, tous ceux qui se proposèrent. Plus de vingt fois, on le crut mort.</p>
+            <p>Grâce à la faveur divine, il en réchappa toujours ; car il protégeait les gens d’église, les orphelins, les veuves, et principalement les vieillards. Quand il en voyait un marchant devant lui, il criait pour connaître sa figure, comme s’il avait eu peur de le tuer par méprise.</p>
+            <p>Des esclaves en fuite, des manants révoltés, des bâtards sans fortune, toutes sortes d’intrépides affluèrent sous son drapeau, et il se composa une armée.</p>
+            <p>Elle grossit. Il devint fameux. On le recherchait.</p>
+         </div>
+      </body>
+   </text>
+</TEI>
