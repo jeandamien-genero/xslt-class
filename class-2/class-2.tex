@@ -1,0 +1,264 @@
+\documentclass{beamer}
+\usepackage[french]{babel}
+\usepackage{inputenc}
+\usetheme{metropolis}
+\usecolortheme{cormorant}
+\usepackage{minted}
+\usepackage {ifthen}
+\newboolean{printCode}
+\setboolean{printCode}{true}
+% \usemintedstyle{trac}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ulem}  % texte barré
+
+% texte surligné
+\usepackage{soul}
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
+
+\title{Technique et chaîne de publication électronique avec XSLT (2/7)}
+\date{2023, 9 janv. - 13 fev.}
+\author{Jean-Damien Généro}
+\institute{École nationale des chartes -- M2 TNAH}
+
+\begin{document}
+
+  \maketitle
+
+  \section{XSLT. Règles basiques}
+
+    \begin{frame}{XSLT/ \texttt{<xsl:template>} (rappels)}
+    \Large
+        \begin{itemize}
+            \item Une règle s'écrit dans un \texttt{<xsl:template>} ;
+            \bigskip
+            \item L'attribut \texttt{@match} contient le chemin XPath vers la balise concernée par la règle.
+        \end{itemize}
+    \end{frame}
+    
+  \begin{frame}[fragile]{XSLT/ Ordre d'application des règles}
+    \Large
+        \begin{itemize}
+            \item L'ordre d'écriture des règles n'a aucune importance ;
+            \item XSLT lit chaque n\oe ud du doc XML et applique la règle associée ; s'il n'y a pas de règle, il passe au suivant.
+            \item Donc  $\rightarrow$ vous avez la possibilité de vous organisez comme vous le souhaitez dans votre feuille de style.
+        \end{itemize}
+    \end{frame}
+
+     \begin{frame}{XSLT/ Contenu d'un \texttt{<xsl:template>}}
+         \Large
+         \begin{itemize}
+             \item \texttt{<xsl:template>} peut contenir :
+             \begin{itemize}
+             \Large
+                 \item Balises XML ou HTML (avec leurs @tt) ou commandes \LaTeX ;
+                 \item Des balises XSL ;
+                 \item Du texte ;
+                 \item Des règles (\textit{templates}) XSL ;
+                 \item Des variables XSL.
+             \end{itemize}
+         \end{itemize}
+     \end{frame}
+
+     \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : XML, HTML, \LaTeX{} (1/2)}
+     \Large
+        \begin{itemize}
+            \item Des balises peuvent être écrites directement dans un \texttt{<xsl:template>} (idem pour une commande \LaTeX) :
+        \end{itemize}
+        \normalsize
+        % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
+         \begin{minted}{xml}
+    <xsl:template match="/TEI/text/body">
+        <div>
+            <head type="chap">
+                <xsl:value-of select="./p[1]"/>
+            </head>
+            <xsl:copy-of select="./p[2]"/>
+        </div>
+    </xsl:template>
+         \end{minted}
+     \end{frame}
+
+     \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : XML, HTML, \LaTeX{} (2/2)}
+     \Large
+        \begin{itemize}
+            \item Les balises XML ou HTML peuvent être écrites dans des \texttt{<xsl:element name="<tag>">} et les attributs dans des \texttt{<xsl:attribute name="<@tt>">} :
+        \end{itemize}
+        \normalsize
+        % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
+         \begin{minted}{xml}
+<xsl:template match="/TEI/text/body">
+    <xsl:element name="body">
+        <xsl:element name="head">
+            <xsl:attribute name="type">chap</xsl:attribute>
+            <xsl:value-of select="./p[1]"/>
+        </xsl:element>
+        <xsl:copy-of select="./p[2]"/>
+    </xsl:element>
+</xsl:template>
+         \end{minted}
+     \end{frame}
+
+     \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : du texte (1/2)}
+     \Large
+        \begin{itemize}
+            \item Du texte peut être mis dans une règle : pour remplacer le contenu d'une balise, pour écrire le préambule d'un doc \LaTeX :
+        \end{itemize}
+        \normalsize
+        % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
+         \begin{minted}{xml}
+        <xsl:template match="/">
+            \documentclass[a4paper]{book}
+            \usepackage[utf8]{inputenc}
+            \usepackage[french]{babel}
+            \usepackage{fontspec}
+            \begin{document}
+                <xsl:apply-templates/>
+            \end{document}
+        </xsl:template>
+         \end{minted}
+     \end{frame}
+
+      \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : du texte (1/2)}
+     \Large
+     % attention avec <xsl:text> les sauts de ligne sont pris en compte
+        \begin{itemize}
+            \item Du texte peut aussi être mis dans un \texttt{<xsl:text>text</xsl:text>} :
+        \end{itemize}
+        \normalsize
+         \begin{minted}{xml}
+<xsl:template match="/TEI/text/body">
+    <xsl:element name="body">
+        <xsl:element name="head">
+            <xsl:attribute name="type">chap
+                </xsl:attribute>
+            <xsl:value-of select="./p[1]"/>
+        </xsl:element>
+        <xsl:element name="p">
+            <xsl:text>nouveau texte</xsl:text>
+        </xsl:element>
+    </xsl:element>
+</xsl:template>
+         \end{minted}
+     \end{frame}
+
+     \begin{frame}{Règles basiques : notions essentielles}
+         \Large
+         \begin{itemize}
+             \item Les balises XML et HTML, et les commandes \LaTeX{} peuvent être écrites en clair dans un \texttt{<xsl:template>} ;
+             \item Les balises XML et HTML peuvent aussi être écrites dans un \texttt{<xsl:element name="tag">} et un attribut dans un \texttt{<xsl:attribute name="@att">}.
+             \item Le texte peut être mis soit en clair soit dans un \texttt{<xsl:text>}.
+         \end{itemize}
+     \end{frame}
+
+     \section{Les quatre principales règles XSL}
+
+     \begin{frame}{XSLT/ Principales règles (1/4) : \texttt{<xsl:apply-template/>}}
+         \Large
+         \begin{itemize}
+             \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} grâce à laquelle les \textbf{règles} définies dans la feuille de style \textbf{sont appliquées aux enfants du n\oe ud courant}.
+            \bigskip
+            \item Exemple : comment transformer tous les \texttt{<hi rend="bold"/>} en \texttt{<bold>} ?
+            \item Écrire la règle une seule fois et l'appliquer partout avec des \texttt{<xsl:apply-template/>}.
+         \end{itemize}
+     \end{frame}
+
+     \begin{frame}[fragile]{XSLT/ Principales règles (2/4) : \texttt{<xsl:copy>}}
+     \Large
+     \begin{itemize}
+         \item \textbf{Copie de la balise du n\oe ud courant, sans les \textit{namespaces}, attributs, texte, etc.}
+         \item \texttt{<xsl:copy/>} peut contenir d'autres règles, du texte, etc.
+     \end{itemize}
+     \begin{minted}{xml}
+<xsl:template match="/TEI/text/body">
+    <xsl:copy>...</xsl:copy>
+</xsl:template>
+     \end{minted}
+     \end{frame}
+
+% expliquer la différence entre le noeud courant et le noeud de contexte ?
+
+     \begin{frame}[fragile]{XSLT/ Principales règles (3/4) : \texttt{<xsl:copy-of>}}
+     \Large
+     \begin{itemize}
+         \item \textbf{Copie de l'ensemble du n\oe ud courant et de ses n\oe uds enfants (balises, attributs, textes).}
+         \item Le n\oe ud courant est toujours contenu dans le \texttt{@select}.
+     \end{itemize}
+     \begin{minted}{xml}
+<xsl:template match="/TEI/text/body">
+    <xsl:copy-of select="."/>
+</xsl:template>
+     \end{minted}
+     \end{frame}
+
+     \begin{frame}[fragile]{XSLT/ Principales règles (4/4) : \texttt{<xsl:value-of>}}
+     \Large
+     \begin{itemize}
+         \item \textbf{Renvoie la valeur textuelle du n\oe ud courant.}
+         \item Le n\oe ud courant est toujours contenu dans le \texttt{@select}.
+     \end{itemize}
+     \begin{minted}{xml}
+<xsl:template match="/TEI/text/body">
+    <xsl:value-of select="."/>
+</xsl:template>
+     \end{minted}
+     \end{frame}
+
+     \begin{frame}[fragile]{XSLT/ Exercice. Combinaison des règles}
+     \Large
+     \begin{itemize}
+         \item Quelle différence entre ces templates ?
+     \end{itemize}
+     \begin{minted}{xml}
+<!-- 1 -->
+<xsl:template match="//body/p">
+    <xsl:copy-of select="."/>
+</xsl:template>
+<!-- 2 -->
+<xsl:template match="//body/p">
+    <xsl:copy>
+        <xsl:value-of select="."/>
+    </xsl:copy>
+</xsl:template>
+     \end{minted}
+     \end{frame}
+
+     \begin{frame}{XSLT/ Une autre règle : \texttt{<xsl:number/> (1/2)}}
+         \Large
+         \begin{itemize}
+             \item \texttt{<xsl:number/>} \og compte des éléments de façon séquentielle \fg.
+             \item \texttt{@count} $\rightarrow$ défini les éléments de l'input qui seront numérotés dans l'output ;
+             \item \texttt{@level="single|multiple|any"} $\rightarrow$ niveau de l'arbre pris en compte pour le comptage ;
+             \item \texttt{@format="1|01|A|a|I|i"} $\rightarrow$ format des numéros.
+         \end{itemize}
+     \end{frame}
+
+     \begin{frame}[fragile]{XSLT/ Une autre règle : \texttt{<xsl:number/> (2/2)}}
+         \Large
+         \begin{minted}{xml}
+<xsl:template match="//body/p">
+    <xsl:copy>
+        <xsl:attribute name="n">
+            <xsl:number
+                count="//body/p" 
+                level="multiple" 
+                format="a"/>
+        </xsl:attribute>
+        <xsl:value-of select="."/>
+    </xsl:copy>
+</xsl:template>
+         \end{minted}
+     \end{frame}
+
+     \begin{frame}{XSLT/ Exercice}
+         \Large
+         \begin{itemize}
+             \item Écrivez une feuille de style XSL avec le fichier de St Julien l'Hospitalier,
+             \item Numéroter dans des formats différents les \texttt{<head>} et les \texttt{<p>} ;
+             \item Transformer les \texttt{<hi rend="b"/>} en des \texttt{<persName>} et les \texttt{<hi rend="i"/>} en des \texttt{<placename>}.
+         \end{itemize}
+     \end{frame}
+     
+\end{document}
