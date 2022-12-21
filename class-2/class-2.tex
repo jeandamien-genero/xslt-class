@@ -54,10 +54,8 @@
              \begin{itemize}
              \Large
                  \item Balises XML ou HTML (avec leurs @tt) ou commandes \LaTeX ;
-                 \item Des balises XSL ;
                  \item Du texte ;
-                 \item Des règles (\textit{templates}) XSL ;
-                 \item Des variables XSL.
+                 \item Des règles (\textit{templates}) ou variables XSL : \texttt{<xsl:.../>};
              \end{itemize}
          \end{itemize}
      \end{frame}
@@ -90,7 +88,7 @@
         % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
          \begin{minted}{xml}
 <xsl:template match="/TEI/text/body">
-    <xsl:element name="body">
+    <xsl:element name="div">
         <xsl:element name="head">
             <xsl:attribute name="type">chap</xsl:attribute>
             <xsl:value-of select="./p[1]"/>
@@ -121,7 +119,7 @@
          \end{minted}
      \end{frame}
 
-      \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : du texte (1/2)}
+      \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : du texte (2/2)}
      \Large
      % attention avec <xsl:text> les sauts de ligne sont pris en compte
         \begin{itemize}
@@ -155,13 +153,26 @@
 
      \section{Les quatre principales règles XSL}
 
+     \begin{frame}{XSLT/ Les quatre principales règles XSL}
+         \Large
+         \begin{itemize}
+             \item \texttt{<xsl:apply-template/>}
+             \bigskip
+             \item \texttt{<xsl:copy/>}
+             \bigskip
+             \item \texttt{<xsl:copy-of/>}
+             \bigskip
+             \item \texttt{<xsl:value-of/>}
+         \end{itemize}
+     \end{frame}
+
      \begin{frame}{XSLT/ Principales règles (1/4) : \texttt{<xsl:apply-template/>}}
          \Large
          \begin{itemize}
              \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} grâce à laquelle les \textbf{règles} définies dans la feuille de style \textbf{sont appliquées aux enfants du n\oe ud courant}.
             \bigskip
-            \item Exemple : comment transformer tous les \texttt{<hi rend="bold"/>} en \texttt{<bold>} ?
-            \item Écrire la règle une seule fois et l'appliquer partout avec des \texttt{<xsl:apply-template/>}.
+            \item Si elle n'est pas présente, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
+            \item Exemple...
          \end{itemize}
      \end{frame}
 
@@ -170,6 +181,7 @@
      \begin{itemize}
          \item \textbf{Copie de la balise du n\oe ud courant, sans les \textit{namespaces}, attributs, texte, etc.}
          \item \texttt{<xsl:copy/>} peut contenir d'autres règles, du texte, etc.
+         \item Intérêt $\rightarrow$ copier un élément pour appliquer des règles à ses enfants.
      \end{itemize}
      \begin{minted}{xml}
 <xsl:template match="/TEI/text/body">
@@ -183,8 +195,9 @@
      \begin{frame}[fragile]{XSLT/ Principales règles (3/4) : \texttt{<xsl:copy-of>}}
      \Large
      \begin{itemize}
-         \item \textbf{Copie de l'ensemble du n\oe ud courant et de ses n\oe uds enfants (balises, attributs, textes).}
+         \item \textbf{Copie à l'identique de l'ensemble du n\oe ud courant et de ses n\oe uds enfants (balises, attributs, textes).}
          \item Le n\oe ud courant est toujours contenu dans le \texttt{@select}.
+         \item Intérêt $\rightarrow$ reproduire rapidement une partie de l'arbre que l'on ne veut pas modifier.
      \end{itemize}
      \begin{minted}{xml}
 <xsl:template match="/TEI/text/body">
@@ -196,8 +209,9 @@
      \begin{frame}[fragile]{XSLT/ Principales règles (4/4) : \texttt{<xsl:value-of>}}
      \Large
      \begin{itemize}
-         \item \textbf{Renvoie la valeur textuelle du n\oe ud courant.}
+         \item \textbf{Renvoie uniquement la valeur textuelle du n\oe ud courant.}
          \item Le n\oe ud courant est toujours contenu dans le \texttt{@select}.
+         \item Intérêt $\rightarrow$ copier du texte sans les balises (utile pour \LaTeX).
      \end{itemize}
      \begin{minted}{xml}
 <xsl:template match="/TEI/text/body">
@@ -229,9 +243,14 @@
          \Large
          \begin{itemize}
              \item \texttt{<xsl:number/>} \og compte des éléments de façon séquentielle \fg.
-             \item \texttt{@count} $\rightarrow$ défini les éléments de l'input qui seront numérotés dans l'output ;
-             \item \texttt{@level="single|multiple|any"} $\rightarrow$ niveau de l'arbre pris en compte pour le comptage ;
-             \item \texttt{@format="1|01|A|a|I|i"} $\rightarrow$ format des numéros.
+             \bigskip
+             \item Attributs :
+             \begin{itemize}
+             \Large
+                 \item \texttt{@count} $\rightarrow$ définit les éléments de l'input qui seront numérotés dans l'output ;  % c'est une expression XPath
+                 \item \texttt{@level="single|multiple|any"} $\rightarrow$ niveau de l'arbre pris en compte pour le comptage ;
+                 \item \texttt{@format="1|01|A|a|I|i"} $\rightarrow$ format des numéros.
+             \end{itemize}
          \end{itemize}
      \end{frame}
 
@@ -254,9 +273,11 @@
 
      \begin{frame}{XSLT/ Exercice}
          \Large
+         $\rightarrow$ Écrire une feuille de style XSL avec le fichier de St Julien l'Hospitalier :
          \begin{itemize}
-             \item Écrivez une feuille de style XSL avec le fichier de St Julien l'Hospitalier,
+             \item Constituer un fichier XML-TEI valide ;
              \item Numéroter dans des formats différents les \texttt{<head>} et les \texttt{<p>} ;
+             \item Ajouter un nouveau paragraphe ;
              \item Transformer les \texttt{<hi rend="b"/>} en des \texttt{<persName>} et les \texttt{<hi rend="i"/>} en des \texttt{<placename>}.
          \end{itemize}
      \end{frame}
