@@ -172,7 +172,15 @@
              \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} grâce à laquelle les \textbf{règles} définies dans la feuille de style \textbf{sont appliquées aux enfants du n\oe ud courant}.
             \bigskip
             \item Si elle n'est pas présente, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
-            \item Exemple...
+            \item Exemple : la balise \texttt{<TEI/>}.
+            % pour faire deux règles différentes :
+            % (1) reproduire la balise <TEI>
+            % (2) appliquer les règles sur body des slides précédentes :
+            % <xsl:template match="/">
+            %   <TEI>
+            %       <xsl:apply-templates/> --> permet de dire "applique des règles aux éléments enfants"
+            %   </TEI>
+            % </xsl:template>
          \end{itemize}
      \end{frame}
 
