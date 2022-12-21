@@ -26,6 +26,72 @@
 \begin{document}
     \maketitle
 
-    \section{XSLT. Les attributs de <xsl:apply-template/>}
+    \section{XSLT. Les attributs de \texttt{<xsl:apply-template/>}}
+
+    \begin{frame}[fragile]{XSLT/ Rappel : l'instruction \texttt{<xsl:apply-template/>}}
+        \Large
+        \begin{itemize}
+            \item Permet d'appeler les règles aux n\oe uds enfants du n\oe ud courant.
+            \item Sans le \texttt{<xsl:apply-template/>}, XSLT ne chercherait pas de règle pour les enfants de <TEI> dans l'exemple ci-dessous :
+        \end{itemize}
+        % noeud courant = celui dans @select de <xsl:template> (fixe)
+        % noeud de contexte = celui sur le quel opère la règle (variable)
+        \begin{minted}{xml}
+<xsl:template match="/">
+    <TEI>
+        <xsl:apply-templates/>
+    </TEI>
+</xsl:template>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:apply-template/>}, attribut \texttt{@select} (1/2)}
+        \Large
+        \begin{itemize}
+            \item \texttt{@select} permet d'appliquer les règles uniquement aux n\oe uds enfants sélectionnés.
+            \bigskip
+            \item Exemple $\rightarrow$ inverser le \texttt{<teiHeader/>} et le \texttt{<text/>} : 
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template match="/">
+    <TEI>
+        <xsl:apply-templates select="//text"/>
+        <xsl:apply-templates select="//teiHeader"/>
+    </TEI>
+</xsl:template>
+        \end{minted}
+
+        % exemple dans Oxygen :
+        % <?xml version="1.0" encoding="UTF-8"?>
+        % <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        %     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        %     xmlns:tei="http://www.tei-c.org/ns/1.0"
+        %     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+        %     xmlns="http://www.tei-c.org/ns/1.0"
+        %     exclude-result-prefixes="xs tei"
+        %     version="2.0">
+        %     <xsl:output method="xml" indent="yes" omit-xml-declaration="no"/>
+        %     <xsl:template match="/">
+        %         <TEI>
+        %             <xsl:apply-templates select="//text"/>
+        %             <xsl:apply-templates select="//teiHeader"/>
+        %         </TEI>
+        %     </xsl:template>
+        %     <xsl:template match="//teiHeader">
+        %         <xsl:copy-of select="."/>
+        %     </xsl:template>
+        %     <xsl:template match="//text">
+        %         <xsl:copy-of select="."/>
+        %     </xsl:template>
+        % </xsl:stylesheet>
+    \end{frame}
+
+    \begin{frame}{XSLT/ \texttt{<xsl:apply-template/>}, attribut \texttt{@mode} (2/2)}
+        \Large
+        \begin{itemize}
+            \item \texttt{@mode} permet d'appliquer des règles différentes à un même élément XML en fonction de son emplacement ou de son contenu (= son \og mode \fg).
+        \end{itemize}
+    \end{frame} 
 
 \end{document}
