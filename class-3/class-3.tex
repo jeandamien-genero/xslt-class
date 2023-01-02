@@ -91,4 +91,43 @@
         \end{minted}
     \end{frame}
 
+    \section{XSLT. Les variables}
+
+    \begin{frame}{XSLT/ Les variables (1/2)}
+        \Large
+        \begin{itemize}
+            \item Rappel : une variable possède un nom (unique) et une valeur (statique ou dynamique).
+            \bigskip
+            \item La variable XSLT $\rightarrow$ \texttt{<xsl:variable/>} ;
+            \item Attributs : \texttt{@name} \textit{(req.)} et \texttt{@select} \textit{(opt.)} ;
+            \item Élément global (premier niveau) ou local (intégré à un \texttt{<xsl:template/>}).
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Les variables (2/2)}
+        \Large
+        \begin{itemize}
+            \item Deux manières de définir la valeur d'une variable XSLT :
+            \begin{itemize}
+                \item Par le contenu de l'\texttt{@select} (expression XPath) ;
+                \item Par le contenu de \texttt{<xsl:variable/>} (texte ou règle).
+            \end{itemize}
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:variable name="x" select="Xpath"/>
+<xsl:variable name="y">[règles]</xsl:variable>
+        \end{minted}
+        \Large
+        \begin{itemize}
+            \item  Pour appeler une variable : \texttt{\$} + \texttt{@name} dans le \texttt{@select} d'un \texttt{<value-of/>}
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template math="/">
+    <xsl:value-of select="$x"/>
+    <xsl:value-of select="$y"/>
+</xsl:template>
+        \end{minted}
+    \end{frame}
 \end{document}
