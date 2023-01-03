@@ -72,9 +72,16 @@
         </xsl:copy>
     </xsl:template>
     <xsl:template match="//body/div[@n]">
-        <xsl:copy-of select="."/>
+        <!--<xsl:copy-of select="."/>-->
+        <div>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="//div[@n]/p">
+        <p><xsl:value-of select="replace(., 'Il', 'Tu')"/></p>
     </xsl:template>
     <xsl:template match="//body/div[@n]" mode="toc">
         <p><xsl:value-of select="$chap"/><xsl:value-of select="./head"/></p>
+        <p><xsl:value-of select="count(p)"/> paragraphes</p>
     </xsl:template>
 </xsl:stylesheet>

@@ -130,4 +130,32 @@
 </xsl:template>
         \end{minted}
     \end{frame}
+
+    \section{XPath/ Les fonctions}
+
+    \begin{frame}{XPath/ Fonctions}
+        \Large
+        \begin{itemize}
+            \item Les fonctions peuvent être utilisées dans des expressions XPath ou dans des prédicats :
+            \begin{itemize}
+            \Large
+                \item Expression $\rightarrow$ \texttt{count(./p)}
+                \item Prédicat (\texttt{[ ]}) $\rightarrow$ \texttt{./[count(p)]}
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XPath/ Fonctions sur les chaînes de caractères}
+    \Large
+    \begin{itemize}
+        \item \texttt{concat(string1, string2)} ;
+        \bigskip
+        \item \texttt{upper-case(string)}, \texttt{lower-case(string)} ;
+        \bigskip
+        \item \texttt{contains(string1, string2)}, \texttt{starts-with(string1, string2)}, \texttt{ends-with(string1, string2)} ;
+        \bigskip
+        \item \texttt{translate(string, a, A)}, \texttt{replace(string, abc, ABC}).
+    \end{itemize}
+        
+    \end{frame}
 \end{document}
