@@ -41,9 +41,9 @@
   \begin{frame}[fragile]{XSLT/ Ordre d'application des règles}
     \Large
         \begin{itemize}
-            \item L'ordre d'écriture des règles n'a aucune importance ;
+            \item L'ordre d'écriture des règles n'a aucune importance pour le processeur XSLT ;
             \item XSLT lit chaque n\oe ud du doc XML et applique la règle associée ; s'il n'y a pas de règle, il passe au suivant.
-            \item Donc  $\rightarrow$ vous avez la possibilité de vous organisez comme vous le souhaitez dans votre feuille de style.
+            \item \textbf{Attention  $\rightarrow$ restez lisible + commentez votre code !}
         \end{itemize}
     \end{frame}
 
@@ -55,7 +55,7 @@
              \Large
                  \item Balises XML ou HTML (avec leurs @tt) ou commandes \LaTeX ;
                  \item Du texte ;
-                 \item Des règles (\textit{templates}) ou variables XSL : \texttt{<xsl:.../>};
+                 \item Des règles (\textit{templates}) ou variables/param XSL : \texttt{<xsl:.../>};
              \end{itemize}
          \end{itemize}
      \end{frame}
@@ -63,7 +63,7 @@
      \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : XML, HTML, \LaTeX{} (1/2)}
      \Large
         \begin{itemize}
-            \item Des balises peuvent être écrites directement dans un \texttt{<xsl:template>} (idem pour une commande \LaTeX) :
+            \item Des balises peuvent être écrites directement dans un \texttt{<xsl:template>} :
         \end{itemize}
         \normalsize
         % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
@@ -82,7 +82,7 @@
      \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : XML, HTML, \LaTeX{} (2/2)}
      \Large
         \begin{itemize}
-            \item Les balises XML ou HTML peuvent être écrites dans des \texttt{<xsl:element name="<tag>">} et les attributs dans des \texttt{<xsl:attribute name="<@tt>">} :
+            \item Les balises XML ou HTML peuvent être écrites dans des \texttt{<xsl:element name="tag">} et les attributs dans des \texttt{<xsl:attribute name="@tt">} :
         \end{itemize}
         \normalsize
         % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
@@ -145,9 +145,9 @@
      \begin{frame}{Règles basiques : notions essentielles}
          \Large
          \begin{itemize}
-             \item Les balises XML et HTML, et les commandes \LaTeX{} peuvent être écrites en clair dans un \texttt{<xsl:template>} ;
+             \item Les balises XML et HTML peuvent être écrites en clair dans un \texttt{<xsl:template>} ;
              \item Les balises XML et HTML peuvent aussi être écrites dans un \texttt{<xsl:element name="tag">} et un attribut dans un \texttt{<xsl:attribute name="@att">}.
-             \item Le texte peut être mis soit en clair soit dans un \texttt{<xsl:text>}.
+             \item Le texte (commandes \LaTeX{}) peut être mis soit en clair soit dans un \texttt{<xsl:text>}.
          \end{itemize}
      \end{frame}
 
