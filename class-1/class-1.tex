@@ -62,20 +62,20 @@
   \begin{frame}{Écosystème XML/ Principes généraux}
   \Large
   \begin{itemize}
-      \item \textbf{XML $\rightarrow$} \textit{a markup language that encodes a description of a doc's storage layout and logical structure} ; %% + provides a mechanism to impose constraints on the storage layout and logical structure%%
+      \item \textbf{XML $\rightarrow$} \textit{langage de balisage qui encode une description de la mise en page et de la structure logique d'un document}
       \begin{itemize}
-          \item \textbf{XPath $\rightarrow$} \textit{use a path notation for navigating through the hierarchical structure of an XML doc} ;
+          \item \textbf{XPath $\rightarrow$} \textit{langage de requête pour naviguer dans la structure hiérarchique d'un document XML à l'aide de chemins} ;
       \end{itemize}
       \bigskip
-      \item \textbf{XSL $\rightarrow$} \textit{a language for expressing stylesheets} ;
-      \begin{itemize}
-          \item \textit{stylesheet} $\rightarrow$ \textit{express intentions about how a structured content [i. e. XML doc] should be presented} ;
-      \end{itemize}
+      \item \textbf{XSL $\rightarrow$} \textit{spécifications pour la transformation de doc XML à l'aide de feuilles de style} ;
+      % \begin{itemize}
+          % \item Feuille de style (\textit{stylesheet}) $\rightarrow$ \textit{exprime des intentions sur la manière dont un contenu structuré [i. e. un doc XML] doit être présenté} ;
+      % \end{itemize}
       \bigskip
-      \item \textbf{XSLT $\rightarrow$} \textit{a language designed for transforming XML documents into other XML documents}.
+      \item \textbf{XSLT $\rightarrow$} \textit{un langage conçu pour transformer des documents XML en d'autres documents selon les spécifications XSL}.
   \end{itemize}
    
-   \footnotesize W3C Recommendations : \href{https://www.w3.org/TR/xml11/}{XML}, \href{https://www.w3.org/TR/xpath-31/}{XPath}, \href{https://www.w3.org/TR/xsl/}{XSL}, \href{https://www.w3.org/TR/xslt-30/}{XSLT}
+   \footnotesize W3C Recommendations : \href{https://www.w3.org/TR/xml11/}{XML}, \href{https://www.w3.org/TR/xpath-31/}{XPath}, \href{https://www.w3.org/TR/xsl/}{XSL}, \href{https://www.w3.org/TR/xslt-30/}{XSLT}.
    
   \end{frame}
   
@@ -179,15 +179,6 @@
         \end{itemize}
         
     \end{frame}
-    
-    \begin{frame}{XPath/ Exercice n°1. \textit{Saint Julien l'hospitalier}, II.}
-        \Large
-        \begin{itemize}
-            \item Donner le chemin de la racine vers les paragraphes \texttt{<p>}.
-            \bigskip
-            \item Donner le chemin de la racine vers \texttt{<author>} dans le \texttt{<sourceDesc>}.
-        \end{itemize}
-    \end{frame}
 
         \begin{frame}{XPath/ Axes de relation}
         \Large
@@ -236,18 +227,12 @@
         \begin{itemize}
             \item (Racine $\rightarrow$ \textbf{/})
             \item \texttt{self::} $\rightarrow$ \textbf{.} \textit{(n\oe ud courant)}
-            \item \texttt{descendant-or-self::} $\rightarrow$ \textbf{..}
             \item \texttt{attribute::} $\rightarrow$ \textbf{@}
+            \bigskip
+            \item Donc : vous pouvez écrire \texttt{//div/@n} au lieu de \texttt{//div/attribute::n}.
         \end{itemize}
     \end{frame}
-
-    \begin{frame}{XPath/ Exercice n°2. \textit{Saint Julien l'hospitalier}, II.}
-        \Large
-        \begin{itemize}
-            \item Donner le chemin le plus court de la racine aux titres des chapitres (\texttt{<head>}).
-        \end{itemize}
-    \end{frame}
-
+    
     \begin{frame}{XPath/ Prédicats : définition}
         \Large
         \begin{itemize}
@@ -265,22 +250,9 @@
         \begin{itemize}
             \item \texttt{//tag[position()=1]} ou \texttt{//tag[2]} $\rightarrow$ condition de position (\texttt{<tag>} n°2) ;
             \bigskip
-            \item \texttt{//tag[last()]} $\rightarrow$ idem (dernier \texttt{<tag>}) ;
+            \item \texttt{//tag[last()]} $\rightarrow$ dernier \texttt{<tag>} ;
             \bigskip
             \item \texttt{//tag[@foo='bar']} $\rightarrow$ expression logique (\texttt{<tag>} avec un \texttt{@foo} dont la valeur est \texttt{bar}) ;
-            \bigskip
-            \item \texttt{//tag[@foo='bar' and @baz='qux']} $\rightarrow$ \texttt{<tag>} avec un \texttt{@foo} dont la valeur est \texttt{bar} \textbf{et} un \texttt{@baz} dont la valeur est \texttt{qux}.
-        \end{itemize}
-    \end{frame}
-
-    \begin{frame}{XPath/ Exercice n°3. \textit{Saint Julien l'hospitalier}, II.}
-        \Large
-        \begin{itemize}
-            \item Utiliser un prédicat pour sélectionner les \texttt{<title>} ayant pour texte \texttt{Trois Comtes}.
-            \bigskip
-            \item Utiliser un prédicat pour sélectionner le \textbf{deuxième} ou le \textbf{cinquième paragraphe} du \textbf{premier chapitre} (deux solutions).
-            \bigskip
-            
         \end{itemize}
     \end{frame}
 
@@ -294,7 +266,16 @@
         \end{itemize}
     \end{frame}
 
-    \section{XSLT : première approche}
+    \begin{frame}{XPath/ Exercice. \textit{Saint Julien l'hospitalier}.}
+        \Large
+        \begin{itemize}
+            \item Donner le chemin de la racine vers \texttt{<author>} dans le \texttt{<sourceDesc>}.
+            \bigskip
+            \item Utiliser un prédicat pour sélectionner les \texttt{<title>} ayant pour texte \texttt{Trois Comtes}.
+        \end{itemize}
+    \end{frame}
+
+    \section{XSLT : élément racine et instructions de premier niveau}
 
     \begin{frame}{XSLT/ Définition}
         \Large
@@ -307,7 +288,7 @@
                 % sérialisation = processus de génération du document de sortie selon les spécifications données (= templates xslt)
                 % https://www.w3.org/TR/xslt-xquery-serialization-31/
                 \item Le plus connu $\rightarrow$ \textbf{Saxon} (en ligne de commande) ;
-                \item Généralement \textbf{intégrés} à des logiciels (\textbf{Oxygen}) ou des navigateurs.
+                \item Généralement \textbf{intégré} à des logiciels (\textbf{Oxygen}) ou des librairies (\textbf{python : lxml}).
             \end{itemize}
         \end{itemize}
     \end{frame}
@@ -359,7 +340,7 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]{XSLT/ Élémént \texttt{<xsl:output>}}
+    \begin{frame}[fragile]{XSLT/ Instruction de 1\up{er} niveau : \texttt{<xsl:output>}}
     \Large
         \begin{itemize}
             \item Instruction de premier niveau ;
@@ -444,14 +425,14 @@
             \bigskip
             \item Manipulation de XSL avec Oxygen ;
             \bigskip
+            \item Élément racine : \texttt{<xsl:stylesheet>} et ses attributs ;
+            \bigskip
             \item Instructions de premier niveau :
             \begin{itemize}
             \Large
-                \item \texttt{<xsl:stylesheet>} et ses attributs ;
-                \item \texttt{<xsl:output>}.
+                \item \texttt{<xsl:output>} ;
+                \item \texttt{<xsl:template>} et son \texttt{@match}.
             \end{itemize}
-            \bigskip
-            \item \texttt{<xsl:template>} et son \texttt{@match}.
         \end{itemize}
     \end{frame}
 \end{document}
