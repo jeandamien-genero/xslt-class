@@ -51,6 +51,35 @@
     </xsl:template>-->
     
     <!-- 3. EXEMPLE D'UTILISATION DES VARIABLES XSL -->
+    <!--<xsl:variable name="chap">Chapitre </xsl:variable>
+    <xsl:template match="/TEI">
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="//text">
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="//body">
+        <xsl:copy>
+            <xsl:apply-templates />
+            <div>
+                <head>Table des matières</head>
+                <xsl:apply-templates mode="toc"/>
+            </div>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="//body/div[@n]">
+        <xsl:copy-of select="."/>
+    </xsl:template>
+    <xsl:template match="//body/div[@n]" mode="toc">
+        <p><xsl:value-of select="$chap"/><xsl:value-of select="./head"/></p>
+        <p><xsl:value-of select="count(./p)"/> paragraphes</p>
+    </xsl:template>-->
+    
+    <!-- 4. EXEMPLE D'UTILISATION DES FONCTIONS XPATH -->
     <xsl:variable name="chap">Chapitre </xsl:variable>
     <xsl:template match="/TEI">
         <xsl:copy>
@@ -72,16 +101,20 @@
         </xsl:copy>
     </xsl:template>
     <xsl:template match="//body/div[@n]">
-        <!--<xsl:copy-of select="."/>-->
         <div>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
     <xsl:template match="//div[@n]/p">
-        <p><xsl:value-of select="replace(., 'Il', 'Tu')"/></p>
+        <p>
+            <xsl:attribute name="n">
+                <xsl:value-of select="count(preceding-sibling::p) + 1"/>
+            </xsl:attribute>
+            <xsl:value-of select="replace(., 'Julien', 'saint Julien')"/>
+        </p>
     </xsl:template>
     <xsl:template match="//body/div[@n]" mode="toc">
         <p><xsl:value-of select="$chap"/><xsl:value-of select="./head"/></p>
-        <p><xsl:value-of select="count(p)"/> paragraphes</p>
+        <p><xsl:value-of select="count(./p)"/> paragraphes</p>
     </xsl:template>
 </xsl:stylesheet>
