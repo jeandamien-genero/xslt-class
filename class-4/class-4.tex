@@ -37,15 +37,53 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}{XSLT/ \texttt{<xsl:if/>}}
+    \begin{frame}{XSLT/ \texttt{<xsl:if/>} (1/2)}
         \Large
         \begin{itemize}
             \item \texttt{<xsl:if/>} possède un \texttt{@test} obligatoire ;
-            \item Contenu appliqué si et seulement si le \texttt{@test} est validé.
+            \item Contenu appliqué si le \texttt{@test} est validé.
             \bigskip
             \item Pas de \texttt{elif} : utiliser plusieurs \texttt{<xsl:if/>} ;
             \item Pas de \texttt{else} : utiliser \texttt{<xsl:choose/>}.
         \end{itemize}
     \end{frame}
-    
+
+    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:if/>} (2/2)}
+        \Large
+        Exemple : dans \textit{St Julien}, ajouter un \texttt{@n} aux \texttt{<p/>} \textbf{si ces derniers sont dans la \texttt{<div/>} \no 2} :
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template match="//div[@n]/p">
+    <p>
+        <xsl:if test="parent::div/@n = 2">
+            <xsl:attribute name="n">
+                ...
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:value-of select="."/>
+    </p>
+</xsl:template>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{XSLT/ \texttt{<xsl:choose/>}}
+        \Large
+        \begin{itemize}
+            \item \texttt{<xsl:choose/>} a pour enfant un ou des \texttt{<xsl:when/>} (req.) et un seul \texttt{<xsl:otherwise/>} (opt.).
+            \bigskip
+            \item \texttt{<xsl:when/>} a un \texttt{@test} obligatoire (même fonctionnement que \texttt{<xsl:if/>}) ;
+            \bigskip
+            \item si aucun \texttt{<xsl:when/>} n'est réalisé, alors \texttt{<xsl:otherwise/>} est activé
+        \end{itemize}
+    \end{frame}
+
+    \section{XSLT. Boucles}
+
+    \begin{frame}{XSLT/ \texttt{<xsl:for-each/>}}
+        \Large
+        \begin{itemize}
+            \item \texttt{<xsl:for-each/>} a un \texttt{@select} ;
+            \item pour chaque n\oe uds contenus dans le \texttt{@select}, la règle contenue dans le \texttt{<xsl:for-each/>} est appliquée.
+        \end{itemize}
+    \end{frame}
 \end{document}
