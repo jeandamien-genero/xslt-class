@@ -1,4 +1,27 @@
-# Fonctions XPath
+% __Fonctions XPath__
+% ENC/ XSLT
+% 2023
+
+---
+
+XPath possède des fonctions prédéfinies :
+
+- Elles sont reconnaissables par leurs `()` finales ;
+- Elles peuvent avoir un ou plusieurs arguments, ou ne pas en avoir du tout ;
+- Dans XSLT, elles peuvent être utilisées dans les `@match` ou les `@select` ;
+- Elles peuvent retourner : une valeur booléenne (`true` ou `false`), un nombre, une chaîne de caractères (`string`) ou une liste de noeuds (`nodeset`) ;
+
+---
+
+Les opérateurs suivants sont utilisables en XPath :
+
+- Opérateurs numériques : `+`, `-`, `*`, `div` (division), `mod` (modulo).
+
+- Opérateurs booléens : `<`, `<=`, `>`, `>=`, `=`, `!=`, `and`, `or`.
+
+---
+
+Sélection de fonctions :
 
 ## 1. `concat()`
 
@@ -27,7 +50,7 @@
 
 - `contains(string1, string2)` : retourne `true` ou `false` selon que `string1` contienne (`true`) ou ne contienne pas `string2` (`false`).
 
-### 5. `starts-with()` et `ends-with()`
+## 5. `starts-with()` et `ends-with()`
 
 - `starts-with(string1, string2)` : retourne `true` ou `false` selon que `string1` commence (`true`) ou ne commence pas par `string2` (`false`) ;
 
@@ -40,7 +63,7 @@
   - _Attention : ce n'est pas l'équivalent de l'opérateur booléen `!=`. `\\title[@level != 'm')]` renvoie tous les `<title>` qui ont un `@level` dont la valeur n'est pas `m`._
   - Peut être combiné avec `contains()` sous la forme de `not(contains(..., ...))`.
 
-### 7. `last()`, `position()` et `count()`
+## 7. `last()`, `position()` et `count()`
 
 - _NB : dans XPath, la numérotation commence à `1`._
 
@@ -55,4 +78,3 @@
 - `count(arg)` : évalue le nombre de `node` et retourne ce nombre.
   - Le résultat est identique à `last()`, la différence étant que `count()` prend une expression XPath en argument.
   - Exemple d'utilisation : connaître le nombre total d'élément au sein d'un parent (comme le nombre de `<p>` au sein d'une `<div>`).
-
