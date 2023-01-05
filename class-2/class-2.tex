@@ -37,15 +37,6 @@
             \item L'attribut \texttt{@match} contient le chemin XPath vers la balise concernée par la règle.
         \end{itemize}
     \end{frame}
-    
-  \begin{frame}[fragile]{XSLT/ Ordre d'application des règles}
-    \Large
-        \begin{itemize}
-            \item L'ordre d'écriture des règles n'a aucune importance pour le processeur XSLT ;
-            \item XSLT lit chaque n\oe ud du doc XML et applique la règle associée ; s'il n'y a pas de règle, il passe au suivant.
-            \item \textbf{Attention  $\rightarrow$ restez lisible + commentez votre code !}
-        \end{itemize}
-    \end{frame}
 
      \begin{frame}{XSLT/ Contenu d'un \texttt{<xsl:template>}}
          \Large
@@ -156,36 +147,17 @@
      \begin{frame}{XSLT/ Les quatre principales règles XSL}
          \Large
          \begin{itemize}
-             \item \texttt{<xsl:apply-template/>}
-             \bigskip
              \item \texttt{<xsl:copy/>}
              \bigskip
              \item \texttt{<xsl:copy-of/>}
              \bigskip
              \item \texttt{<xsl:value-of/>}
+             \bigskip
+             \item \texttt{<xsl:apply-template/>}
          \end{itemize}
      \end{frame}
-
-     \begin{frame}{XSLT/ Principales règles (1/4) : \texttt{<xsl:apply-template/>}}
-         \Large
-         \begin{itemize}
-             % \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} grâce à laquelle les \textbf{règles} définies dans la feuille de style \textbf{sont appliquées aux enfants du n\oe ud courant}.
-             \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} : le processeur va \textbf{examiner les n\oe uds enfants} dans l’ordre et a\textbf{ppliquer les règles} qui leur sont associées.
-            \bigskip
-            \item Sans elle, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
-            \item Exemple : la balise \texttt{<TEI/>}.
-            % pour faire deux règles différentes :
-            % (1) reproduire la balise <TEI>
-            % (2) appliquer les règles sur body des slides précédentes :
-            % <xsl:template match="/">
-            %   <TEI>
-            %       <xsl:apply-templates/> --> permet de dire "applique des règles aux éléments enfants"
-            %   </TEI>
-            % </xsl:template>
-         \end{itemize}
-     \end{frame}
-
-     \begin{frame}[fragile]{XSLT/ Principales règles (2/4) : \texttt{<xsl:copy>}}
+     
+     \begin{frame}[fragile]{XSLT/ Principales règles (1/4) : \texttt{<xsl:copy>}}
      \Large
      \begin{itemize}
          \item \textbf{Copie de la balise du n\oe ud courant, sans les \textit{namespaces}, attributs, texte, etc.}
@@ -201,7 +173,7 @@
 
 % expliquer la différence entre le noeud courant et le noeud de contexte ?
 
-     \begin{frame}[fragile]{XSLT/ Principales règles (3/4) : \texttt{<xsl:copy-of>}}
+     \begin{frame}[fragile]{XSLT/ Principales règles (2/4) : \texttt{<xsl:copy-of>}}
      \Large
      \begin{itemize}
          \item \textbf{Copie à l'identique de l'ensemble du n\oe ud courant et de ses n\oe uds enfants (balises, attributs, textes).}
@@ -215,7 +187,7 @@
      \end{minted}
      \end{frame}
 
-     \begin{frame}[fragile]{XSLT/ Principales règles (4/4) : \texttt{<xsl:value-of>}}
+     \begin{frame}[fragile]{XSLT/ Principales règles (3/4) : \texttt{<xsl:value-of>}}
      \Large
      \begin{itemize}
          \item \textbf{Renvoie uniquement la valeur textuelle du n\oe ud courant.}
@@ -229,7 +201,7 @@
      \end{minted}
      \end{frame}
 
-     \begin{frame}[fragile]{XSLT/ Exercice. Combinaison des règles}
+    \begin{frame}[fragile]{XSLT/ Exercice. Combinaison des règles}
      \Large
      \begin{itemize}
          \item Quelle différence entre ces templates ?
@@ -248,6 +220,85 @@
      \end{minted}
      \end{frame}
 
+    \begin{frame}{XSLT/ Principales règles (4/4) : \texttt{<xsl:apply-template/>}}
+         \Large
+         \begin{itemize}
+             \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} : le processeur va \textbf{examiner les n\oe uds enfants} dans l’ordre et \textbf{appliquer les règles} qui leur sont associées.
+            % pour faire deux règles différentes :
+            % (1) reproduire la balise <TEI>
+            % (2) appliquer les règles sur body des slides précédentes :
+            % <xsl:template match="/">
+            %   <TEI>
+            %       <xsl:apply-templates/> --> permet de dire "applique des règles aux éléments enfants"
+            %   </TEI>
+            % </xsl:template>
+         \end{itemize}
+     \end{frame}
+
+
+    \begin{frame}[fragile]{XSLT/ La règle \texttt{<xsl:apply-templates/>} (1/4)}
+        \Large
+        \begin{itemize}
+            \item Sans elle, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
+            \item Exemple : la balise \texttt{<TEI/>}.
+        \end{itemize}
+        % noeud courant = celui dans @select de <xsl:template> (fixe)
+        % noeud de contexte = celui sur le quel opère la règle (variable)
+        \begin{minted}{xml}
+<xsl:template match="/">
+    <TEI>
+        <xsl:apply-templates/>
+    </TEI>
+</xsl:template>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ La règle \texttt{<xsl:apply-templates/>} : \texttt{@select} (2/4)}
+        \Large
+        \begin{itemize}
+            \item \texttt{@select} permet d'appliquer les règles uniquement au n\oe ud sélectionné.
+            \bigskip
+            \item Ex. $\rightarrow$ inverser \texttt{<teiHeader/>} et \texttt{<text/>} (\textit{cf.} fichier) : 
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template match="/">
+    <TEI>
+        <xsl:apply-templates select="//text"/>
+        <xsl:apply-templates select="//teiHeader"/>
+    </TEI>
+</xsl:template>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{XSLT/ La règle \texttt{<xsl:apply-templates/>} : \texttt{@mode} (3/4)}
+        \Large
+        \begin{itemize}
+            \item \texttt{@mode} permet d'appliquer des règles différentes \textbf{à un même élément XML} en fonction de son emplacement ou de son contenu (= son \og mode \fg).
+            \bigskip
+            \item Le \texttt{@mode} doit être présent et dans le \texttt{<xsl:apply-templates/>} et dans le \texttt{<xsl:template/>} avec la même valeur (= le nom du mode).
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ La règle \texttt{<xsl:apply-templates/>} : \texttt{@mode} (4/4)}
+        \Large
+        \begin{itemize}
+            \item Exemple d'utilisation de \texttt{@mode} : créer une table des matières (\textit{cf.} fichier).
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template match="//body">
+    <xsl:copy>
+        <xsl:apply-templates />
+        <div>
+            <head>Table des matières</head>
+            <xsl:apply-templates mode="toc"/>
+        </div>
+    </xsl:copy>
+</xsl:template>
+        \end{minted}
+    \end{frame}
+     
      \begin{frame}{XSLT/ Une autre règle : \texttt{<xsl:number/> (1/2)}}
          \Large
          \begin{itemize}
@@ -279,6 +330,18 @@
 </xsl:template>
          \end{minted}
      \end{frame}
+
+     \begin{frame}{XSLT/ Ordre d'application des règles}
+    \Large
+        \begin{itemize}
+            \item XSLT commence par chercher la règle à appliquer au n\oe ud racine ;
+            \item Cette règle fait appel à d'autres avec \texttt{apply-templates} (avec ou sans @tt), elles sont appliquées dans l'ordre ;
+            \item S'il n'y a pas de règle, il passe au suivant.
+            \bigskip
+            \item Donc : l'ordre d'écriture des règles n'a aucune importance ;
+            \item \textbf{Attention  $\rightarrow$ restez lisible + commentez votre code !}
+        \end{itemize}
+    \end{frame}
 
      \begin{frame}{XSLT/ Exercice}
          \Large

@@ -25,72 +25,7 @@
 
 \begin{document}
     \maketitle
-
-    \section{XSLT. Les attributs de \texttt{<xsl:apply-templates/>}}
-
-    \begin{frame}[fragile]{XSLT/ Rappel : l'instruction \texttt{<xsl:apply-templates/>}}
-        \Large
-        \begin{itemize}
-            \item Permet d'appliquer les règles aux n\oe uds enfants du n\oe ud courant.
-            \item Sans le \texttt{<xsl:apply-templates/>}, XSLT ne chercherait pas de règle pour les enfants de <TEI> dans l'exemple ci-dessous :
-        \end{itemize}
-        % noeud courant = celui dans @select de <xsl:template> (fixe)
-        % noeud de contexte = celui sur le quel opère la règle (variable)
-        \begin{minted}{xml}
-<xsl:template match="/">
-    <TEI>
-        <xsl:apply-templates/>
-    </TEI>
-</xsl:template>
-        \end{minted}
-    \end{frame}
-
-    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:apply-templates/>}, attribut \texttt{@select} (1/3)}
-        \Large
-        \begin{itemize}
-            \item \texttt{@select} permet d'appliquer les règles uniquement au n\oe ud sélectionné.
-            \bigskip
-            \item Ex. $\rightarrow$ inverser \texttt{<teiHeader/>} et \texttt{<text/>} (\textit{cf.} fichier) : 
-        \end{itemize}
-        \normalsize
-        \begin{minted}{xml}
-<xsl:template match="/">
-    <TEI>
-        <xsl:apply-templates select="//text"/>
-        <xsl:apply-templates select="//teiHeader"/>
-    </TEI>
-</xsl:template>
-        \end{minted}
-    \end{frame}
-
-    \begin{frame}{XSLT/ \texttt{<xsl:apply-templates/>}, attribut \texttt{@mode} (2/3)}
-        \Large
-        \begin{itemize}
-            \item \texttt{@mode} permet d'appliquer des règles différentes \textbf{à un même élément XML} en fonction de son emplacement ou de son contenu (= son \og mode \fg).
-            \bigskip
-            \item Le \texttt{@mode} doit être présent et dans le \texttt{<xsl:apply-templates/>} et dans le \texttt{<xsl:template/>} avec la même valeur (= le nom du mode).
-        \end{itemize}
-    \end{frame}
-
-    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:apply-templates/>}, attribut \texttt{@mode} (3/3)}
-        \Large
-        \begin{itemize}
-            \item Exemple d'utilisation de \texttt{@mode} : créer une table des matières (\textit{cf.} fichier).
-        \end{itemize}
-        \normalsize
-        \begin{minted}{xml}
-<xsl:template match="//body">
-    <xsl:copy>
-        <xsl:apply-templates />
-        <div>
-            <head>Table des matières</head>
-            <xsl:apply-templates mode="toc"/>
-        </div>
-    </xsl:copy>
-</xsl:template>
-        \end{minted}
-    \end{frame}
-
+    
     \section{XSLT. Variables et paramètres}
 
     \begin{frame}{XSLT/ Différence entre \texttt{variable} et \texttt{param}}
@@ -160,4 +95,3 @@
         \end{itemize}
     \end{frame}
 \end{document}
-
