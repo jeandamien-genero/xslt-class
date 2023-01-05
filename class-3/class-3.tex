@@ -1,64 +1,163 @@
-\documentclass[a4paper]{article}
+\documentclass{beamer}
 \usepackage[french]{babel}
-\usepackage[T1]{fontenc}
+\usepackage{inputenc}
+\usetheme{metropolis}
+\usecolortheme{cormorant}
+\usepackage{minted}
+\usepackage {ifthen}
+\newboolean{printCode}
+\setboolean{printCode}{true}
+% \usemintedstyle{trac}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ulem}  % texte barré
 
-\title{\textsc{École nationale des chartes}
+% texte surligné
+\usepackage{soul}
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
 
-\bigskip
-
-Technique et chaîne de publication électronique avec XSLT}
-\author{Jean-Damien Généro}
+\title{Technique et chaîne de publication électronique avec XSLT (3/7)}
 \date{2023, 9 janv. - 13 fev.}
+\author{Jean-Damien Généro}
+\institute{École nationale des chartes -- M2 TNAH}
 
 \begin{document}
-\maketitle
+    \maketitle
 
-\section*{Informations générales}
+    \section{XSLT. Les attributs de \texttt{<xsl:apply-templates/>}}
 
-\begin{itemize}
-    \item Cours en ligne : https://github.com/jeandamien-genero/xslt-class
-    \item Contact : jean-damien.genero [at] cnrs [.] fr
-\end{itemize}
+    \begin{frame}[fragile]{XSLT/ Rappel : l'instruction \texttt{<xsl:apply-templates/>}}
+        \Large
+        \begin{itemize}
+            \item Permet d'appliquer les règles aux n\oe uds enfants du n\oe ud courant.
+            \item Sans le \texttt{<xsl:apply-templates/>}, XSLT ne chercherait pas de règle pour les enfants de <TEI> dans l'exemple ci-dessous :
+        \end{itemize}
+        % noeud courant = celui dans @select de <xsl:template> (fixe)
+        % noeud de contexte = celui sur le quel opère la règle (variable)
+        \begin{minted}{xml}
+<xsl:template match="/">
+    <TEI>
+        <xsl:apply-templates/>
+    </TEI>
+</xsl:template>
+        \end{minted}
+    \end{frame}
 
-\bigskip
+    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:apply-templates/>}, attribut \texttt{@select} (1/3)}
+        \Large
+        \begin{itemize}
+            \item \texttt{@select} permet d'appliquer les règles uniquement au n\oe ud sélectionné.
+            \bigskip
+            \item Ex. $\rightarrow$ inverser \texttt{<teiHeader/>} et \texttt{<text/>} (\textit{cf.} fichier) : 
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template match="/">
+    <TEI>
+        <xsl:apply-templates select="//text"/>
+        <xsl:apply-templates select="//teiHeader"/>
+    </TEI>
+</xsl:template>
+        \end{minted}
+    \end{frame}
 
-\section*{Programme}
+    \begin{frame}{XSLT/ \texttt{<xsl:apply-templates/>}, attribut \texttt{@mode} (2/3)}
+        \Large
+        \begin{itemize}
+            \item \texttt{@mode} permet d'appliquer des règles différentes \textbf{à un même élément XML} en fonction de son emplacement ou de son contenu (= son \og mode \fg).
+            \bigskip
+            \item Le \texttt{@mode} doit être présent et dans le \texttt{<xsl:apply-templates/>} et dans le \texttt{<xsl:template/>} avec la même valeur (= le nom du mode).
+        \end{itemize}
+    \end{frame}
 
-\renewcommand{\arraystretch}{1.5}
-\begin{center}
-    \begin{tabular}[h]{|p{1.5cm} p{9.6cm}}
-        \textbf{9 janv.} & \textbf{1.} Introduction. \texttt{XPath}. Premières notions de \texttt{XSLT}.\\
-        \textbf{16 janv.} & \textbf{2.} \texttt{XSLT} : règles basiques.  \\
-        \textbf{23 janv.} & \textbf{3.} \texttt{XSLT} : \texttt{<xsl:apply-template/>}, variables et fonctions \texttt{XPath}. \\
-        \textbf{30 janv.} & \textbf{4.} \texttt{XSLT} : règles complexes (conditions et boucles). \\
-        \textbf{6 fev.} & \textbf{!}  Contrôle continu.
-        
-        \textbf{5.} Transformation de \texttt{XML}  vers \texttt{XSLT}. \\
-        \textbf{13 fev.} & \textbf{6.} Transformation de \texttt{XML}  vers \texttt{HTML}. \\
-        \textbf{20 fev.} & \textbf{7.} Transformation de \texttt{XML}  vers \texttt{LaTeX}. \\
-    \end{tabular}
-\end{center}
+    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:apply-templates/>}, attribut \texttt{@mode} (3/3)}
+        \Large
+        \begin{itemize}
+            \item Exemple d'utilisation de \texttt{@mode} : créer une table des matières (\textit{cf.} fichier).
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template match="//body">
+    <xsl:copy>
+        <xsl:apply-templates />
+        <div>
+            <head>Table des matières</head>
+            <xsl:apply-templates mode="toc"/>
+        </div>
+    </xsl:copy>
+</xsl:template>
+        \end{minted}
+    \end{frame}
 
-\bigskip
+    \section{XSLT. Variables et paramètres}
 
-\section*{Objectifs}
-      \begin{itemize}
-          \item \texttt{XPath}
-          \begin{itemize}
-              \item Naviguer dans un arbre \texttt{XML}
-              \item Manipuler les principales fonctions \texttt{XPath}
-          \end{itemize}
-          \item \texttt{XSLT}
-          \begin{itemize}
-              \item Manipuler les règles (\textit{templates}) basiques
-              \item Manipuler les variables, conditions et boucles
-          \end{itemize}
-          \item Édition numérique
-          \begin{itemize}
-              \item Transformer un document \texttt{XML} en un autre document \texttt{XML}
-              \item Transformer un document \texttt{XML} en un document \texttt{HTML}
-              \item Transformer un document \texttt{XML} en un document \texttt{LaTeX}
-          \end{itemize}
-      \end{itemize}
+    \begin{frame}{XSLT/ Différence entre \texttt{variable} et \texttt{param}}
+        \Large
+        \begin{itemize}
+            \item Rappel $\rightarrow$ variable : nom (unique) + valeur (statique ou dynamique).
+            \bigskip
+            \item Dans XSLT, portée globale (premier niveau) ou locale (intégrée à un \texttt{<xsl:template/>}) ;
+            \bigskip
+            \item \texttt{<xsl:variable/>} : \textbf{valeur fixe} ;
+            \bigskip
+            \item \texttt{<xsl:param/>} : \textbf{valeur fixe ou dynamique}, peut être pris en argument par le processeur (ex : saxon dans lxml).
+        \end{itemize}
+    \end{frame}
 
+    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:variable/>} (1/2)}
+        \Large
+        \begin{itemize}
+            \item Attributs : \texttt{@name} \textit{(req.)} et \texttt{@select} \textit{(opt.)} ;
+            \bigskip
+            \item Deux manières de définir la valeur de \texttt{<xsl:variable/>} :
+            \begin{itemize}
+            \Large
+                \item Par le contenu de l'\texttt{@select} (expression XPath) ;
+                \item Par le contenu de \texttt{<xsl:variable/>} (texte ou règle).
+            \end{itemize}
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:variable name="x" select="Xpath"/>
+<xsl:variable name="y">[règles]</xsl:variable>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:variable/>} (2/2)}
+        \Large
+        \begin{itemize}
+            \item  Pour appeler une variable : \texttt{\$} + \texttt{@name} dans le \texttt{@select} d'un \texttt{<value-of/>}
+        \end{itemize}
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template math="/">
+    <xsl:value-of select="$x"/>
+    <xsl:value-of select="$y"/>
+</xsl:template>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{XSLT/ \texttt{<xsl:param/>}}
+        \Large
+        \begin{itemize}
+            \item Fonctionne de la même manière que \texttt{<xsl:variable/>}.
+        \end{itemize}
+    \end{frame}
+
+    \section{XPath/ Les fonctions}
+
+    \begin{frame}{XPath/ Fonctions}
+        \Large
+        \begin{itemize}
+            \item Les fonctions peuvent être utilisées dans des expressions XPath ou dans des prédicats :
+            \begin{itemize}
+            \Large
+                \item Expression $\rightarrow$ \texttt{count(./p)}
+                \item Prédicat (\texttt{[ ]}) $\rightarrow$ \texttt{./[count(p)]}
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
 \end{document}
+

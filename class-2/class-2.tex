@@ -169,9 +169,10 @@
      \begin{frame}{XSLT/ Principales règles (1/4) : \texttt{<xsl:apply-template/>}}
          \Large
          \begin{itemize}
-             \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} grâce à laquelle les \textbf{règles} définies dans la feuille de style \textbf{sont appliquées aux enfants du n\oe ud courant}.
+             % \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} grâce à laquelle les \textbf{règles} définies dans la feuille de style \textbf{sont appliquées aux enfants du n\oe ud courant}.
+             \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} : le processeur va \textbf{examiner les n\oe uds enfants} dans l’ordre et a\textbf{ppliquer les règles} qui leur sont associées.
             \bigskip
-            \item Si elle n'est pas présente, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
+            \item Sans elle, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
             \item Exemple : la balise \texttt{<TEI/>}.
             % pour faire deux règles différentes :
             % (1) reproduire la balise <TEI>
