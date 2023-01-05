@@ -1,0 +1,51 @@
+\documentclass{beamer}
+\usepackage[french]{babel}
+\usepackage{inputenc}
+\usetheme{metropolis}
+\usecolortheme{cormorant}
+\usepackage{minted}
+\usepackage {ifthen}
+\newboolean{printCode}
+\setboolean{printCode}{true}
+% \usemintedstyle{trac}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ulem}  % texte barré
+
+% texte surligné
+\usepackage{soul}
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
+
+\title{Technique et chaîne de publication électronique avec XSLT (4/7)}
+\date{2023, 9 janv. - 13 fev.}
+\author{Jean-Damien Généro}
+\institute{École nationale des chartes -- M2 TNAH}
+
+\begin{document}
+    \maketitle
+    
+    \section{XSLT. Conditions}
+
+    \begin{frame}{XSLT/ Conditions}
+        \Large
+        \begin{itemize}
+            \item Deux moyens d'exprimer une condition en XSLT : \texttt{<xsl:if/>} et \texttt{<xsl:choose/>} ;
+            \bigskip
+            \item Attention : les conditions XSLT ne fonctionnent pas de la même manière que celles d'autres langages de programmation, comme Python où l'on trouve le triplet \texttt{if}, \texttt{elif} et \texttt{else}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XSLT/ \texttt{<xsl:if/>}}
+        \Large
+        \begin{itemize}
+            \item \texttt{<xsl:if/>} possède un \texttt{@test} obligatoire ;
+            \item Contenu appliqué si et seulement si le \texttt{@test} est validé.
+            \bigskip
+            \item Pas de \texttt{elif} : utiliser plusieurs \texttt{<xsl:if/>} ;
+            \item Pas de \texttt{else} : utiliser \texttt{<xsl:choose/>}.
+        \end{itemize}
+    \end{frame}
+    
+\end{document}
