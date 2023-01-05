@@ -23,6 +23,48 @@
                   </imprint>
                </monogr>
             </biblStruct>
+            <listBibl>
+               <biblStruct>
+                  <monogr>
+                     <author>
+                        <persName>
+                           <forename>Véronique</forename>
+                           <surname>Samson</surname>
+                        </persName>
+                     </author>
+                     <title level="a">Le roman après la fin</title>
+                     <title level="m">Après la fin. Gustave Flaubert et le temps du roman</title>
+                     <imprint>
+                        <pubPlace>Saint-Denis</pubPlace>
+                        <publisher>Presses universitaires de Vincennes</publisher>
+                        <date>2021</date>
+                        <biblScope unit="chapter" n="2"/>
+                        <biblScope unit="page" from="105" to="190"/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <!-- SAMSON Véronique, « Chapitre 2. Le roman après la fin », Après la fin. Gustave Flaubert et le temps du roman, Saint-Denis, Presses universitaires de Vincennes, « Culture et Société », 2021, p. 105-190. -->
+               <biblStruct>
+                  <monogr>
+                     <author>
+                        <persName>
+                           <forename>Stéphanie</forename>
+                           <surname>Dord-Crouslé</surname>
+                        </persName>
+                     </author>
+                     <title level="a">Établir le texte de Trois contes</title>
+                     <title level="m">Flaubert. Revue critique et génétique</title>
+                     <ref target="https://journals.openedition.org/flaubert/4143"/>
+                     <imprint>
+                        <pubPlace>Saint-Denis</pubPlace>
+                        <publisher>Presses universitaires de Vincennes</publisher>
+                        <date>2020</date>
+                        <biblScope unit="issue" n="24"/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <!-- Stéphanie Dord-Crouslé, « Établir le texte de Trois contes », Flaubert [En ligne], 24 | 2020, mis en ligne le 12 décembre 2020, consulté le 05 janvier 2023. URL : http://journals.openedition.org/flaubert/4143 -->
+            </listBibl>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
