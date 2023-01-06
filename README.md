@@ -13,3 +13,15 @@
 | 6 fev.   | Contrôle continu + 5. Transformation de XML vers XML.   |
 | 13 fev.  | 6. Transformation de XML vers HTML.                     |
 | 20 fev.  | 7. Transformation de XML vers LaTeX.                    |
+
+## Ressources
+
+### En bibliothèque
+- Amann, Bernd et Rigaux, Philippe, _Comprendre XSLT_, Cambridge, Cologne, Paris, O'Reilly, 2002 _[[dispo à la BEC](https://catalogue.chartes.psl.eu/cgi-bin/koha/opac-detail.pl?biblionumber=17515)]_.
+- Harold, Elliotte Rusty, Means, W. Scott, _XML en concentré_, Paris, O'Reilly, 2005 _[[dispo à la BEC](https://catalogue.chartes.psl.eu/cgi-bin/koha/opac-detail.pl?biblionumber=85823)]_.
+- Mangano, Sal, _XSLT en action_, Paris, O'Reilly, 2003 _[[dispo à la BEC](https://catalogue.chartes.psl.eu/cgi-bin/koha/opac-detail.pl?biblionumber=85826)]_.
+
+### En ligne
+- [Cours d'Ariane Pinche](https://github.com/ArianePinche/coursTNAH_XSLT).
+- [W3S XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp).
+- [W3S XSLT Tutorial](https://www.w3schools.com/xml/xsl_intro.asp).
