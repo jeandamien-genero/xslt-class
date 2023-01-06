@@ -31,7 +31,9 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    <xsl:template match="//div[@n]/p">
+    
+    <!-- 1. UTILISATION DES CONDITIONS -->
+    <!--<xsl:template match="//div[@n]/p">
         <p>
             <xsl:choose>
                 <xsl:when test="parent::div/@n=2">
@@ -45,6 +47,15 @@
                     </xsl:attribute>
                 </xsl:otherwise>
             </xsl:choose>
+            <xsl:value-of select="."/>
+        </p>
+    </xsl:template>-->
+    
+    <xsl:template match="//div[@n]/p">
+        <p>
+            
+                §<xsl:value-of select="count(preceding-sibling::p) + 1"/><xsl:text>. </xsl:text>
+            
             <xsl:value-of select="."/>
         </p>
     </xsl:template>
