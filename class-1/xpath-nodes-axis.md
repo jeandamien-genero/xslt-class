@@ -1,5 +1,5 @@
-% __XPath : noeuds et axes__
-% ENC/ XSLT
+% __ENC/ XSLT/ Noeuds et axes XPath__
+% Jean-Damien Généro
 % 2023
 
 ---
@@ -47,7 +47,7 @@ Pour XPath, un document XML est un "_tree of nodes_" ("abre avec des noeuds"). C
 - Les instructions de traitement XML (notées entre `<? ?>`) indiquent à une application comment traiter le document XML qu'elle lit.
 - Elles possèdent un nom (`name()`) et une valeur (`string()`).
 - Exemple : `<?xml-stylesheet href="exemple.xsl" type="text/xsl" title="Exemple"?>`.
-- À ne pas confondre avec l'entête XMl (`<?xml version="1.0" encoding="UTF-8"?>` au début du document).
+- À ne pas confondre avec l'entête XML (`<?xml version="1.0" encoding="UTF-8"?>` au début du document).
 
 ---
 
