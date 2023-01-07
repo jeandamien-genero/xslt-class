@@ -22,6 +22,8 @@
 - Mangano, Sal, _XSLT en action_, Paris, O'Reilly, 2003 _[[dispo à la BEC](https://catalogue.chartes.psl.eu/cgi-bin/koha/opac-detail.pl?biblionumber=85826)]_.
 
 ### En ligne
+- __(en.)__ Doug Tidwell, _XSLT_, O'Reilly, 2001, [en ligne](https://docstore.mik.ua/orelly/xml/xslt/index.htm).
+- __(en.)__ Elliotte Rusty Harold, W. Scott Means, _XML in a nutshell_, O'Reilly, 2002, [en ligne](https://docstore.mik.ua/orelly/xml/xmlnut/index.htm).
 - [Cours d'Ariane Pinche](https://github.com/ArianePinche/coursTNAH_XSLT).
-- [W3S XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp).
-- [W3S XSLT Tutorial](https://www.w3schools.com/xml/xsl_intro.asp).
+- __(en.)__ [W3S XPath Tutorial](https://www.w3schools.com/xml/xpath_intro.asp).
+- __(en.)__ [W3S XSLT Tutorial](https://www.w3schools.com/xml/xsl_intro.asp).
