@@ -163,19 +163,20 @@
 
     \section{XPath}
     
-    \begin{frame}{XPath/ Syntaxe}
+    \begin{frame}{XPath/ N\oe uds}
         \Large
         \begin{itemize}
-            \item \textbf{N\oe ud} (\textit{node}) = un composant de l'arbre XML. Sept types, dont : \textbf{balise}, \textbf{attribut}, \textbf{\textit{text}}, \textit{namespace}.
-            %% Peut être inclus dans un chemin XPath. 7 noeuds : https://www.w3schools.com/xml/xpath_nodes.asp
+            \item \textbf{N\oe ud} (\textit{node}) (7) = composant de l'arbre : \textbf{\textit{element}} (balise), \textbf{\textit{attribute}}, \textbf{\textit{text}}, \textit{\textbf{comment}}, \textit{\textbf{namespace}}, \textit{\textbf{root}} et \textit{\textbf{processing instruction}}.
+            \bigskip
+            \item Deux rôles : \textbf{\textit{current node}} (fixe, le premier du chemin) ou \textbf{\textit{context node}} (variable, celui sur lequel XPath opère à l'instant \textit{t}) ;
+            % noeud courant (fixe) = le premier noeud d'un chemin XPath (dans le @select d'un <xsl:template>).
+            % noeud de contexte (variable) = le noeud sur lequel XPath opére, qui change à chaque étape du chemin
             \bigskip
             \item Écrire un chemin (\textit{expression}) : succession de n\oe uds séparés par l'\textbf{opérateur /} ;
             \begin{itemize}
             \Large
-                \item \texttt{/TEI/text/body/p}
+                \item Tester dans Oxygen : \texttt{/TEI/text/body/div/p}
             \end{itemize}
-            \bigskip
-            \item Axe (direction) basique : \textbf{parent $\rightarrow$ enfant}
         \end{itemize}
         
     \end{frame}
@@ -184,6 +185,8 @@
         \Large
         \begin{itemize}
             \item Un axe permet de qualifier la \textbf{relation} entre le \textbf{n\oe ud de contexte} et un ou des \textbf{autre(s) n\oe ud(s)}.
+            
+            \item Direction basique : \textbf{parent $\rightarrow$ enfant}.
 
             \bigskip
 
@@ -194,11 +197,6 @@
                 \item \texttt{child::} $\rightarrow$ n\oe ud immédiatement en-dessous ;
                 \item \texttt{following-sibling::} $\rightarrow$ n\oe ud(s) après celui de contexte et qui ne fait/font pas partie de ses descendants ;
                 \item \texttt{ancestor}, \texttt{descendant}, \texttt{preceding}, etc.
-                %% https://developer.mozilla.org/fr/docs/Web/XPath/Axes
-                %% https://spip.teluq.ca/inf6450/spip.php?article111
-                %% https://svground.fr/xpath-axes.php#following-sibling
-                %% preceding-sibling : que les noeuds de même niveau
-                %% folloxing : les noeuds de même niveau + leurs descendants
             \end{itemize}
         \end{itemize}
         
@@ -225,8 +223,8 @@
     \begin{frame}{XPath/ Abbréviations des axes}
     \Large
         \begin{itemize}
-            \item Premier élément de l'arbre (n\oe ud racine) $\rightarrow$ \textbf{/} \textit{(attention : ce n'est pas forcément l'élément racine \texttt{<TEI>})}
-            \item \texttt{decendant::} $\rightarrow$ \textbf{//}
+            \item 1\up{er} élément de l'arbre (\textit{root node}) $\rightarrow$ \textbf{/} \textit{(attention : différent de la racine \texttt{<TEI>})}
+            \item \texttt{decendant-or-self::} $\rightarrow$ \textbf{//}
             \item \texttt{self::} $\rightarrow$ \textbf{.} \textit{(n\oe ud courant)}
             \item \texttt{attribute::} $\rightarrow$ \textbf{@}
             \bigskip
@@ -237,7 +235,7 @@
     \begin{frame}{XPath/ Prédicats : définition}
         \Large
         \begin{itemize}
-            \item Prédicat (filtre) = \textbf{condition} qui doit être satisfaite par le n\oe ud courant (existence d'un attribut, valeur d'un attribut, position d'une balise, etc.).
+            \item Prédicat (filtre) = \textbf{condition} qui doit être satisfaite par le n\oe ud de contexte (existence d'un attribut, valeur d'un attribut, position d'une balise, etc.).
             \item Écrit entre crochets \texttt{[ ]}.
             \bigskip
             \item \texttt{//div[@n='2']/head} = le \texttt{<head>} de la \texttt{<div>} avec un \texttt{@n} de valeur \texttt{2}.
@@ -281,8 +279,10 @@
     \begin{frame}{XSLT/ Définition}
         \Large
         \begin{itemize}
-            \item XSLT $\rightarrow$ un \textbf{langage de programmation déclaratif} ;
+            \item XSLT $\rightarrow$ un \textbf{langage de programmation} ;
+            \bigskip
             \item Permet de \textbf{transformer un doc XML} en un autre doc  (\texttt{.xml}, \texttt{.html}, \texttt{.tex}, etc.) ;
+            \bigskip
             \item Transformation opérée par un \textbf{processeur XSLT}
             \begin{itemize}
                 \item \textbf{Construit} l'arbre output, \textbf{transforme} l'arbre input et \textbf{sérialise} le document output ;

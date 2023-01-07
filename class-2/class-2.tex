@@ -153,7 +153,7 @@
              \bigskip
              \item \texttt{<xsl:value-of/>}
              \bigskip
-             \item \texttt{<xsl:apply-template/>}
+             \item \texttt{<xsl:apply-templates/>}
          \end{itemize}
      \end{frame}
      
@@ -170,8 +170,6 @@
 </xsl:template>
      \end{minted}
      \end{frame}
-
-% expliquer la différence entre le noeud courant et le noeud de contexte ?
 
      \begin{frame}[fragile]{XSLT/ Principales règles (2/4) : \texttt{<xsl:copy-of>}}
      \Large
@@ -220,10 +218,10 @@
      \end{minted}
      \end{frame}
 
-    \begin{frame}{XSLT/ Principales règles (4/4) : \texttt{<xsl:apply-template/>}}
+    \begin{frame}{XSLT/ Principales règles (4/4) : \texttt{<xsl:apply-templates/>}}
          \Large
          \begin{itemize}
-             \item \texttt{<xsl:apply-template/>} est une \textbf{instruction récursive} : le processeur va \textbf{examiner les n\oe uds enfants} dans l’ordre et \textbf{appliquer les règles} qui leur sont associées.
+             \item \texttt{<xsl:apply-templates/>} est une \textbf{instruction récursive} : le processeur va \textbf{examiner les n\oe uds enfants} dans l’ordre et \textbf{appliquer les règles} qui leur sont associées.
             % pour faire deux règles différentes :
             % (1) reproduire la balise <TEI>
             % (2) appliquer les règles sur body des slides précédentes :
@@ -242,7 +240,7 @@
             \item Sans elle, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
             \item Exemple : la balise \texttt{<TEI/>}.
         \end{itemize}
-        % noeud courant = celui dans @select de <xsl:template> (fixe)
+        % noeud courant = celui dans F (fixe)
         % noeud de contexte = celui sur le quel opère la règle (variable)
         \begin{minted}{xml}
 <xsl:template match="/">
