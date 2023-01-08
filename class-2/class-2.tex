@@ -51,6 +51,15 @@
          \end{itemize}
      \end{frame}
 
+     \begin{frame}{Contenu d'un \texttt{<xsl:template>} : fichiers d'exemple}
+         \Large
+         \begin{itemize}
+            \item Ouvrir Oxygen.
+             \item Ouvrir \texttt{/class-2/class2\_teiAll\_oxygen.xml}.
+             \item Ouvrir \texttt{/class-2/class2\_teiAll\_xsl.xsl}.
+         \end{itemize}
+     \end{frame}
+
      \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : XML, HTML, \LaTeX{} (1/2)}
      \Large
         \begin{itemize}
@@ -93,7 +102,8 @@
      \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : du texte (1/2)}
      \Large
         \begin{itemize}
-            \item Du texte peut être mis dans une règle : pour remplacer le contenu d'une balise, pour écrire le préambule d'un doc \LaTeX :
+            \item Du texte peut être mis dans une règle : pour remplacer le contenu d'une balise, pour écrire le préambule d'un doc \LaTeX.
+            \item (Dans le fichier d'exemple : remplacer tout.)
         \end{itemize}
         \normalsize
         % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
@@ -240,7 +250,7 @@
             \item Sans elle, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
             \item Exemple : la balise \texttt{<TEI/>}.
         \end{itemize}
-        % noeud courant = celui dans F (fixe)
+        % noeud courant = celui dans @select (fixe)
         % noeud de contexte = celui sur le quel opère la règle (variable)
         \begin{minted}{xml}
 <xsl:template match="/">
