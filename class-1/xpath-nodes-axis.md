@@ -1,4 +1,4 @@
-% __ENC/ XSLT/ Noeuds et axes XPath__
+% __ENC/ XSLT/ Fiche XPath__
 % Jean-Damien Généro
 % 2023
 
