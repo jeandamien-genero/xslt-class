@@ -6,7 +6,7 @@
 
 ## 1. Les noeuds
 
-Pour XPath, un document XML est un "_tree of nodes_" ("abre avec des noeuds"). Chaque noeud est une "étape" possible dans une expression XPath. Il y a sept types de noeud :
+Pour XPath, un document XML est un "_tree of nodes_" ("arbre avec des noeuds"). Chaque noeud est une "étape" possible dans une expression XPath. Il y a sept types de noeud :
 
 ### 1.1 _Root node_
 
