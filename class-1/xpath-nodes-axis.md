@@ -22,7 +22,7 @@ Pour XPath, un document XML est un "_tree of nodes_" ("arbre avec des noeuds"). 
 ### 1.3 _Attribute Nodes_
 
 - Notation : `attribute()`.
-- Les attributs des balises XML. Le parent direct d'un _attribute node_ est forcément un _element node_.
+- Les attributs sont des balises XML. Le parent direct d'un _attribute node_ est forcément un _element node_.
 
 ### 1.4 _Text nodes_
 
@@ -104,7 +104,7 @@ Pour XPath, un document XML est un "_tree of nodes_" ("arbre avec des noeuds"). 
 ### 2.8 _Descendant-or-self axis_
 
 - Notation : `descendant-or-self::`.
-- Sélection : le noeuf de contexte et _descendant-axis_
+- Sélection : le noeud de contexte et _descendant-axis_
 - Attention : les `attribute nodes` et `namespace nodes` ne sont pas pris en compte par cet axe.
 
 ### 2.9 _Preceding-sibling axis_
