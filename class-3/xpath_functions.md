@@ -54,7 +54,7 @@ Sélection de fonctions :
 
 - `starts-with(string1, string2)` : retourne `true` ou `false` selon que `string1` commence (`true`) ou ne commence pas par `string2` (`false`) ;
 
-- `ends-with()` : retourne `true` ou `false` selon que `string1` se termine (`true`) ou ne se termine pas par `string2` (`false`) ;
+- `ends-with(string1, string2)` : retourne `true` ou `false` selon que `string1` se termine (`true`) ou ne se termine pas par `string2` (`false`) ;
 
 ## 6. `not()`
 
