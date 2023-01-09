@@ -11,43 +11,44 @@ Pour XPath, un document XML est un "_tree of nodes_" ("arbre avec des noeuds"). 
 ### 1.1 _Root node_
 
 - Notation : `/`.
-- Il contient l'ensemble du document ; c'est le seul noeud "orphelin" (il ne peut pas avoir de parent). On parle parfois du _document node_.
-- À ne pas confondre avec l'élément racine (_root element_) d'un document XML : `<TEI>` est entièrement contenu dans le _root node_ tout en étant le seul _root element_ du document.
+- Sélection : l'ensemble du document ; c'est le seul noeud "orphelin" (il ne peut pas avoir de parent). On parle parfois du _document node_.
+- Attention : ne pas confondre avec l'élément racine (_root element_) d'un document XML : `<TEI>` est entièrement contenu dans le _root node_ tout en étant le seul _root element_ du document.
 
 ### 1.2 _Element nodes_
 
 - Notation : `element()`.
-- Les éléments (i. e. balises) du document XML, notés entre `< >`.
+- Séléction : les éléments (i. e. balises) du document XML (entre `< >`).
 
-### 1.3 _Attribute Nodes_
+### 1.3 _Attribute nodes_
 
 - Notation : `attribute()`.
-- Les attributs sont des balises XML. Le parent direct d'un _attribute node_ est forcément un _element node_.
+- Sélection : les attributs des balises XML. Le parent direct d'un _attribute node_ est forcément un _element node_.
 
 ### 1.4 _Text nodes_
 
 - Notation : `text()`.
-- Le texte d'un _element node_ ou d'un _attribute node_.
+- Sélection : le texte d'un _element node_ ou d'un _attribute node_.
 
 ### 1.5 _Comment nodes_
 
 - Notation : `comment()`.
-- Les commentaires d'un document XML (notés entre `<!-- -->`).
-- Le _comment node_ sélectionne le texte du commentaire sans les `<!-- -->`.
+- Sélection : les commentaires d'un document XML (notés entre `<!-- -->`).
+- Attention : _comment node_ sélectionne le texte du commentaire sans les `<!-- -->`.
 
 ### 1.6 _Namespace nodes_
 
 - Notation : _via_ l'axe `namespace::`.
-- Les noms de domaine, généralement stockés dans des `xmlns:`. Cela signifie que dans `<TEI xmlns="http://www.tei-c.org/ns/1.0">`, `xmlns` n'est pas un `attribute node` mais un `namespace node`. On y accède par l'expression `/TEI/namespace::*`.
-- Très peu utilisés en XSLT. 
+- Sélection : les noms de domaine, généralement stockés dans des `xmlns:`. On y accède par l'expression `/tag/namespace::*`.
+- Attention : 
+  - Dans `<TEI xmlns="http://www.tei-c.org/ns/1.0">`, `xmlns` n'est pas un `attribute node` mais un `namespace node`.
+  - Très peu utilisés en XSLT.
 
 ### 1.7 _Processing instruction nodes_
 
 - Notation : `processing-instruction()`.
-- Les instructions de traitement XML (notées entre `<? ?>`) indiquent à une application comment traiter le document XML qu'elle lit.
-- Elles possèdent un nom (`name()`) et une valeur (`string()`).
+- Séection : les instructions de traitement XML (notées entre `<? ?>`), qui indiquent à une application comment traiter le document XML qu'elle lit. Elles possèdent un nom (`name()`) et une valeur (`string()`).
 - Exemple : `<?xml-stylesheet href="exemple.xsl" type="text/xsl" title="Exemple"?>`.
-- À ne pas confondre avec l'entête XML (`<?xml version="1.0" encoding="UTF-8"?>` au début du document).
+- Attention : ne pas confondre avec l'entête XML (`<?xml version="1.0" encoding="UTF-8"?>` au début du document).
 
 ---
 
@@ -67,7 +68,7 @@ Pour XPath, un document XML est un "_tree of nodes_" ("arbre avec des noeuds"). 
 
 ### 2.2 _Parent axis_
 
-- Notation et abréviation : `child::` et `..` (deux points).
+- Notation et abréviation : `parent::` et `..` (deux points).
 - Sélection : la balise hiérarchiquement supérieure au noeud de contexte.
 - Exemples : `//fileDesc/parent::teiHeader` et `//fileDesc/..` sélectionnent le `<teiHeader>` depuis le `<fileDesc>`.
 
@@ -91,12 +92,12 @@ Pour XPath, un document XML est un "_tree of nodes_" ("arbre avec des noeuds"). 
 
 ### 2.6 _Ancestor-or-self axis_
 
-- Notation : `ancestor-or-self::`.
-- Sélection : le noeud de contexte et _ancestor axis_.
+- Notation : `ancestor-or-self::` et `//`.
+- Sélection : le noeud de contexte et `ancestor axis`.
 
 ### 2.7 _Descendant axis_
 
-- Notation : `descendant::`.
+- Notation et abréviation : `descendant::`.
 - Sélection : tous les enfants du noeud de contexte, et leurs enfants, et ainsi de suite.
 - Exemple : `//descendant::sourceDesc`.
 - Attention : les `attribute nodes` et `namespace nodes` ne sont pas pris en compte par cet axe.
@@ -104,14 +105,16 @@ Pour XPath, un document XML est un "_tree of nodes_" ("arbre avec des noeuds"). 
 ### 2.8 _Descendant-or-self axis_
 
 - Notation : `descendant-or-self::`.
-- Sélection : le noeud de contexte et _descendant-axis_
+- Sélection : le noeud de contexte et `descendant axis`
 - Attention : les `attribute nodes` et `namespace nodes` ne sont pas pris en compte par cet axe.
 
 ### 2.9 _Preceding-sibling axis_
 
 - Notation : `preceding-sibling::`.
 - Sélection : tous les noeuds qui ont le même parent que le noeud de contexte et qui sont avant lui dans l'arbre.
-- Exemples : `//sourceDesc/preceding-sibling::titleStmt` sélectionne le `<titleStmt>` depuis le `<sourceDesc>` ; `//sourceDesc/preceding-sibling::*` sélectionne le `<titleStmt>` et le `<publicationStmt>`.
+- Exemples : 
+  - `//sourceDesc/preceding-sibling::titleStmt` sélectionne le `<titleStmt>` depuis le `<sourceDesc>` ;
+  - `//sourceDesc/preceding-sibling::*` sélectionne le `<titleStmt>` et le `<publicationStmt>`.
 
 ### 2.9 _Following-sibling axis_
 
@@ -146,7 +149,7 @@ XPath possède des fonctions prédéfinies :
 - Elles peuvent avoir un ou plusieurs arguments, ou ne pas en avoir du tout ;
 - Dans XSLT, elles peuvent être utilisées dans les `@match` ou les `@select` ;
 - Elles peuvent retourner : une valeur booléenne (`true` ou `false`), un nombre, une chaîne de caractères (`string`) ou une liste de noeuds (`nodeset`) ;
-- Les opérateurs suivants sont utilisables avec les fonctions et prédicats XPath :
+- Les opérateurs suivants sont utilisables avec les fonctions et prédicats :
   - Opérateurs numériques : `+`, `-`, `*`, `div` (division), `mod` (modulo).
   - Opérateurs booléens : `<`, `<=`, `>`, `>=`, `=`, `!=`, `and`, `or`.
 
@@ -171,8 +174,8 @@ Sélection de fonctions :
   - _NB : le troisième paramètre n'a pas besoin d'être de la même taille que le deuxième. Avec `translate(string, 'abc', '')`, tous les  `a`, les `b` et les `c` seront enlevés de `string`._
   - Ce n'est pas l'équivalent d'un "rechercher/remplacer".
 
-- `replace(string, abc, ABC)` : retourne `string` avec `abc` replacé par `ABC`.
-  - Ce peut être considéré comme l'équivalent d'un "rechercher/remplacer".
+- `replace(string, abc, ABC)` : retourne `string` avec `abc` remplacé par `ABC`.
+  - Peut être considéré comme l'équivalent d'un "rechercher/remplacer".
   - Attention : ne fonctionne qu'à partir de XSLT version 2.
 
 ### 3.4 `contains()`
