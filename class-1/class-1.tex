@@ -67,7 +67,7 @@
           \item \textbf{XPath $\rightarrow$} \textit{langage de requête pour naviguer dans la structure hiérarchique d'un document XML à l'aide de chemins} ;
       \end{itemize}
       \bigskip
-      \item \textbf{XSL $\rightarrow$} \textit{spécifications pour la transformation de doc XML à l'aide de feuilles de style} ;
+      \item \textbf{XSL $\rightarrow$} \textit{spécifications pour écrire des feuilles de style} (\textit{stylesheet}) ;
       % \begin{itemize}
           % \item Feuille de style (\textit{stylesheet}) $\rightarrow$ \textit{exprime des intentions sur la manière dont un contenu structuré [i. e. un doc XML] doit être présenté} ;
       % \end{itemize}
@@ -166,7 +166,7 @@
     \begin{frame}{XPath/ N\oe uds}
         \Large
         \begin{itemize}
-            \item \textbf{N\oe ud} (\textit{node}) (7) = composant de l'arbre : \textit{\textbf{root}}, \textbf{\textit{element}} (balise), \textbf{\textit{attribute}}, \textbf{\textit{text}}, \textit{\textbf{comment}}, \textit{\textbf{namespace}} et \textit{\textbf{processing instruction}}.
+            \item \textbf{N\oe ud} (\textit{node}) (7) = composant de l'arbre : \textit{\textbf{root}}, \textbf{\textit{element}}, \textbf{\textit{attribute}}, \textbf{\textit{text}}, \textit{\textbf{comment}}, \textit{\textbf{namespace}} et \textit{\textbf{processing instruction}}.
             \bigskip
             \item Deux rôles : \textbf{\textit{current node}} (fixe, le premier du chemin) ou \textbf{\textit{context node}} (variable, celui que XPath évalue à l'instant \textit{t}) ;
             % noeud courant (fixe) = le premier noeud d'un chemin XPath (dans le @select d'un <xsl:template>).
@@ -225,7 +225,7 @@
         \begin{itemize}
             \item 1\up{er} élément de l'arbre (\textit{root node}) $\rightarrow$ \textbf{/} \textit{(attention : différent de la racine \texttt{<TEI>})}
             \item \texttt{decendant-or-self::} $\rightarrow$ \textbf{//}
-            \item \texttt{self::} $\rightarrow$ \textbf{.} \textit{(n\oe ud courant)}
+            \item \texttt{self::} $\rightarrow$ \textbf{.}
             \item \texttt{attribute::} $\rightarrow$ \textbf{@}
             \bigskip
             \item Donc : vous pouvez écrire \texttt{//div/@n} au lieu de \texttt{//div/attribute::n}.
