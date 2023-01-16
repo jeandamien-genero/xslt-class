@@ -55,7 +55,7 @@
              \Large
                  \item Des balises XML ou HTML (avec leurs @tt) ou commandes \LaTeX ;
                  \item Du texte ;
-                 \item Des règles (\textit{templates}) ou variables/param XSL : \texttt{<xsl:.../>};
+                 \item Des instructions ou variables/param XSL : \texttt{<xsl:.../>};
              \end{itemize}
          \end{itemize}
      \end{frame}
@@ -195,7 +195,7 @@
      \Large
      \begin{itemize}
          \item \textbf{Copie à l'identique de la balise matchée par le \texttt{@select} et de ses n\oe uds enfants (balises, attributs, textes).}
-         \item C'est un élément vide (pas de règles internes).
+         \item Élément vide (pas de règles internes).
          \item Intérêt $\rightarrow$ reproduire rapidement une partie de l'arbre que l'on ne veut pas modifier.
      \end{itemize}
      \begin{minted}{xml}
@@ -209,7 +209,7 @@
      \Large
      \begin{itemize}
          \item \textbf{Renvoie uniquement la valeur textuelle de la balise matchée par le \texttt{@select}}.
-         \item C'est un élément vide (pas de règles internes).
+         \item Élément vide (pas de règles internes).
          \item Intérêt $\rightarrow$ copier du texte sans les balises (utile pour \LaTeX).
      \end{itemize}
      \begin{minted}{xml}
