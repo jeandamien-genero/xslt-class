@@ -99,7 +99,7 @@
         \normalsize
         % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
          \begin{minted}{xml}
-<xsl:template match="///body">
+<xsl:template match="//body">
     <xsl:element name="div">
         <xsl:element name="head">
             <xsl:attribute name="type">chap</xsl:attribute>
@@ -326,7 +326,7 @@
              \begin{itemize}
              \Large
                  \item \texttt{@count} $\rightarrow$ définit les éléments de l'input qui seront numérotés dans l'output ;  % c'est une expression XPath
-                 \item \texttt{@level="single|multiple|any"} $\rightarrow$ niveau de l'arbre pris en compte pour le comptage ;
+                 \item \texttt{@level="single|multiple|any"} $\rightarrow$ niveaux de l'arbre pris en compte pour le comptage ;
                  \item \texttt{@format="1|01|A|a|I|i"} $\rightarrow$ format des numéros.
              \end{itemize}
          \end{itemize}
@@ -335,16 +335,16 @@
      \begin{frame}[fragile]{XSLT/ Une autre instruction : \texttt{<xsl:number/> (2/2)}}
          \Large
          \begin{minted}{xml}
-<xsl:template match="//body/p">
-    <xsl:copy>
-        <xsl:attribute name="n">
-            <xsl:number
-                count="//body/p" 
-                level="multiple" 
-                format="a"/>
-        </xsl:attribute>
-        <xsl:value-of select="."/>
-    </xsl:copy>
+<xsl:template match="//body//p">
+        <xsl:copy>
+            <xsl:attribute name="n">
+                <xsl:number
+                    count="//div[@n]/p" 
+                    level="any" 
+                    format="1"/>
+            </xsl:attribute>
+            <xsl:value-of select="."/>
+        </xsl:copy>
 </xsl:template>
          \end{minted}
      \end{frame}
@@ -371,7 +371,7 @@
              \item Ajouter un \texttt{<editionStmt/>} (avec \texttt{<edition/>} et \texttt{<respStmt/>}) ;
              \item Numéroter dans des formats différents les \texttt{<head>} et les \texttt{<p>} ;
              \item Transformer les \texttt{<hi rend="b"/>} en des \texttt{<persName>} et les \texttt{<hi rend="i"/>} en des \texttt{<placename>} ;
-             \item Bonus pour les plus aguérris : ajouter le début du §3 (lien dans le \texttt{<teiHeader/>}).
+             \item Bonus : ajouter le début du §3 (lien dans le \texttt{<teiHeader/>}).
          \end{itemize}
      \end{frame}
      

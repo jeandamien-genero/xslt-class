@@ -44,40 +44,17 @@
         </xsl:copy>
     </xsl:template>
     <xsl:template match="//body/div[@n]">
-        <xsl:copy-of select="."/>
+        <div>
+            <xsl:apply-templates />
+        </div>
+    </xsl:template>
+    <xsl:template match="//body//p">
+        <xsl:copy>
+            <xsl:value-of select="."/>
+        </xsl:copy>
     </xsl:template>
     <xsl:template match="//body/div[@n]" mode="toc">
         <p>Chapitre <xsl:value-of select="./head"/></p>
     </xsl:template>-->
-    
-    <!-- 3. EXEMPLE D'UTILISATION DES VARIABLES XSL -->
-    <!--<xsl:variable name="chap">Chapitre </xsl:variable>
-    <xsl:template match="/TEI">
-        <xsl:copy>
-            <xsl:apply-templates/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="//text">
-        <xsl:copy>
-            <xsl:apply-templates/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="//body">
-        <xsl:copy>
-            <xsl:apply-templates />
-            <div>
-                <head>Table des matières</head>
-                <xsl:apply-templates mode="toc"/>
-            </div>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="//body/div[@n]">
-        <xsl:copy-of select="."/>
-    </xsl:template>
-    <xsl:template match="//body/div[@n]" mode="toc">
-        <p><xsl:value-of select="$chap"/><xsl:value-of select="./head"/></p>
-        <p><xsl:value-of select="count(./p)"/> paragraphes</p>
-    </xsl:template>-->
-    
     
 </xsl:stylesheet>
