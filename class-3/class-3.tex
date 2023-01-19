@@ -26,6 +26,22 @@
 \begin{document}
     \maketitle
     
+    \section{XPath/ Les fonctions}
+
+    \begin{frame}{XPath/ Fonctions}
+        \Large
+        \begin{itemize}
+            \item Les fonctions peuvent être utilisées dans des expressions XPath ou dans des prédicats :
+            \begin{itemize}
+            \Large
+                \item Expression $\rightarrow$ \texttt{count(./p)}
+                \item Prédicat (\texttt{[ ]}) $\rightarrow$ \texttt{./[count(p)]}
+            \end{itemize}
+            \bigskip
+            \item Cf. fiche : fichier xpath-nodes-axis-functions.
+        \end{itemize}
+    \end{frame}
+    
     \section{XSLT. Variables et paramètres}
 
     \begin{frame}{XSLT/ Différence entre \texttt{variable} et \texttt{param}}
@@ -49,7 +65,7 @@
             \item Deux manières de définir la valeur de \texttt{<xsl:variable/>} :
             \begin{itemize}
             \Large
-                \item Par le contenu de l'\texttt{@select} (expression XPath) ;
+                \item Par la valeur de l'\texttt{@select} (expression XPath) ;
                 \item Par le contenu de \texttt{<xsl:variable/>} (texte ou règle).
             \end{itemize}
         \end{itemize}
@@ -65,7 +81,7 @@
         \begin{itemize}
             \item  Pour appeler une variable : \texttt{\$} + \texttt{@name} dans le \texttt{@select} d'un \texttt{<value-of/>}
         \end{itemize}
-        \normalsize
+        \large
         \begin{minted}{xml}
 <xsl:template math="/">
     <xsl:value-of select="$x"/>
@@ -81,17 +97,54 @@
         \end{itemize}
     \end{frame}
 
-    \section{XPath/ Les fonctions}
+    \section{XSLT. Conditions}
 
-    \begin{frame}{XPath/ Fonctions}
+    \begin{frame}{XSLT/ Conditions}
         \Large
         \begin{itemize}
-            \item Les fonctions peuvent être utilisées dans des expressions XPath ou dans des prédicats :
-            \begin{itemize}
-            \Large
-                \item Expression $\rightarrow$ \texttt{count(./p)}
-                \item Prédicat (\texttt{[ ]}) $\rightarrow$ \texttt{./[count(p)]}
-            \end{itemize}
+            \item Deux moyens d'exprimer une condition en XSLT : \texttt{<xsl:if/>} et \texttt{<xsl:choose/>} ;
+            \bigskip
+            \item Attention : les conditions XSLT ne fonctionnent pas de la même manière que celles d'autres langages de programmation, comme Python où l'on trouve le triplet \texttt{if}, \texttt{elif} et \texttt{else}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XSLT/ \texttt{<xsl:if/>} (1/2)}
+        \Large
+        \begin{itemize}
+            \item \texttt{<xsl:if/>} possède un \texttt{@test} obligatoire ;
+            \item Contenu appliqué si le \texttt{@test} est validé.
+            \bigskip
+            \item Pas de \texttt{elif} : utiliser plusieurs \texttt{<xsl:if/>} ;
+            \item Pas de \texttt{else} : utiliser \texttt{<xsl:choose/>}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:if/>} (2/2)}
+        \Large
+        Exemple : dans \textit{St Julien}, ajouter un \texttt{@n} aux \texttt{<p/>} \textbf{si ces derniers sont dans la \texttt{<div/>} \no 2} :
+        \normalsize
+        \begin{minted}{xml}
+<xsl:template match="//div[@n]/p">
+    <p>
+        <xsl:if test="parent::div/@n = 2">
+            <xsl:attribute name="n">
+                ...
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:value-of select="."/>
+    </p>
+</xsl:template>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{XSLT/ \texttt{<xsl:choose/>}}
+        \Large
+        \begin{itemize}
+            \item \texttt{<xsl:choose/>} a pour enfant un ou des \texttt{<xsl:when/>} (req.) et un seul \texttt{<xsl:otherwise/>} (opt.).
+            \bigskip
+            \item \texttt{<xsl:when/>} a un \texttt{@test} obligatoire (même fonctionnement que \texttt{<xsl:if/>}) ;
+            \bigskip
+            \item si aucun \texttt{<xsl:when/>} n'est réalisé, alors \texttt{<xsl:otherwise/>} est activé
         \end{itemize}
     \end{frame}
 \end{document}
