@@ -11,11 +11,11 @@
 
 # Consignes
 ## 1/ Les variables
-- écrire le "Trois comtes" du premier `<title>` en majuscule. Stocker cette balise dans une variable $booktitle.
-- enlever la majuscule à "Saint" dans le deuxième `<title>`. Stocker cette balise dans une variable $sectiontitle.
+- écrire le "Trois comtes" du premier `<title>` en majuscule. Stocker cette balise dans une variable `$booktitle`.
+- enlever la majuscule à "Saint" dans le deuxième `<title>`. Stocker cette balise dans une variable `$chaptitle`.
 
 ## 2/ Le `<teiHeader>`
-- Dans le `<titleStmt>` : reproduire les balises `<title>`, mais en changeant leurs textes par le contenu des variables définies précedemment.
+- Dans le `<titleStmt>` : reproduire les balises `<title>`, mais en changeant leurs textes par le contenu des variables définies précédemment.
 - Dans le `<listBibl>` : reproduire tout sauf les commentaires (proposer une règle utilisant le noeud `comment()`).
 - Ajouter un `<editionStmt/>` (avec `<edition/>` et `<respStmt/>`).
 - Reproduire les autres balises sans changement.
