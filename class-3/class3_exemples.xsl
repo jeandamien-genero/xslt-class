@@ -90,11 +90,17 @@
     
     <!-- 5.3 reproduction des <p> avec ajout d'un @n dont la valeur change selon la place de la <div> supérieure -->
     <xsl:template match="//div[@n]/p">
+        <xsl:variable name="numbering">
+            <xsl:number count="//div[@n]/p" level="single" format="A"/>
+        </xsl:variable>
+        <xsl:variable name="num_div">
+            <xsl:value-of select="parent::div/@n"/>
+        </xsl:variable>
         <p>
             <xsl:attribute name="n">
                 <xsl:choose>
                     <xsl:when test="parent::div[@n&lt;2]">
-                        <xsl:number count="//div[@n]/p" level="single" format="A"/>
+                        <xsl:value-of select="concat($num_div, '_', $numbering)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:number count="//div[@n]/p" level="single" format="I"/>
