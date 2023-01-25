@@ -25,65 +25,121 @@
 
 \begin{document}
     \maketitle
-    
-    \section{XSLT. Conditions}
 
-    \begin{frame}{XSLT/ Conditions}
-        \Large
-        \begin{itemize}
-            \item Deux moyens d'exprimer une condition en XSLT : \texttt{<xsl:if/>} et \texttt{<xsl:choose/>} ;
-            \bigskip
-            \item Attention : les conditions XSLT ne fonctionnent pas de la même manière que celles d'autres langages de programmation, comme Python où l'on trouve le triplet \texttt{if}, \texttt{elif} et \texttt{else}.
-        \end{itemize}
-    \end{frame}
+    \section{XSLT. Boucles et tri}
 
-    \begin{frame}{XSLT/ \texttt{<xsl:if/>} (1/2)}
-        \Large
-        \begin{itemize}
-            \item \texttt{<xsl:if/>} possède un \texttt{@test} obligatoire ;
-            \item Contenu appliqué si le \texttt{@test} est validé.
-            \bigskip
-            \item Pas de \texttt{elif} : utiliser plusieurs \texttt{<xsl:if/>} ;
-            \item Pas de \texttt{else} : utiliser \texttt{<xsl:choose/>}.
-        \end{itemize}
-    \end{frame}
-
-    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:if/>} (2/2)}
-        \Large
-        Exemple : dans \textit{St Julien}, ajouter un \texttt{@n} aux \texttt{<p/>} \textbf{si ces derniers sont dans la \texttt{<div/>} \no 2} :
-        \normalsize
-        \begin{minted}{xml}
-<xsl:template match="//div[@n]/p">
-    <p>
-        <xsl:if test="parent::div/@n = 2">
-            <xsl:attribute name="n">
-                ...
-            </xsl:attribute>
-        </xsl:if>
-        <xsl:value-of select="."/>
-    </p>
-</xsl:template>
-        \end{minted}
-    \end{frame}
-
-    \begin{frame}{XSLT/ \texttt{<xsl:choose/>}}
-        \Large
-        \begin{itemize}
-            \item \texttt{<xsl:choose/>} a pour enfant un ou des \texttt{<xsl:when/>} (req.) et un seul \texttt{<xsl:otherwise/>} (opt.).
-            \bigskip
-            \item \texttt{<xsl:when/>} a un \texttt{@test} obligatoire (même fonctionnement que \texttt{<xsl:if/>}) ;
-            \bigskip
-            \item si aucun \texttt{<xsl:when/>} n'est réalisé, alors \texttt{<xsl:otherwise/>} est activé
-        \end{itemize}
-    \end{frame}
-
-    \section{XSLT. Boucles}
-
-    \begin{frame}{XSLT/ \texttt{<xsl:for-each/>}}
+    \begin{frame}{XSLT/ Boucle simple : \texttt{<xsl:for-each/>} (1/2)}
         \Large
         \begin{itemize}
             \item \texttt{<xsl:for-each/>} a un \texttt{@select} ;
-            \item pour chaque n\oe uds contenus dans le \texttt{@select}, la règle contenue dans le \texttt{<xsl:for-each/>} est appliquée.
+            \bigskip
+            \item Itération sur chaque n\oe ud désigné par le \texttt{@select}, la règle contenue dans le \texttt{<xsl:for-each/>} est appliquée ;
+            \bigskip
+            \item Le point de départ des chemins Xpath au sein d'un \texttt{<xsl:for-each/>} est la balise sélectionnée par le \texttt{@select} ;
+            \bigskip
+            \item Peut intégrer d'autres instructions XSL comme \texttt{<xsl:if/>} et \texttt{<xsl:choose/>}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Boucle simple : \texttt{<xsl:for-each/>} (2/2)}
+        \Large
+        \begin{itemize}
+            \item Exemple :
+        \end{itemize}
+        \begin{minted}{xml}
+<xsl:for-each select="//persName">
+  <persName>
+   <xsl:value-of select="./forename"/>,
+   <xsl:value-of select="./surname"/>.
+  </persName>
+</xs:for-each>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Tri : \texttt{<xsl:sort/>} (1/2)}
+        \Large
+        \begin{itemize}
+            \item S'utilise comme premier enfant de \texttt{<xsl:apply-templates/>}, \texttt{<xsl:for-each/>} ou \texttt{<xsl:for-each-group/>} ;
+            \bigskip
+            \item Change l'ordre d'origine des n\oe uds sélectionnés en un autre ordre (alphabétique, numérique, etc.) ;
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Tri : \texttt{<xsl:sort/>} (2/2)}
+        \Large
+        \begin{itemize}
+            \item Exemple :
+        \end{itemize}
+        \begin{minted}{xml}
+<xsl:for-each select="//date[@when]">
+  <xsl:sort select="./when" 
+            data-type="number"/>
+  <xsl:copy-of select="."/>
+</xs:for-each>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (1/3)}
+        \Large
+        \begin{itemize}
+            % \item "Nouveauté" de XSLT 2.0 ;
+            \item Rassemble les n\oe uds (\texttt{@select}) en groupe selon un critère donné (\texttt{@group-by}) et leur applique les règles définies à l'intérieur de \texttt{<xsl:for-each-group/>}.
+            \bigskip
+            \begin{enumerate}
+            \Large
+                \item Itère sur les n\oe uds désignés dans le \texttt{@select} ;
+                \item Regroupe ces n\oe uds selon le critère défini dans le \texttt{@group-by} ;
+                \item Applique les règles indiquées dans le contenu de la balise.
+            \end{enumerate}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (2/3)}
+        \Large
+        \begin{itemize}
+            \item Plusieurs \texttt{<xsl:for-each-group/>} sont souvent utilisés ensemble (boucles dans une boucle) ;
+            \bigskip
+            \item Ils peuvent contenir des \texttt{<xsl:for-each/>} simples, des conditions, etc...
+            \bigskip
+            \item Attention : c'est une nouveauté de XSLT 2.0.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (3/3)}
+        \Large
+        \begin{itemize}
+            \item \texttt{current-group()} retourne la liste des nœuds du groupe de l'itération en cours d'exécution ;
+            \begin{itemize}
+            \large
+                \item à utiliser dans le \texttt{@select} d'un sous-\texttt{<xsl:for-each-group/>} ou d'un \texttt{<value-of/>}.
+            \end{itemize}
+            \bigskip
+            \item \texttt{current-grouping-key()} retourne la clef utilisée pour l'itération en cours d'exécution.
+            \begin{itemize}
+            \large
+                \item à utiliser dans le \texttt{@select} d'un \texttt{<value-of/>}.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Conditions et boucles. Notions essentielles}
+        \Large
+        \begin{itemize}
+            \item Conditions XSL :
+            \begin{enumerate}
+            \large
+                \item Sans alternative : \texttt{<xsl:if/>} (\texttt{@test}) ;
+                \item Avec alternative : \texttt{<xsl:choose/>}, contient des \texttt{<xsl:when>} (\texttt{@test}) et un (\texttt{<xs:otherwise/>}).
+            \end{enumerate}
+            \bigskip
+            \item Boucles XSL :
+            \begin{enumerate}
+            \large
+                \item Simple : \texttt{<xsl:for-each/>} (\texttt{@select}) ;
+                \item Sur des groupes : \texttt{<xsl:for-each-group/>} (\texttt{@select}, \texttt{@group-by}).
+            \end{enumerate}
+            \bigskip
+            \item Tri XSL : \texttt{<xsl:sort/>} (\texttt{@select}).
         \end{itemize}
     \end{frame}
 \end{document}
