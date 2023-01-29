@@ -45,7 +45,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <!-- SAMSON Véronique, « Chapitre 2. Le roman après la fin », Après la fin. Gustave Flaubert et le temps du roman, Saint-Denis, Presses universitaires de Vincennes, « Culture et Société », 2021, p. 105-190. -->
+               <!-- SAMSON Véronique, « Le roman après la fin », <hi rend="i">Après la fin. Gustave Flaubert et le temps du roman</hi>, chap. 2, Saint-Denis, Presses universitaires de Vincennes, 2021, p. 105-190. -->
                <biblStruct>
                   <monogr>
                      <author>
@@ -55,12 +55,10 @@
                         </persName>
                      </author>
                      <title level="j">Les Dossiers du Grihl</title>
-                     <title level="a">Flaubert. Revue critique et génétique</title>
-                     <ref type="DOI" target="https://doi.org/10.4000/dossiersgrihl.6447"/>
+                     <title level="a">Le Saint Julien de Flaubert – une poétique du vitrail narrativisé</title>
+                     <ref type="DOI" target="10.4000/dossiersgrihl.6447"/>
                      <ref type="URL" target="http://journals.openedition.org/dossiersgrihl/6447"/>
                      <imprint>
-                        <pubPlace>Saint-Denis</pubPlace>
-                        <publisher>Presses universitaires de Vincennes</publisher>
                         <date>2015</date>
                         <biblScope unit="issue" n="9"/>
                         <biblScope unit="volume" n="1"/>
@@ -68,7 +66,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <!-- Sabine Narr, « Le Saint Julien de Flaubert – une poétique du vitrail narrativisé », Les Dossiers du Grihl [En ligne], 9-1 | 2015, mis en ligne le 07 décembre 2015, consulté le 25 janvier 2023. URL : http://journals.openedition.org/dossiersgrihl/6447 ; DOI : https://doi.org/10.4000/dossiersgrihl.6447 -->
+               <!-- NARR Sabine, « Le Saint Julien de Flaubert – une poétique du vitrail narrativisé », <hi rend="i">Les Dossiers du Grihl</hi> [<ref target="http://journals.openedition.org/dossiersgrihl/6447">en ligne</ref>, DOI : <ref target="https://doi.org/10.4000/dossiersgrihl.6447">10.4000/dossiersgrihl.6447</ref>], 9-1, 2015. -->
                <biblStruct>
                   <monogr>
                      <author>
@@ -89,7 +87,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <!-- Stéphanie Dord-Crouslé, « Établir le texte de Trois contes », Flaubert [En ligne], 24 | 2020, mis en ligne le 12 décembre 2020, consulté le 05 janvier 2023. URL : http://journals.openedition.org/flaubert/4143 -->
+               <!-- DORD-CROUSLÉ Stéphanie, « Établir le texte de Trois contes », <hi rend="i">Flaubert</hi> [<ref target="http://journals.openedition.org/flaubert/4143">en ligne</ref>], 24, 2020. -->
             </listBibl>
          </sourceDesc>
       </fileDesc>
