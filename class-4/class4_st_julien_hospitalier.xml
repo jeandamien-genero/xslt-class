@@ -3,9 +3,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title level="m">
-               Trois Comtes
-            </title>
+            <title level="m">Trois Comtes</title>
             <title level="a">La Légende de Saint Julien l'Hospitalier</title>
             <author>Gustave Flaubert</author>
          </titleStmt>
@@ -45,7 +43,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <!-- SAMSON Véronique, « Le roman après la fin », <hi rend="i">Après la fin. Gustave Flaubert et le temps du roman</hi>, chap. 2, Saint-Denis, Presses universitaires de Vincennes, 2021, p. 105-190. -->
+               <!-- SAMSON Véronique, « Le roman après la fin », dans <hi rend="i">Après la fin. Gustave Flaubert et le temps du roman</hi>, chap. 2, Saint-Denis, Presses universitaires de Vincennes, 2021, p. 105-190. -->
                <biblStruct>
                   <monogr>
                      <author>
@@ -66,7 +64,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <!-- NARR Sabine, « Le Saint Julien de Flaubert – une poétique du vitrail narrativisé », <hi rend="i">Les Dossiers du Grihl</hi> [<ref target="http://journals.openedition.org/dossiersgrihl/6447">en ligne</ref>, DOI : <ref target="https://doi.org/10.4000/dossiersgrihl.6447">10.4000/dossiersgrihl.6447</ref>], 9-1, 2015. -->
+               <!-- NARR Sabine, « Le Saint Julien de Flaubert – une poétique du vitrail narrativisé », <hi rend="i">Les Dossiers du Grihl</hi> [<ref target="http://journals.openedition.org/dossiersgrihl/6447">en ligne</ref>, DOI : <ref target="https://doi.org/10.4000/dossiersgrihl.6447">10.4000/dossiersgrihl.6447</ref>], n°9-1, 2015. -->
                <biblStruct>
                   <monogr>
                      <author>
@@ -76,7 +74,7 @@
                         </persName>
                      </author>
                      <title level="a">Établir le texte de Trois contes</title>
-                     <title level="m">Flaubert. Revue critique et génétique</title>
+                     <title level="j">Flaubert. Revue critique et génétique</title>
                      <ref type="URL" target="https://journals.openedition.org/flaubert/4143"/>
                      <imprint>
                         <pubPlace>Saint-Denis</pubPlace>
@@ -87,7 +85,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <!-- DORD-CROUSLÉ Stéphanie, « Établir le texte de Trois contes », <hi rend="i">Flaubert</hi> [<ref target="http://journals.openedition.org/flaubert/4143">en ligne</ref>], 24, 2020. -->
+               <!-- DORD-CROUSLÉ Stéphanie, « Établir le texte de Trois contes », <hi rend="i">Flaubert</hi> [<ref target="http://journals.openedition.org/flaubert/4143">en ligne</ref>], n°24, 2020. -->
             </listBibl>
          </sourceDesc>
       </fileDesc>
