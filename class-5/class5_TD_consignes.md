@@ -69,7 +69,7 @@
 
 - `<xsl:result-document/>` permet de générer plusieurs documents de sortie. C'est une "nouveauté" de XSLT 2.0.
 - Cette instruction s'utilise comme enfant d'un `<xsl:template/>`.
-- L'attribut `@href` permet d'indiquer l'URI du document à générer. Elle peut être absolue (depuis la racine) ou relative (dans ce cas, le prossesseur part de l'emplacement du fichier d'entrée).
+- L'attribut `@href` permet d'indiquer l'URI du document à générer. Elle peut être absolue (depuis la racine) ou relative (dans ce cas, le processeur part de l'emplacement du fichier d'entrée).
 - L'attribut `method` permet de spécifier le format du code de sortie.
 - L'attribut `indent` permet d'indiquer si le résultat sera indenté.
 
