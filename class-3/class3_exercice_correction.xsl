@@ -107,9 +107,9 @@
                 </persName>
             </xsl:when>
             <xsl:when test="./@rend='i'">
-                <placename>
+                <placeName>
                     <xsl:value-of select="."/>
-                </placename>
+                </placeName>
             </xsl:when>
         </xsl:choose>
     </xsl:template>
