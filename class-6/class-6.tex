@@ -1,0 +1,86 @@
+\documentclass{beamer}
+\usepackage[french]{babel}
+\usepackage{inputenc}
+\usetheme{metropolis}
+\usecolortheme{cormorant}
+\usepackage{minted}
+\usepackage {ifthen}
+\newboolean{printCode}
+\setboolean{printCode}{true}
+% \usemintedstyle{trac}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ulem}  % texte barré
+
+% texte surligné
+\usepackage{soul}
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
+
+\title{Technique et chaîne de publication électronique avec XSLT (6/7)}
+\date{2023, 9 janv. - 13 fev.}
+\author{Jean-Damien Généro}
+\institute{École nationale des chartes -- M2 TNAH}
+
+\begin{document}
+    \maketitle
+
+    \section{XSLT. Transformation vers HTML}
+
+    \begin{frame}{XSLT/ Méthode HTML (1/2)}
+        \Large
+        \begin{itemize}
+            \item Dans l'en-tête XSL : les \texttt{@xmlns:tei}, \texttt{@xmlns} et \texttt{@exclude-result-prefixes} ne sont plus nécessaires ;
+            \bigskip
+            \item Dans \texttt{<xsl:method/>} : ajouter \texttt{@method='html'}, \texttt{@omit-xml-declaration} n'est plus nécessaire.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Méthode HTML (2/2). Template HTML basique}
+        \begin{minted}{html}
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <title><!-- doc title --></title>
+        <meta name="description" content="#"/>
+        <meta name="author" content="#"/>
+        <!-- <link rel="stylesheet" href="#"/> -->
+    </head>
+    <body>
+        <!-- some text here -->
+        <!-- <script src="#"></script> -->
+    </body>
+</html>
+        \end{minted}
+    \end{frame}
+    
+    \begin{frame}{XSLT/ Instruction \texttt{call-template} (1/2)}
+        \Large
+        \begin{itemize}
+            \item \textbf{\texttt{<xsl:call-template name="\#"/>}} ;
+            \item Permet d'appeler autant de fois qu'on le veut une template dans un \texttt{<xsl:template/>}
+            \item Cas pratiques :
+            \begin{itemize}
+                \item Un \texttt{call-template} par \texttt{result-document} ;
+                \item Peut permettre de stocker des parties du document de sortie (header, footer) au même titre que les variables.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Instruction \texttt{call-template} (2/2). Exemple.}
+        \begin{minted}{html}
+<xsl:template match="/">
+    <xsl:call-template name="name1"/>
+</xsl:template>
+
+<xsl:template name="name1">
+    <xsl:result-document href="#">
+        <html>
+            ...
+        </html>
+    </xsl:result-document>
+</xsl:template>
+        \end{minted}
+    \end{frame}
+\end{document}
