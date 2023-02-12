@@ -19,7 +19,7 @@
 \newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
 
 \title{Technique et chaîne de publication électronique avec XSLT (2/7)}
-\date{2023, 9 janv. - 13 fev.}
+\date{2023, 9 janv. - 20 fev.}
 \author{Jean-Damien Généro}
 \institute{École nationale des chartes -- M2 TNAH}
 
@@ -42,7 +42,7 @@
                 \item Les enfants ou descendants de cette balise ;
                 \item N'importe quelle balise de l'arbre \textit{via} des axes (\textit{ancestor}, \textit{preceding}, etc.).
                 \bigskip
-                \item La partie de l'arbre sur laquelle la règle s'applique est en général indiquée dans le \texttt{@select} de l'instruction XSL (cf. infra). % même si c'est la même que celle contenue dans le @match
+                \item La partie de l'arbre sur laquelle la règle s'applique est en général indiquée dans le \texttt{@select} de l'instruction XSL (\textit{cf. infra}). % même si c'est la même que celle contenue dans le @match
             \end{itemize}
         \end{itemize}
     \end{frame}
@@ -196,6 +196,7 @@
      \begin{itemize}
          \item \textbf{Copie à l'identique de la balise matchée par le \texttt{@select} et de ses n\oe uds enfants (balises, attributs, textes).}
          \item Élément vide (pas de règles internes).
+         \item \textbf{Impossible de modifier les éléments copiés !}
          \item Intérêt $\rightarrow$ reproduire rapidement une partie de l'arbre que l'on ne veut pas modifier.
      \end{itemize}
      \begin{minted}{xml}
@@ -371,7 +372,7 @@
              \item Ajouter un \texttt{<editionStmt/>} (avec \texttt{<edition/>} et \texttt{<respStmt/>}) ;
              \item Numéroter dans des formats différents les \texttt{<head>} et les \texttt{<p>} ;
              \item Transformer les \texttt{<hi rend="b"/>} en des \texttt{<persName>} et les \texttt{<hi rend="i"/>} en des \texttt{<placename>} ;
-             \item Bonus : ajouter le début du §3 (lien dans le \texttt{<teiHeader/>}).
+             \item Bonus : ajouter le début du chap. 3 (lien dans le \texttt{<teiHeader/>}).
          \end{itemize}
      \end{frame}
      

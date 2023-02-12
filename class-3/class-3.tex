@@ -19,7 +19,7 @@
 \newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
 
 \title{Technique et chaîne de publication électronique avec XSLT (3/7)}
-\date{2023, 9 janv. - 13 fev.}
+\date{2023, 9 janv. - 20 fev.}
 \author{Jean-Damien Généro}
 \institute{École nationale des chartes -- M2 TNAH}
 
@@ -49,9 +49,9 @@
         \begin{itemize}
             \item Rappel $\rightarrow$ variable : nom (unique) + valeur (statique ou dynamique).
             \bigskip
-            \item Dans XSLT, portée globale (premier niveau) ou locale (intégrée à un \texttt{<xsl:template/>}) ;
+            \item Dans XSLT, portée globale (premier niveau) ou locale (intégrée à un \texttt{xsl:template}) ;
             \bigskip
-            \item \texttt{<xsl:variable/>} : \textbf{valeur fixe} ;
+            \item \texttt{<xsl:variable/>} : \textbf{valeur fixe} \textit{(NB: la valeur courante peut changer au sein d'une itération)} ;
             \bigskip
             \item \texttt{<xsl:param/>} : \textbf{valeur fixe ou dynamique}, peut être pris en argument par le processeur (ex : saxon dans lxml).
         \end{itemize}
@@ -79,7 +79,7 @@
     \begin{frame}[fragile]{XSLT/ \texttt{<xsl:variable/>} (2/2)}
         \Large
         \begin{itemize}
-            \item  Pour appeler une variable : \texttt{\$} + \texttt{@name} dans le \texttt{@select} d'un \texttt{<value-of/>}
+            \item  Pour appeler une variable : \texttt{\$} + \texttt{@name} dans le \texttt{@select} d'un \texttt{<xsl:value-of/>} (uniquement le texte) ou d'un \texttt{<xsl:copy-of/>} (texte + balises).
         \end{itemize}
         \large
         \begin{minted}{xml}

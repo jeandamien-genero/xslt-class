@@ -18,95 +18,128 @@
 \usepackage{color}
 \newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
 
-\title{Technique et chaîne de publication électronique avec XSLT (5/7)}
-\date{2023, 9 janv. - 13 fev.}
+\title{Technique et chaîne de publication électronique avec XSLT (4/7)}
+\date{2023, 9 janv. - 20 fev.}
 \author{Jean-Damien Généro}
 \institute{École nationale des chartes -- M2 TNAH}
 
 \begin{document}
     \maketitle
 
-    \section{XSLT. Enregistrement du document de sortie}
+    \section{XSLT. Boucles et tri}
 
-    \begin{frame}{XSLT/ Enregistrement : \texttt{<xsl:result-document/>} (1/2)}
+    \begin{frame}{XSLT/ Boucle simple : \texttt{<xsl:for-each/>} (1/2)}
         \Large
         \begin{itemize}
-            \item \texttt{<xsl:result-document/>} permet de générer plusieurs documents de sortie ; 
-            \item Nouveauté de XSLT 2.0 ;
-            \item S'utilise comme enfant d'un \texttt{<xsl:template/>}.
+            \item \texttt{<xsl:for-each/>} a un \texttt{@select} ;
+            \bigskip
+            \item Itération sur chaque n\oe ud désigné par le \texttt{@select}, la règle contenue dans le \texttt{<xsl:for-each/>} est appliquée ;
+            \bigskip
+            \item Le point de départ des chemins Xpath au sein d'un \texttt{<xsl:for-each/>} est la balise sélectionnée par le \texttt{@select} ;
+            \bigskip
+            \item Peut intégrer d'autres instructions XSL comme \texttt{<xsl:if/>} et \texttt{<xsl:choose/>}.
         \end{itemize}
     \end{frame}
 
-    \begin{frame}{XSLT/ Enregistrement : \texttt{<xsl:result-document/>} (2/2)}
+    \begin{frame}[fragile]{XSLT/ Boucle simple : \texttt{<xsl:for-each/>} (2/2)}
         \Large
-        Trois attributs :
         \begin{itemize}
-            \item \texttt{@href} permet d'indiquer l'URI du document à générer : absolue (depuis la racine) ou relative (dans ce cas, le processeur part de l'emplacement du fichier d'entrée) ;
-            \item \texttt{@method} permet de spécifier le format du code  de sortie ;
-            \item \texttt{@indent} permet d'indiquer si le résultat sera indenté ;
+            \item Exemple :
         \end{itemize}
-    \end{frame}
-
-    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:result-document/>}, exemple}
         \begin{minted}{xml}
-<xsl:template match="/">
-  <xsl:result-document href="st_julien1.xml"
-        method="xml" indent="yes">
-    <TEI><!-- règles --></TEI>
-  </xsl:result-document>
-  <xsl:result-document href="st_julien2.xml"
-        method="xml" indent="yes">
-    <TEI><!-- règles --></TEI>
-  </xsl:result-document>
-  <xsl:result-document href="index.xml"
-        method="xml" indent="yes">
-    <TEI><!-- règles --></TEI>
-  </xsl:result-document>
-</xsl:template>
+<xsl:for-each select="//persName">
+  <persName>
+   <xsl:value-of select="./forename"/>,
+   <xsl:value-of select="./surname"/>.
+  </persName>
+</xs:for-each>
         \end{minted}
     \end{frame}
 
-    \begin{frame}{XSLT/ \texttt{<xsl:result-document/>} et variables}
-    \Large
-    \begin{itemize}
-        \item Inconvénient de créer X docs de sortie $\rightarrow$ répéter X fois des éléments récurrents (\texttt{<teiHeader/>}, header HTML, etc.) ;
-        \item Stocker ces éléments dans des variables permet de ne les modifier qu'une seule fois.
-    \end{itemize}
-    \end{frame}
-
-     \begin{frame}[fragile]{XSLT/ \texttt{<xsl:result-document/>} et URI}
-    \Large
-    \begin{itemize}
-        \item Bonne pratique de programmation $\rightarrow$ déclarer les URI des docs de sortie dans des variables au début de la feuille de style.
-    \end{itemize}
-    \normalsize
-    \begin{minted}{xml}
- <xsl:variable name="chap1">
-        <xsl:value-of select="
-            concat('st_julien_chap1', '.xml')"/>
-</xsl:variable>
-<xsl:template match="/">
-  <xsl:result-document href="$chap1"
-        method="xml" indent="yes">
-    <TEI><!-- règles --></TEI>
-  </xsl:result-document>
-</xsl:template>
-    \end{minted}
-    \end{frame}
-
-    \begin{frame}{XSLT/ \texttt{<xsl:result-document/>}. Notions essentielles}
+    \begin{frame}{XSLT/ Tri : \texttt{<xsl:sort/>} (1/2)}
         \Large
         \begin{itemize}
-            \item \texttt{<xsl:result-document/>} permet de générer un ou plusieurs documents de sortie ;
+            \item S'utilise comme premier enfant de \texttt{<xsl:for-each/>} ou \texttt{<xsl:for-each-group/>} ;
             \bigskip
-            \item L'URI est indiquée dans un \texttt{@href} ;
+            \item Change l'ordre d'origine des n\oe uds sélectionnés en un autre ordre (alphabétique, numérique, etc.) ;
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Tri : \texttt{<xsl:sort/>} (2/2)}
+        \Large
+        \begin{itemize}
+            \item Exemple :
+        \end{itemize}
+        \begin{minted}{xml}
+<xsl:for-each select="//date[@when]">
+  <xsl:sort select="./when" 
+            data-type="number"/>
+  <xsl:copy-of select="."/>
+</xs:for-each>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (1/3)}
+        \Large
+        \begin{itemize}
+            % \item "Nouveauté" de XSLT 2.0 ;
+            \item Rassemble les n\oe uds (\texttt{@select}) en groupe selon un critère donné (\texttt{@group-by}) et leur applique les règles définies à l'intérieur de \texttt{<xsl:for-each-group/>}.
             \bigskip
-            \item Les variables sont utiles pour :
+            \begin{enumerate}
+            \Large
+                \item Itère sur les n\oe uds désignés dans le \texttt{@select} ;
+                \item Regroupe ces n\oe uds selon le critère défini dans le \texttt{@group-by} ;
+                \item Applique les règles indiquées dans le contenu de la balise.
+            \end{enumerate}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (2/3)}
+        \Large
+        \begin{itemize}
+            \item Plusieurs \texttt{<xsl:for-each-group/>} sont souvent utilisés ensemble (boucles dans une boucle) ;
+            \bigskip
+            \item Ils peuvent contenir des \texttt{<xsl:for-each/>}, des conditions, etc...
+            \bigskip
+            \item Attention : c'est une nouveauté de XSLT 2.0.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (3/3)}
+        \Large
+        \begin{itemize}
+            \item \texttt{current-group()} retourne la liste des nœuds du groupe de l'itération en cours d'exécution ;
             \begin{itemize}
-                \item Déclarer les URI des documents de sortie au début de la feuille de style ;
-                \item Contenir les éléments récurrents des documents de sortie (header, footer, etc).
+            \large
+                \item à utiliser dans le \texttt{@select} d'un sous-\texttt{<xsl:for-each-group/>} ou d'un \texttt{<value-of/>}.
+            \end{itemize}
+            \bigskip
+            \item \texttt{current-grouping-key()} retourne la clef utilisée pour l'itération en cours d'exécution.
+            \begin{itemize}
+            \large
+                \item à utiliser dans le \texttt{@select} d'un \texttt{<value-of/>}.
             \end{itemize}
         \end{itemize}
     \end{frame}
-    
+
+    \begin{frame}{XSLT/ Conditions et boucles. Notions essentielles}
+        \Large
+        \begin{itemize}
+            \item Conditions XSL :
+            \begin{enumerate}
+            \large
+                \item Sans alternative : \texttt{<xsl:if/>} (\texttt{@test}) ;
+                \item Avec alternative : \texttt{<xsl:choose/>}, contient des \texttt{<xsl:when>} (\texttt{@test}) et un (\texttt{<xs:otherwise/>}).
+            \end{enumerate}
+            \bigskip
+            \item Boucles XSL :
+            \begin{enumerate}
+            \large
+                \item Simple : \texttt{<xsl:for-each/>} (\texttt{@select}) ;
+                \item Sur des groupes : \texttt{<xsl:for-each-group/>} (\texttt{@select}, \texttt{@group-by}).
+            \end{enumerate}
+            \bigskip
+            \item Tri XSL : \texttt{<xsl:sort/>} (\texttt{@select}).
+        \end{itemize}
+    \end{frame}
 \end{document}
