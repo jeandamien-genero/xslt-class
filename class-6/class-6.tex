@@ -41,7 +41,9 @@
         \begin{minted}{html}
 <html lang="fr">
     <head>
-        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" 
+           content="text/html; charset=UTF-8">
+        <!-- le 1er <meta> est ajouté par XSLT -->
         <title><!-- doc title --></title>
         <meta name="description" content="#"/>
         <meta name="author" content="#"/>
@@ -62,6 +64,7 @@
             \item Permet d'appeler autant de fois qu'on le veut une template dans un \texttt{<xsl:template/>}
             \item Cas pratiques :
             \begin{itemize}
+            \Large
                 \item Un \texttt{call-template} par \texttt{result-document} ;
                 \item Peut permettre de stocker des parties du document de sortie (header, footer) au même titre que les variables.
             \end{itemize}
