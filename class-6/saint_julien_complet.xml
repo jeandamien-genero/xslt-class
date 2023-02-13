@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title level="m">Trois Comtes</title>
+            <title level="a">La Légende de Saint Julien l'Hospitalier</title>
+            <author>Gustave Flaubert</author>
+         </titleStmt>
+         <editionStmt>
+            <edition>Édition dans le cadre du Master TNAH de l'École nationale des chartes</edition>
+            <editor>Jean-Damien Généro</editor>
+         </editionStmt>
+         <publicationStmt>
+            <p>From <ref target="https://fr.wikisource.org/wiki/Trois_Contes_(Flaubert)/La_L%C3%A9gende_de_Saint_Julien_l%E2%80%99Hospitalier">Wikisource</ref>.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <biblStruct xml:lang="fr">
+               <monogr>
+                  <author>Gustave Flaubert</author>
+                  <title level="m">Trois Comtes</title>
+                  <title level="a">La Légende de Saint Julien l'Hospitalier</title>
+                  <imprint>
+                     <pubPlace>Paris</pubPlace>
+                     <publisher>G. Charpentier</publisher>
+                     <date when="1877">1877</date>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+            <listBibl>
+               <biblStruct>
+                  <monogr>
+                     <author>
+                        <hi rend="b">
+                           <forename>Véronique</forename>
+                           <surname>Samson</surname>
+                        </hi>
+                     </author>
+                     <title level="a">Le roman après la fin</title>
+                     <title level="m">Après la fin. Gustave Flaubert et le temps du roman</title>
+                     <imprint>
+                        <pubPlace>Saint-Denis</pubPlace>
+                        <publisher>Presses universitaires de Vincennes</publisher>
+                        <date>2021</date>
+                        <biblScope unit="chapter" n="2"/>
+                        <biblScope unit="page" from="105" to="190"/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <!-- SAMSON Véronique, « Le roman après la fin », dans <hi rend="i">Après la fin. Gustave Flaubert et le temps du roman</hi>, chap. 2, Saint-Denis, Presses universitaires de Vincennes, 2021, p. 105-190. -->
+               <biblStruct>
+                  <monogr>
+                     <author>
+                        <hi rend="b">
+                           <forename>Sabine</forename>
+                           <surname>Narr</surname>
+                        </hi>
+                     </author>
+                     <title level="j">Les Dossiers du Grihl</title>
+                     <title level="a">Le Saint Julien de Flaubert – une poétique du vitrail narrativisé</title>
+                     <ref type="DOI" target="10.4000/dossiersgrihl.6447"/>
+                     <ref type="URL" target="http://journals.openedition.org/dossiersgrihl/6447"/>
+                     <imprint>
+                        <date>2015</date>
+                        <biblScope unit="issue" n="9"/>
+                        <biblScope unit="volume" n="1"/>
+                        <note>en ligne</note>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <!-- NARR Sabine, « Le Saint Julien de Flaubert – une poétique du vitrail narrativisé », <hi rend="i">Les Dossiers du Grihl</hi> [<ref target="http://journals.openedition.org/dossiersgrihl/6447">en ligne</ref>, DOI : <ref target="https://doi.org/10.4000/dossiersgrihl.6447">10.4000/dossiersgrihl.6447</ref>], n°9-1, 2015. -->
+               <biblStruct>
+                  <monogr>
+                     <author>
+                        <hi rend="b">
+                           <forename>Stéphanie</forename>
+                           <surname>Dord-Crouslé</surname>
+                        </hi>
+                     </author>
+                     <title level="a">Établir le texte de Trois contes</title>
+                     <title level="j">Flaubert. Revue critique et génétique</title>
+                     <ref type="URL" target="https://journals.openedition.org/flaubert/4143"/>
+                     <imprint>
+                        <pubPlace>Saint-Denis</pubPlace>
+                        <publisher>Presses universitaires de Vincennes</publisher>
+                        <date>2020</date>
+                        <biblScope unit="issue" n="24"/>
+                        <note>en ligne</note>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <!-- DORD-CROUSLÉ Stéphanie, « Établir le texte de Trois contes », <hi rend="i">Flaubert</hi> [<ref target="http://journals.openedition.org/flaubert/4143">en ligne</ref>], n°24, 2020. -->
+            </listBibl>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <abstract>
+            <p>Né de parents nobles, dans un château, Julien devient un jeune homme vigoureux, ardent, et très cruel, passionné de chasse. Un jour, après avoir massacré une harde de cerfs, il voit s’avancer vers lui le grand mâle qui la commandait, et celui-ci lui parle : &#171; Maudit ! un jour, cœur féroce, tu assassineras ton père et ta mère ! &#187;. Effrayé de cette prophétie, Julien délaisse la chasse ; mais peu de temps après, il manque de tuer accidentellement son père et sa mère. Il fuit alors le château et mène une vie d’aventurier. Devenu un mercenaire célèbre, il loue ses services aux principaux souverains d’Europe et traite avec eux d’égal à égal. Ne sachant comment le récompenser, l’empereur lui offre sa fille en mariage, et les deux jeunes gens vivent heureux, jusqu’au jour où Julien se laisser attirer par des animaux sauvages dans la forêt. Entre-temps, ses vieux parents sont arrivés au château : leur belle-fille a le plus grand mal à les reconnaître en ces mendiants décharnés. Quand Julien rentre, les vieux sont étendus sur son lit. Dans l’obscurité, Julien croit trouver sa femme en compagnie d’un amant et il les massacre. Le voilà de nouveau errant sur les routes, menant la vie d’un pèlerin. Il finit par se fixer au bord d’un fleuve et fait le métier de passeur. Un jour, en plein orage, il est appelé de l’autre rive par un affreux lépreux. Il va le chercher, et l’homme lui demande l’hospitalité. Il mange toutes les provisions de son hôte, s’installe dans son lit et, ne pouvant se réchauffer, demander à Julien de venir à côté de lui, puis de s’allonger sur lui. Julien s’exécute, et tout à coup le lépreux devient Jésus qui entraîne Julien à sa suite, au Ciel.</p>
+         </abstract>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div n="1">
+            <head>I.</head>
+            <p>Le <hi rend="b">père</hi> et la <hi rend="b">mère</hi> de <hi rend="b">Julien</hi> habitaient un château, au milieu des bois, sur la pente d'une colline.</p>
+            <p>Les quatre tours aux angles avaient des toits pointus recouverts d'écailles de plomb, et la base des murs s'appuyait sur les quartiers de rocs, qui dévalaient abruptement jusqu'au fond des douves.</p>
+            <p>Les pavés de la cour étaient nets comme le dallage d'une église. De longues gouttières, figurant des dragons la gueule en bas, crachaient l'eau des pluies vers la citerne ; et sur le bord des fenêtres, à tous les étages, dans un pot d'argile peinte, un basilic ou un héliotrope s'épanouissait.</p>
+            <p>Une seconde enceinte, faite de pieux, comprenait d'abord un verger d'arbres à fruits, ensuite un parterre où des combinaisons de fleurs dessinaient des chiffres, puis une treille avec des berceaux pour prendre le frais, et un jeu de mail qui servait au divertissement des pages. De l'autre côté se trouvaient le chenil, les écuries, la boulangerie, le pressoir et les granges. Un pâturage de gazon vert se développait tout autour, enclos lui-même d'une forte haie d'épines.</p>
+            <p>On vivait en paix depuis si longtemps que la herse ne s'abaissait plus ; les fossés étaient pleins d'herbe ; des hirondelles faisaient leur nid dans la fente des créneaux ; et l'archer qui tout le long du jour se promenait sur la courtine, dès que le soleil brillait trop fort, rentrait dans l'échauguette, et s'endormait comme un moine.</p>
+            <p>À l'intérieur, les ferrures partout reluisaient ; des tapisseries dans les chambres protégeaient du froid ; et les armoires regorgeaient de linge, les tonnes de vin s'empilaient dans les celliers, les coffres de chêne craquaient sous le poids des sacs d'argent.</p>
+            <p>On voyait dans la salle d'armes, entre des étendards et des mufles de bêtes fauves, des armes de tous les temps et de toutes les nations, depuis les frondes des <hi rend="b">Amalécites</hi> et les javelots des <hi rend="b">Garamantes</hi> jusqu'aux braquemarts des <hi rend="b">Sarrasins</hi> et aux cottes de mailles des <hi rend="b">Normands</hi>.</p>
+            <p>La maîtresse broche de la cuisine pouvait faire tourner un bœuf ; la chapelle était somptueuse comme l'oratoire d'un roi. Il y avait même, dans un endroit écarté, une étuve à la romaine ; mais le bon seigneur s'en privait, estimant que c'est un usage des idolâtres.</p>
+            <p>Toujours enveloppé d'une pelisse de renard, il se promenait dans sa maison, rendait la justice à ses vassaux, apaisait les querelles de ses voisins. Pendant l'hiver, il regardait les flocons de neige tomber, ou se faisait lire des histoires. Dès les premiers beaux jours, il s'en allait sur sa mule le long des petits chemins, au bord des blés qui verdoyaient, et causait avec les manants, auxquels il donnait des conseils. Après beaucoup d'aventures, il avait pris pour femme une demoiselle de haut lignage.</p>
+            <p>Elle était très blanche, un peu fière et sérieuse. Les cornes de son hennin frôlaient le linteau des portes ; la queue de sa robe de drap traînait de trois pas derrière elle. Son domestique était réglé comme l'intérieur d'un monastère ; chaque matin elle distribuait la besogne à ses servantes, surveillait les confitures et les onguents, filait à la quenouille ou brodait des nappes d'autel. À force de prier Dieu, il lui vint un fils.</p>
+            <p>Alors il y eut de grandes réjouissances, et un repas qui dura trois jours et quatre nuits, dans l'illumination des flambeaux, au son des harpes, sur des jonchées de feuillages. On y mangea les plus rares épices, avec des poules grosses comme des moutons ; par divertissement, un nain sortit d'un pâté ; et, les écuelles ne suffisant plus, car la foule augmentait toujours, on fut obligé de boire dans les oliphants et dans les casques.</p>
+            <p>La nouvelle accouchée n'assista pas à ces fêtes. Elle se tenait dans son lit, tranquillement. Un soir, elle se réveilla, et elle aperçut, sous un rayon de la lune qui entrait par la fenêtre, comme une ombre mouvante. C'était un <hi rend="b">vieillard</hi> en froc de bure, avec un chapelet au côté, une besace sur l'épaule, toute l'apparence d'un ermite. Il s'approcha de son chevet et lui dit, sans desserrer les lèvres :</p>
+            <p>— Réjouis-toi, ô <hi rend="b">mère</hi> ! ton fils sera un saint !</p>
+            <p>Elle allait crier ; mais, glissant sur les rais de la lune, il s'éleva dans l'air doucement, puis disparut. Les chants du banquet éclatèrent plus fort. Elle entendit les voix des anges ; et sa tête retomba sur l'oreiller, que dominait un os de martyr dans un cadre d'escarboucles.</p>
+            <p>Le lendemain, tous les serviteurs interrogés déclarèrent qu'ils n'avaient pas vu d'<hi>ermite</hi>. Songe ou réalité, cela devait être une communication du ciel ; mais elle eut soin de n'en rien dire, ayant peur qu'on ne l'accusât d'orgueil.</p>
+            <p>Les convives s'en allèrent au petit jour ; et le <hi rend="b">père</hi> de Julien se trouvait en dehors de la poterne, où il venait de reconduire le dernier, quand tout à coup un <hi rend="b">mendiant</hi> se dressa devant lui, dans le brouillard. C'était un <hi rend="b">Bohême</hi> à barbe tressée, avec des anneaux d'argent aux deux bras et les prunelles flamboyantes. Il bégaya d'un air inspiré ces mots sans suite :</p>
+            <p>— Ah ! ah ! ton fils !… beaucoup de sang !… beaucoup de gloire !… toujours heureux ! la famille d'un empereur.</p>
+            <p>Et, se baissant pour ramasser son aumône, il se perdit dans l'herbe, s'évanouit.</p>
+            <p>Le bon châtelain regarda de droite et de gauche, appela tant qu'il put. Personne. Le vent sifflait, les brumes du matin s'envolaient.</p>
+            <p>Il attribua cette vision à la fatigue de sa tête pour avoir trop peu dormi.</p>
+            <p>« Si j'en parle, on se moquera de moi, » se dit-il.</p>
+            <p>Cependant les splendeurs destinées à son fils l'éblouissaient, bien que la promesse n'en fût pas claire et qu'il doutât même de l'avoir entendue.</p>
+            <p>Les époux se cachèrent leur secret. Mais tous deux chérissaient l'enfant d'un pareil amour ; et, le respectant comme marqué de <hi rend="b">Dieu</hi>, ils eurent pour sa personne des égards infinis. Sa couchette était rembourrée du plus fin duvet ; une lampe en forme de colombe brûlait dessus, continuellement ; trois nourrices le berçaient ; et, bien serré dans ses langes, la mine rose et les yeux bleus, avec son manteau de brocart et son béguin chargé de perles, il ressemblait à un petit <hi rend="b">Jésus</hi>. Les dents lui poussèrent sans qu'il pleurât une seule fois.</p>
+            <p>Quand il eut sept ans, sa <hi rend="b">mère</hi> lui apprit à chanter. Pour le rendre courageux, son <hi rend="b">père</hi> le hissa sur un gros cheval. L'enfant souriait d'aise, et ne tarda pas à savoir tout ce qui concerne les destriers.</p>
+            <p>Un vieux moine très savant lui enseigna l'Écriture sainte, la numération des Arabes, les lettres latines, et à faire sur le vélin des peintures mignonnes. Ils travaillaient ensemble, tout en haut d'une tourelle, à l'écart du bruit.</p>
+            <p>La leçon terminée, ils descendaient dans le jardin, où, se promenant pas à pas, ils étudiaient les fleurs.</p>
+            <p>Quelquefois on apercevait, cheminant au fond de la vallée, une file de bêtes de somme, conduites par un piéton, accoutré à l'orientale. Le châtelain, qui l'avait reconnu pour un marchand, expédiait vers lui un valet. L'étranger, prenant confiance, se détournait de sa route ; et, introduit dans le parloir, il retirait de ses coffres des pièces de velours et de soie, des orfèvreries, des aromates, des choses singulières d'un usage inconnu ; à la fin le bonhomme s'en allait, avec un gros profit, sans avoir enduré aucune violence. D'autres fois, une troupe de pèlerins frappait à la porte. Leurs habits mouillés fumaient devant l'âtre ; et, quand ils étaient repus, ils racontaient leurs voyages : les erreurs des nefs sur la mer écumeuse, les marches à pied dans les sables brûlants, la férocité des païens, les cavernes de la <hi rend="i">Syrie</hi>, la Crèche et le Sépulcre. Puis ils donnaient au jeune seigneur des coquilles de leur manteau.</p>
+            <p>Souvent le châtelain festoyait ses vieux compagnons d'armes. Tout en buvant, ils se rappelaient leurs guerres, les assauts des forteresses avec le battement des machines et les prodigieuses blessures. <hi rend="b">Julien</hi>, qui les écoutait, en poussait des cris ; alors son père ne doutait pas qu'il ne fût plus tard un conquérant. Mais le soir, au sortir de l'Angélus, quand il passait entre les pauvres inclinés, il puisait dans son escarcelle avec tant de modestie et d'un air si noble, que sa <hi rend="b">mère</hi> comptait bien le voir par la suite archevêque.</p>
+            <p>Sa place dans la chapelle était aux côtés de ses parents ; et, si longs que fussent les offices, il restait à genoux sur son prie-Dieu, la toque par terre et les mains jointes.</p>
+            <p>Un jour, pendant la messe, il aperçut, en relevant la tête, une petite souris blanche qui sortait d'un trou, dans la muraille. Elle trottina sur la première marche de l'autel, et, après deux ou trois tours de droite et de gauche, s'enfuit du même côté. Le dimanche suivant, l'idée qu'il pourrait la revoir le troubla. Elle revint ; et, chaque dimanche il l'attendait, en était importuné, fut pris de haine contre elle, et résolut de s'en défaire.</p>
+            <p>Ayant donc fermé la porte, et semé sur les marches les miettes d'un gâteau, il se posta devant le trou, une baguette à la main.</p>
+            <p>Au bout de très longtemps un museau rose parut, puis la souris tout entière. Il frappa un coup léger, et demeura stupéfait devant ce petit corps qui ne bougeait plus. Une goutte de sang tachait la dalle. Il l'essuya bien vite avec sa manche, jeta la souris dehors, et n'en dit rien à personne.</p>
+            <p>Toutes sortes d'oisillons picoraient les graines du jardin. Il imagina de mettre des pois dans un roseau creux. Quand il entendait gazouiller dans un arbre, il en approchait avec douceur, puis levait son tube, enflait ses joues ; et les bestioles lui pleuvaient sur les épaules si abondamment qu'il ne pouvait s'empêcher de rire, heureux de sa malice.</p>
+            <p>Un matin, comme il s'en retournait par la courtine, il vit sur la crête du rempart un gros pigeon qui se rengorgeait au soleil. <hi rend="b">Julien</hi> s'arrêta pour le regarder ; le mur en cet endroit ayant une brèche, un éclat de pierre se rencontra sous ses doigts. Il tourna son bras, et la pierre abattit l'oiseau qui tomba d'un bloc dans un fossé.</p>
+            <p>Il se précipita vers le fond, se déchirant aux broussailles, furetant partout, plus leste qu'un jeune chien.</p>
+            <p>Le pigeon, les ailes cassées, palpitait, suspendu dans les branches d'un troène.</p>
+            <p>La persistance de sa vie irrita l'enfant. Il se mit à l'étrangler ; et les convulsions de l'oiseau faisaient battre son cœur, l'emplissaient d'une volupté sauvage et tumultueuse. Au dernier roidissement, il se sentit défaillir.</p>
+            <p>Le soir, pendant le souper, son père déclara que l'on devait à son âge apprendre la vénerie ; et il alla chercher un vieux cahier d'écriture contenant, par demandes et réponses, tout le déduit des chasses. Un maître y démontrait à son élève l'art de dresser les chiens et d'affaiter les faucons, de tendre les pièges, comment reconnaître le cerf à ses fumées, le renard à ses empreintes, le loup à ses déchaussures, le bon moyen de discerner leurs voies, de quelle manière on les lance, où se trouvent ordinairement leurs refuges, quels sont les vents les plus propices, avec l'énumération des cris et les règles de la curée.</p>
+            <p>Quand <hi rend="b">Julien</hi> put réciter par cœur toutes ces choses, son père lui composa une meute.</p>
+            <p>D'abord on y distinguait vingt-quatre lévriers barbaresques, plus véloces que des gazelles, mais sujets à s'emporter ; puis dix-sept couples de chiens bretons, tiquetés de blanc sur fond rouge, inébranlables dans leur créance, forts de poitrine et grands hurleurs. Pour l'attaque du sanglier et les refuites périlleuses, il y avait quarante griffons, poilus comme des ours. Des mâtins de <hi rend="i">Tartarie</hi>, presque aussi hauts que des ânes, couleur de feu, l'échine large et le jarret droit, étaient destinés à poursuivre les aurochs. La robe noire des épagneuls luisait comme du satin ; le jappement des talbots valait celui des bigles chanteurs. Dans une cour à part, grondaient, en secouant leur chaîne et roulant leurs prunelles, huit dogues alains, bêtes formidables qui sautent au ventre des cavaliers et n'ont pas peur des lions.</p>
+            <p>Tous mangeaient du pain de froment, buvaient dans des auges de pierre, et portaient un nom sonore.</p>
+            <p>La fauconnerie, peut-être, dépassait la meute ; le bon seigneur, à force d'argent, s'était procuré des tiercelets du <hi rend="i">Caucase</hi>, des sacres de <hi rend="i">Babylone</hi>, des gerfauts d'<hi rend="i">Allemagne</hi>, et des faucons pèlerins, capturés sur les falaises, au bord des mers froides, en de lointains pays. Ils logeaient dans un hangar couvert de chaume, et, attachés par rang de taille sur le perchoir, avaient devant eux une motte de gazon, où de temps à autre on les posait afin de les dégourdir.</p>
+            <p>Des bourses, des hameçons, des chausse-trapes, toute sorte d'engins, furent confectionnés.</p>
+            <p>Souvent on menait dans la campagne des chiens d'oysel, qui tombaient bien vite en arrêt. Alors les piqueurs, s'avançant pas à pas, étendaient avec précaution sur leurs corps impassibles un immense filet. Un commandement les faisait aboyer ; des cailles s'envolaient ; et les dames des alentours conviées avec leurs maris, les enfants, les camérières, tout le monde se jetait dessus, et les prenait facilement.</p>
+            <p>D'autres fois, pour débucher les lièvres, on battait du tambour ; des renards tombaient dans des fosses, ou bien un ressort, se débandant, attrapait un loup par le pied.</p>
+            <p>Mais <hi rend="b">Julien</hi> méprisa ces commodes artifices ; il préférait chasser loin du monde, avec son cheval et son faucon. C'était presque toujours un grand tartaret de <hi rend="i">Scythie</hi>, blanc comme la neige. Son capuchon de cuir était surmonté d'un panache, des grelots d'or tremblaient à ses pieds bleus ; et il se tenait ferme sur le bras de son maître pendant que le cheval galopait, et que les plaines se déroulaient. <hi rend="b">Julien</hi>, dénouant ses longes, le lâchait tout à coup ; la bête hardie montait droit dans l'air comme une flèche ; et l'on voyait deux taches inégales tourner, se joindre, puis disparaître dans les hauteurs de l'azur. Le faucon ne tardait pas à descendre en déchirant quelque oiseau, et revenait se poser sur le gantelet, les deux ailes frémissantes.</p>
+            <p><hi rend="b">Julien</hi> vola de cette manière le héron, le milan, la corneille et le vautour.</p>
+            <p>Il aimait, en sonnant de la trompe, à suivre ses chiens qui couraient sur le versant des collines, sautaient les ruisseaux, remontaient vers le bois ; et, quand le cerf commençait à gémir sous les morsures, il l'abattait prestement, puis se délectait à la furie des mâtins qui le dévoraient, coupé en pièces sur sa peau fumante.</p>
+            <p>Les jours de brume, il s'enfonçait dans un marais pour guetter les oies, les loutres et les halbrans.</p>
+            <p>Trois écuyers, dès l'aube, l'attendaient au bas du perron ; et le vieux moine, se penchant à sa lucarne, avait beau faire des signes pour le rappeler, <hi rend="b">Julien</hi> ne se retournait pas. Il allait à l'ardeur du soleil, sous la pluie, par la tempête, buvait l'eau des sources dans sa main, mangeait en trottant des pommes sauvages, s'il était fatigué se reposait sous un chêne ; et il rentrait au milieu de la nuit, couvert de sang et de boue, avec des épines dans les cheveux et sentant l'odeur des bêtes farouches. Il devint comme elles. Quand sa <hi rend="b">mère</hi> l'embrassait, il acceptait froidement son étreinte, paraissant rêver à des choses profondes.</p>
+            <p>Il tua des ours à coups de couteau, des taureaux avec la hache ; des sangliers avec l'épieu ; et même une fois, n'ayant plus qu'un bâton, se défendit contre des loups qui rongeaient des cadavres au pied d'un gibet.</p>
+            <p>Un matin d'hiver, il partit avant le jour, bien équipé, une arbalète sur l'épaule et un trousseau de flèches à l'arçon de la selle.</p>
+            <p>Son genet danois, suivi de deux bassets, en marchant d'un pas égal faisait résonner la terre. Des gouttes de verglas se collaient à son manteau, une brise violente soufflait. Un côté de l'horizon s'éclaircit ; et, dans la blancheur du crépuscule, il aperçut des lapins sautillant au bord de leurs terriers. Les deux bassets, tout de suite, se précipitèrent sur eux ; et, çà et là, vivement, leur brisaient l'échine.</p>
+            <p>Bientôt, il entra dans un bois. Au bout d'une branche, un coq de bruyère engourdi par le froid dormait la tête sous l'aile. Julien, d'un revers d'épée, lui faucha les deux pattes, et sans le ramasser continua sa route.</p>
+            <p>Trois heures après, il se trouva sur la pointe d'une montagne tellement haute que le ciel semblait presque noir. Devant lui, un rocher pareil à un long mur s'abaissait, en surplombant un précipice ; et, à l'extrémité, deux boucs sauvages regardaient l'abîme. Comme il n'avait pas ses flèches (car son cheval était resté en arrière), il imagina de descendre jusqu'à eux ; à demi courbé, pieds nus, il arriva enfin au premier des boucs, et lui enfonça un poignard sous les côtes. Le second, pris de terreur, sauta dans le vide. Julien s'élança pour le frapper, et, glissant du pied droit, tomba sur le cadavre de l'autre, la face au-dessus de l'abîme et les deux bras écartés.</p>
+            <p>Redescendu dans la plaine, il suivit des saules qui bordaient une rivière. Des grues, volant très bas, de temps à autre, passaient au-dessus de sa tête. <hi rend="b">Julien</hi> les assommait avec son fouet, et n'en manqua pas une.</p>
+            <p>Cependant l'air plus tiède avait fondu le givre, de larges vapeurs flottaient, et le soleil se montra. Il vit reluire tout au loin un lac figé, qui ressemblait à du plomb. Au milieu du lac, il y avait une bête que Julien ne connaissait pas, un castor à museau noir. Malgré la distance, une flèche l'abattit ; et il fut chagrin de ne pouvoir emporter la peau.</p>
+            <p>Puis il s'avança dans une avenue de grands arbres, formant avec leurs cimes comme un arc de triomphe, à l'entrée d'une forêt. Un chevreuil bondit hors d'un fourré, un daim parut dans un carrefour, un blaireau sortit d'un trou, un paon sur le gazon déploya sa queue ; — et quand il les eut tous occis, d'autres chevreuils se présentèrent, d'autres daims, d'autres blaireaux, d'autres paons, et des merles, des geais, des putois, des renards, des hérissons, des lynx, une infinité de bêtes, à chaque pas plus nombreuses. Elles tournaient autour de lui, tremblantes, avec un regard plein de douceur et de supplication. Mais <hi rend="b">Julien</hi> ne se fatiguait pas de tuer, tour à tour bandant son arbalète, dégainant l'épée, pointant du coutelas, et ne pensait à rien, n'avait souvenir de quoi que ce fût. Il était en chasse dans un pays quelconque, depuis un temps indéterminé, par le fait seul de sa propre existence, tout s'accomplissant avec la facilité que l'on éprouve dans les rêves. Un spectacle extraordinaire l'arrêta. Des cerfs emplissaient un vallon ayant la forme d'un cirque ; et tassés, les uns près des autres, ils se réchauffaient avec leurs haleines que l'on voyait fumer dans le brouillard.</p>
+            <p>L'espoir d'un pareil carnage, pendant quelques minutes, le suffoqua de plaisir. Puis il descendit de cheval, retroussa ses manches, et se mit à tirer.</p>
+            <p>Au sifflement de la première flèche, tous les cerfs à la fois tournèrent la tête. Il se fit des enfonçures dans leur masse ; des voix plaintives s'élevaient, et un grand mouvement agita le troupeau.</p>
+            <p>Le rebord du vallon était trop haut pour le franchir. Ils bondissaient dans l'enceinte, cherchant à s'échapper. Julien visait, tirait ; et les flèches tombaient comme les rayons d'une pluie d'orage. Les cerfs rendus furieux se battirent, se cabraient, montaient les uns par-dessus les autres ; et leurs corps avec leurs ramures emmêlées faisaient un large monticule, qui s'écroulait, en se déplaçant.</p>
+            <p>Enfin ils moururent, couchés sur le sable, la bave aux naseaux, les entrailles sorties, et l'ondulation de leurs ventres s'abaissant par degrés. Puis tout fut immobile.</p>
+            <p>La nuit allait venir ; et derrière le bois, dans les intervalles des branches, le ciel était rouge comme une nappe de sang.</p>
+            <p>Julien s'adossa contre un arbre. Il contemplait d'un œil béant l'énormité du massacre, ne comprenant pas comment il avait pu le faire.</p>
+            <p>De l'autre côté du vallon, sur le bord de la forêt, il aperçut un cerf, une biche et son faon.</p>
+            <p>Le cerf, qui était noir et monstrueux de taille, portait seize andouillers avec une barbe blanche. La biche, blonde comme les feuilles mortes, broutait le gazon ; et le faon tacheté, sans l'interrompre dans sa marche, lui tétait la mamelle.</p>
+            <p>L'arbalète encore une fois ronfla. Le faon, tout de suite, fut tué. Alors sa mère, en regardant le ciel, brama d'une voix profonde, déchirante, humaine. Julien exaspéré, d'un coup en plein poitrail, l'étendit par terre.</p>
+            <p>Le grand cerf l'avait vu, fit un bond. <hi rend="b">Julien</hi> lui envoya sa dernière flèche. Elle l'atteignit au front, et y resta plantée.</p>
+            <p>Le grand cerf n'eut pas l'air de la sentir ; en enjambant par-dessus les morts, il avançait toujours, allait fondre sur lui, l'éventrer ; et <hi rend="b">Julien</hi> reculait dans une épouvante indicible. Le prodigieux animal s'arrêta ; et les yeux flamboyants, solennel comme un patriarche et comme un justicier, pendant qu'une cloche au loin tintait, il répéta trois fois :</p>
+            <p>— Maudit ! maudit ! maudit ! Un jour, cœur féroce, tu assassineras ton <hi rend="b">père</hi> et ta <hi rend="b">mère</hi> !</p>
+            <p>Il plia les genoux, ferma doucement ses paupières, et mourut.</p>
+            <p><hi rend="b">Julien</hi> fut stupéfait, puis accablé d'une fatigue soudaine ; et un dégoût, une tristesse immense l'envahit. Le front dans les deux mains, il pleura pendant longtemps.</p>
+            <p>Son cheval était perdu ; ses chiens l'avaient abandonné ; la solitude qui l'enveloppait lui sembla toute menaçante de périls indéfinis. Alors, poussé par un effroi, il prit sa course à travers la campagne, choisit au hasard un sentier, et se trouva presque immédiatement à la porte du château.</p>
+            <p>La nuit, il ne dormit pas. Sous le vacillement de la lampe suspendue, il revoyait toujours le grand cerf noir. Sa prédiction l'obsédait ; il se débattait contre elle :</p>
+            <p>— Non ! non ! non ! je ne peux pas les tuer !</p>
+            <p>Puis il songeait :</p>
+            <p>— Si je le voulais, pourtant ?…</p>
+            <p>Et il avait peur que le Diable ne lui en inspirât l'envie.</p>
+            <p>Durant trois mois, sa <hi rend="b">mère</hi> en angoisse pria au chevet de son lit, et son <hi rend="b">père</hi>, en gémissant, marchait continuellement dans les couloirs. Il manda les maîtres mires les plus fameux, lesquels ordonnèrent des quantités de drogues. Le mal de Julien, disaient-ils, avait pour cause un vent funeste, ou un désir d'amour. Mais le jeune homme, à toutes les questions, secouait la tête.</p>
+            <p>Les forces lui revinrent ; et on le promenait dans la cour, le vieux moine et le bon seigneur le soutenant chacun par un bras. Quand il fut rétabli complètement, il s'obstina à ne point chasser.</p>
+            <p>Son <hi rend="b">père</hi>, le voulant réjouir, lui fit cadeau d'une grande épée sarrasine.</p>
+            <p>Elle était au haut d'un pilier, dans une panoplie. Pour l'atteindre, il fallut une échelle. <hi rend="b">Julien</hi> y monta. L'épée trop lourde lui échappa des doigts, et en tombant frôla le bon seigneur de si près que sa houppelande en fut coupée ; <hi rend="b">Julien</hi> crut avoir tué son <hi rend="b">père</hi>, et s'évanouit.</p>
+            <p>Dès lors, il redouta les armes. L'aspect d'un fer nu le faisait pâlir. Cette faiblesse était une désolation pour sa famille.</p>
+            <p>Enfin le vieux moine, au nom de <hi rend="b">Dieu</hi>, de l'honneur et des ancêtres, lui commanda de reprendre ses exercices de gentilhomme.</p>
+            <p>Les écuyers, tous les jours, s'amusaient au maniement de la javeline. <hi rend="b">Julien</hi> y excella bien vite. Il envoyait la sienne dans le goulot des bouteilles, cassait les dents des girouettes, frappait à cent pas les clous des portes.</p>
+            <p>Un soir d'été, à l'heure où la brume rend les choses indistinctes, étant sous la treille du jardin, il aperçut tout au fond deux ailes blanches qui voletaient à la hauteur de l'espalier. Il ne douta pas que ce ne fût une cigogne ; et il lança son javelot.</p>
+            <p>Un cri déchirant partit.</p>
+            <p>C'était sa <hi rend="b">mère</hi>, dont le bonnet à longues barbes restait cloué contre le mur.</p>
+            <p><hi rend="b">Julien</hi> s'enfuit du château, et ne reparut plus. </p>
+         </div>
+         <div n="2">
+            <head>II.</head>
+            <p>Il s'engagea dans une troupe d'aventuriers qui passaient.</p>
+            <p>Il connut la faim, la soif, les fièvres et la vermine. Il s'accoutuma au fracas des mêlées, à l'aspect des moribonds. Le vent tanna sa peau. Ses membres se durcirent par le contact des armures ; et comme il était très fort, courageux, tempérant, avisé, il obtint sans peine le commandement d'une compagnie.</p>
+            <p>Au début des batailles, il enlevait ses soldats d'un grand geste de son épée. Avec une corde à nœuds, il grimpait aux murs des citadelles, la nuit, balancé par l'ouragan, pendant que les flammèches du feu grégeois se collaient à sa cuirasse, et que la résine bouillante et le plomb fondu ruisselaient des créneaux. Souvent le heurt d'une pierre fracassa son bouclier. Des ponts trop chargés d'hommes croulèrent sous lui. En tournant sa masse d'armes, il se débarrassa de quatorze cavaliers. Il défit, en champ clos, tous ceux qui se proposèrent. Plus de vingt fois, on le crut mort.</p>
+            <p>Grâce à la faveur divine, il en réchappa toujours ; car il protégeait les gens d'église, les orphelins, les veuves, et principalement les vieillards. Quand il en voyait un marchant devant lui, il criait pour connaître sa figure, comme s'il avait eu peur de le tuer par méprise.</p>
+            <p>Des esclaves en fuite, des manants révoltés, des bâtards sans fortune, toutes sortes d'intrépides affluèrent sous son drapeau, et il se composa une armée.</p>
+            <p>Elle grossit. Il devint fameux. On le recherchait.</p>
+            <p>Tour à tour, il secourut le <hi rend="b">dauphin de France</hi> et le <hi rend="b">roi d'Angleterre</hi>, les templiers de Jérusalem, le <hi rend="b">suréna des Parthes</hi>, le <hi rend="b">négud d'Abyssinie</hi> et l'<hi rend="b">empereur de Calicut</hi>. Il combattit des Scandinaves recouverts d'écailles de poisson, des Nègres munis de rondaches en cuir d'hippopotame et montés sur des ânes rouges, des Indiens couleur d'or et brandissant par-dessus leurs diadèmes de larges sabres, plus clairs que des miroirs. Il vainquit les Troglodytes et les Anthropophages. Il traversa des régions si torrides que sous l'ardeur du soleil les chevelures s'allumaient d'elles-mêmes comme des flambeaux ; et d'autres qui étaient si glaciales que les bras, se détachant du corps, tombaient par terre ; et des pays où il y avait tant de brouillards que l'on marchait environné de fantômes.</p>
+            <p>Des républiques en embarras le consultèrent. Aux entrevues d'ambassadeurs, il obtenait des conditions inespérées. Si un monarque se conduisait trop mal, il arrivait tout à coup et lui faisait des remontrances. Il affranchit des peuples. Il délivra des reines enfermées dans des tours. C'est lui, et pas un autre, qui assomma la guivre de <hi rend="i">Milan</hi> et le dragon d'<hi rend="i">Oberbirbach</hi>.</p>
+            <p>Or l'<hi rend="b">empereur d'Occitanie</hi>, ayant triomphé des Musulmans espagnols, s'était joint par concubinage à <hi rend="b">la sœur du calife de Cordoue</hi> ; et il en conservait <hi rend="b">une fille</hi>, qu'il avait élevée chrétiennement. Mais le <hi rend="b">calife</hi>, faisant mine de vouloir se convertir, vint lui rendre visite, accompagné d'une escorte nombreuse, massacra toute sa garnison, et le plongea dans un cul de basse-fosse, où il le traitait durement, afin d'en extirper des trésors.</p>
+            <p><hi rend="b">Julien</hi> accourut à son aide, détruisit l'armée des infidèles, assiégea la ville, tua le <hi rend="b">calife</hi>, coupa sa tête, et la jeta comme une boule par-dessus les remparts. Puis il tira <hi rend="b">l'empereur</hi> de sa prison, et le fit remonter sur son trône, en présence de toute sa cour.</p>
+            <p>L'empereur, pour prix d'un tel service, lui présenta dans des corbeilles beaucoup d'argent ; <hi rend="b">Julien</hi> n'en voulut pas. Croyant qu'il en désirait davantage, il lui offrit les trois quarts de ses richesses ; nouveau refus ; puis de partager son royaume ; <hi rend="b">Julien</hi> le remercia. Et l'empereur en pleurait de dépit, ne sachant de quelle manière témoigner sa reconnaissance, quand il se frappa le front, dit un mot à l'oreille d'un courtisan ; les rideaux d'une tapisserie se relevèrent, et une jeune fille parut.</p>
+            <p>Ses grands yeux noirs brillaient comme deux lampes très douces. Un sourire charmant écartait ses lèvres. Les anneaux de sa chevelure s'accrochaient aux pierreries de sa robe entrouverte ; et, sous la transparence de sa tunique, on devinait la jeunesse de son corps. Elle était toute mignonne et potelée, avec la taille fine.</p>
+            <p><hi rend="b">Julien</hi> fut ébloui d'amour, d'autant plus qu'il avait mené jusqu'alors une vie très chaste.</p>
+            <p>Donc il reçut en mariage la <hi rend="b">fille de l'empereur</hi>, avec un château qu'elle tenait de sa mère ; et, les noces étant terminées, on se quitta, après des politesses infinies de part et d'autre.</p>
+            <p>C'était un palais de marbre blanc, bâti à la moresque, sur un promontoire, dans un bois d'orangers. Des terrasses de fleurs descendaient jusqu'au bord d'un golfe, où des coquilles roses craquaient sous les pas. Derrière le château, s'étendait une forêt ayant le dessin d'un éventail. Le ciel continuellement était bleu, et les arbres se penchaient tour à tour sous la brise de la mer et le vent des montagnes, qui fermaient au loin l'horizon.</p>
+            <p>Les chambres, pleines de crépuscule, se trouvaient éclairées par les incrustations des murailles. De hautes colonnettes, minces comme des roseaux, supportaient la voûte des coupoles, décorées de reliefs imitant les stalactites des grottes.</p>
+            <p>Il y avait des jets d'eau dans les salles, des mosaïques dans les cours, des cloisons festonnées, mille délicatesses d'architecture, et partout un tel silence que l'on entendait le frôlement d'une écharpe ou l'écho d'un soupir.</p>
+            <p>Julien ne faisait plus la guerre. Il se reposait, entouré d'un peuple tranquille ; et chaque jour, une foule passait devant lui, avec des génuflexions et des baise-mains à l'orientale.</p>
+            <p>Vêtu de pourpre, il restait accoudé dans l'embrasure d'une fenêtre, en se rappelant ses chasses d'autrefois ; et il aurait voulu courir sur le désert après les gazelles et les autruches, être caché dans les bambous à l'affût des léopards, traverser des forêts pleines de rhinocéros, atteindre au sommet des monts les plus inaccessibles pour viser mieux les aigles, et sur les glaçons de la mer combattre les ours blancs.</p>
+            <p>Quelquefois, dans un rêve, il se voyait comme notre père Adam au milieu du paradis, entre toutes les bêtes ; en allongeant le bras, il les faisait mourir ; ou bien, elles défilaient, deux à deux, par rang de taille, depuis les éléphants et les lions jusqu'aux hermines et aux canards, comme le jour qu'elles entrèrent dans l'arche de <hi rend="b">Noé</hi>. À l'ombre d'une caverne, il dardait sur elles des javelots infaillibles ; il en survenait d'autres ; cela n'en finissait pas ; et il se réveillait en roulant des yeux farouches.</p>
+            <p>Des princes de ses amis l'invitèrent à chasser. Il s'y refusa toujours, croyant, par cette sorte de pénitence, détourner son malheur ; car il lui semblait que du meurtre des animaux dépendait le sort de ses parents. Mais il souffrait de ne pas les voir, et son autre envie devenait insupportable.</p>
+            <p>Sa femme, pour le récréer, fit venir des jongleurs et des danseuses.</p>
+            <p>Elle se promenait avec lui, en litière ouverte, dans la campagne ; d'autres fois, étendus sur le bord d'une chaloupe, ils regardaient les poissons vagabonder dans l'eau, claire comme le ciel. Souvent elle lui jetait des fleurs au visage ; accroupie devant ses pieds, elle tirait des airs d'une mandoline à trois cordes ; puis, lui posant sur l'épaule ses deux mains jointes, disait d'une voix timide :</p>
+            <p>— Qu'avez-vous donc, cher seigneur ?</p>
+            <p>Il ne répondait pas, ou éclatait en sanglots ; enfin, un jour, il avoua son horrible pensée.</p>
+            <p>Elle la combattit en raisonnant très bien ; son <hi rend="b">père</hi> et sa <hi rend="b">mère</hi>, probablement, étaient morts ; si jamais il les revoyait, par quel hasard, dans quel but, arriverait-il à cette abomination ? Donc, sa crainte n'avait pas de cause, et il devait se remettre à chasser.</p>
+            <p><hi rend="b">Julien</hi> souriait en l'écoutant, mais ne se décidait pas à satisfaire son désir.</p>
+            <p>Un soir du mois d'août qu'ils étaient dans leur chambre, elle venait de se coucher et il s'agenouillait pour sa prière quand il entendit le jappement d'un renard, puis des pas légers sous la fenêtre ; et il entrevit dans l'ombre comme des apparences d'animaux. La tentation était trop forte. Il décrocha son carquois.</p>
+            <p>Elle parut surprise.</p>
+            <p>— C'est pour t'obéir ! dit-il, au lever du soleil, je serai revenu.</p>
+            <p>Cependant elle redoutait une aventure funeste.</p>
+            <p>Il la rassura, puis sortit, étonné de l'inconséquence de son humeur.</p>
+            <p>Peu de temps après, un page vint annoncer que deux inconnus, à défaut du seigneur absent, réclamaient tout de suite la seigneuresse.</p>
+            <p>Et bientôt entrèrent dans la chambre un vieil homme et une vieille femme, courbés, poudreux, en habits de toile, et s'appuyant sur un bâton.</p>
+            <p>Ils s'enhardirent et déclarèrent qu'ils apportaient à <hi rend="b">Julien</hi> des nouvelles de ses parents.</p>
+            <p>Elle se pencha pour les entendre.</p>
+            <p>Mais, s'étant concertés du regard, ils lui demandèrent s'il les aimait toujours, s'il parlait d'eux quelquefois.</p>
+            <p>— Oh ! oui ! dit-elle.</p>
+            <p>Alors, ils s'écrièrent :</p>
+            <p>— Eh bien ! c'est nous !</p>
+            <p>Et ils s'assirent, étant fort las et recrus de fatigue.</p>
+            <p>Rien n'assurait à la jeune femme que son époux fût leur fils.</p>
+            <p>Ils en donnèrent la preuve, en décrivant des signes particuliers qu'il avait sur la peau.</p>
+            <p>Elle sauta hors sa couche, appela son page, et on leur servit un repas.</p>
+            <p>Bien qu'ils eussent grand'faim, ils ne pouvaient guère manger ; et elle observait à l'écart le tremblement de leurs mains osseuses, en prenant les gobelets.</p>
+            <p>Ils firent mille questions sur <hi rend="b">Julien</hi>. Elle répondait à chacune, mais eut soin de taire l'idée funèbre qui les concernait.</p>
+            <p>Ne le voyant pas revenir, ils étaient partis de leur château ; et ils marchaient depuis plusieurs années, sur de vagues indications, sans perdre l'espoir. Il avait fallu tant d'argent au péage des fleuves et dans les hôtelleries, pour les droits des princes et les exigences des voleurs, que le fond de leur bourse était vide, et qu'ils mendiaient, maintenant. Qu'importe, puisque bientôt, ils embrasseraient leur fils ? Ils exaltaient son bonheur d'avoir une femme aussi gentille, et ne se lassaient point de la contempler et de la baiser.</p>
+            <p>La richesse de l'appartement les étonnait beaucoup ; et le vieux, ayant examiné les murs, demanda pourquoi s'y trouvait le blason de l'<hi rend="b">empereur d'Occitanie</hi>.</p>
+            <p>Elle répliqua :</p>
+            <p>— C'est mon père !</p>
+            <p>Alors il tressaillit, se rappelant la prédiction du <hi rend="i">Bohême</hi> ; et la vieille songeait à la parole de l'<hi rend="b">Ermite</hi>. Sans doute la gloire de son fils n'était que l'aurore des splendeurs éternelles ; et tous les deux restaient béants, sous la lumière du candélabre qui éclairait la table.</p>
+            <p>Ils avaient dû être très beaux dans leur jeunesse. La <hi rend="b">mère</hi> avait encore tous ses cheveux, dont les bandeaux fins, pareils à des plaques de neige, pendaient jusqu'au bas de ses joues ; et le <hi rend="b">père</hi>, avec sa taille haute et sa grande barbe, ressemblait à une statue d'église.</p>
+            <p>La femme de <hi rend="b">Julien</hi> les engagea à ne pas l'attendre. Elle les coucha elle-même dans son lit, puis ferma la croisée ; ils s'endormirent. Le jour allait paraître, et, derrière le vitrail, les petits oiseaux commençaient à chanter.</p>
+            <p><hi rend="b">Julien</hi> avait traversé le parc ; et il marchait dans la forêt d'un pas nerveux, jouissant de la mollesse du gazon et de la douceur de l'air.</p>
+            <p>Les ombres des arbres s'étendaient sur la mousse. Quelquefois la lune faisait des taches blanches dans les clairières, et il hésitait à s'avancer, croyant apercevoir une flaque d'eau, ou bien la surface des mares tranquilles se confondait avec la couleur de l'herbe. C'était partout un grand silence ; et il ne découvrait aucune des bêtes qui, peu de minutes auparavant, erraient à l'entour de son château.</p>
+            <p>Le bois s'épaissit, l'obscurité devint profonde. Des bouffées de vent chaud passaient, pleines de senteurs amollissantes. Il enfonçait dans des tas de feuilles mortes, et il s'appuya contre un chêne pour haleter un peu.</p>
+            <p>Tout à coup, derrière son dos, bondit une masse plus noire, un sanglier. <hi rend="b">Julien</hi> n'eut pas le temps de saisir son arc, et il s'en affligea comme d'un malheur.</p>
+            <p>Puis, étant sorti du bois, il aperçut un loup qui filait le long d'une haie.</p>
+            <p><hi rend="b">Julien</hi> lui envoya une flèche. Le loup s'arrêta, tourna la tête pour le voir et reprit sa course. Il trottait en gardant toujours la même distance, s'arrêtait de temps à autre, et, sitôt qu'il était visé, recommençait à fuir.</p>
+            <p><hi rend="b">Julien</hi> parcourut de cette manière une plaine interminable, puis des monticules de sable, et enfin, il se trouva sur un plateau dominant un grand espace de pays. Des pierres plates étaient clairsemées entre des caveaux en ruine. On trébuchait sur des ossements de morts ; de place en place, des croix vermoulues se penchaient d'un air lamentable. Mais des formes remuèrent dans l'ombre indécise des tombeaux ; et il en surgit des hyènes, tout effarées, pantelantes. En faisant claquer leurs ongles sur les dalles, elles vinrent à lui et le flairaient avec un bâillement qui découvrait leurs gencives. Il dégaina son sabre. Elles partirent à la fois dans toutes les directions, et, continuant leur galop boiteux et précipité, se perdirent au loin sous un flot de poussière.</p>
+            <p>Une heure après, il rencontra dans un ravin un taureau furieux, les cornes en avant, et qui grattait le sable avec son pied. Julien lui pointa sa lance sous les fanons. Elle éclata, comme si l'animal eût été de bronze ; il ferma les yeux, attendant sa mort. Quand il les rouvrit, le taureau avait disparu.</p>
+            <p>Alors son âme s'affaissa de honte. Un pouvoir supérieur détruisait sa force ; et pour s'en retourner chez lui, il rentra dans la forêt.</p>
+            <p>Elle était embarrassée de lianes ; et il les coupait, avec son sabre quand une fouine glissa brusquement entre ses jambes, une panthère fit un bond par-dessus son épaule, un serpent monta en spirale autour d'un frêne.</p>
+            <p>Il y avait dans son feuillage un choucas monstrueux, qui regardait Julien ; et, çà et là, parurent entre les branches quantités de larges étincelles, comme si le firmament eût fait pleuvoir dans la forêt toutes ses étoiles. C'étaient des yeux d'animaux, des chats sauvages, des écureuils, des hiboux, des perroquets, des singes.</p>
+            <p><hi rend="b">Julien</hi> darda contre eux ses flèches ; les flèches, avec leurs plumes, se posaient sur les feuilles comme des papillons blancs. Il leur jeta des pierres ; les pierres, sans rien toucher, retombaient. Il se maudit, aurait voulu se battre, hurla des imprécations, étouffait de rage.</p>
+            <p>Et tous les animaux qu'il avait poursuivis se représentèrent, faisant autour de lui un cercle étroit. Les uns étaient assis sur leur croupe, les autres dressés de toute leur taille. Il restait au milieu, glacé de terreur, incapable du moindre mouvement. Par un effort suprême de sa volonté il fit un pas ; ceux qui perchaient sur les arbres ouvrirent leurs ailes, ceux qui foulaient le sol déplacèrent leurs membres ; et tous l'accompagnaient.</p>
+            <p>Les hyènes marchaient devant lui, le loup et le sanglier par-derrière. Le taureau, à sa droite, balançait la tête ; et, à sa gauche, le serpent ondulait dans les herbes, tandis que la panthère, bombant son dos, avançait à pas de velours et à grandes enjambées. Il allait le plus lentement possible pour ne pas les irriter ; et il voyait sortir de la profondeur des buissons des porcs-épics, des renards, des vipères, des chacals et des ours.</p>
+            <p><hi rend="b">Julien</hi> se mit à courir ; ils coururent. Le serpent sifflait, les bêtes puantes bavaient. Le sanglier lui frottait les talons avec ses défenses, le loup, l'intérieur des mains avec les poils de son museau. Les singes le pinçaient en grimaçant, la fouine se roulait sur ses pieds. Un ours, d'un revers de patte, lui enleva son chapeau ; et la panthère, dédaigneusement, laissa tomber une flèche qu'elle portait à sa gueule.</p>
+            <p>Une ironie perçait dans leurs allures sournoises. Tout en l'observant du coin de leurs prunelles, ils semblaient méditer un plan de vengeance ; et, assourdi par le bourdonnement des insectes, battu par des queues d'oiseau, suffoqué par des haleines, il marchait les bras tendus et les paupières closes comme un aveugle, sans même avoir la force de crier « grâce ! »</p>
+            <p>Le chant d'un coq vibra dans l'air. D'autres y répondirent ; c'était le jour ; et il reconnut, au-delà des orangers, le faîte de son palais.</p>
+            <p>Puis, au bord d'un champ, il vit, à trois pas d'intervalle, des perdrix rouges qui voletaient dans les chaumes. Il dégrafa son manteau, et l'abattit sur elles comme un filet. Quand il les eut découvertes, il n'en trouva qu'une seule, et morte depuis longtemps, pourrie.</p>
+            <p>Cette déception l'exaspéra plus que toutes les autres. Sa soif de carnage le reprenait ; les bêtes manquant, il aurait voulu massacrer des hommes.</p>
+            <p>Il gravit les trois terrasses, enfonça la porte d'un coup de poing ; mais, au bas de l'escalier, le souvenir de sa chère femme détendit son cœur. Elle dormait sans doute, et il allait la surprendre.</p>
+            <p>Ayant retiré ses sandales, il tourna doucement la serrure, et entra.</p>
+            <p>Les vitraux garnis de plomb obscurcissaient la pâleur de l'aube. <hi rend="b">Julien</hi> se prit les pieds dans des vêtements, par terre ; un peu plus loin, il heurta une crédence encore chargée de vaisselle. « Sans doute, elle aura mangé », se dit-il ; et il avançait vers le lit, perdu dans les ténèbres, au fond de la chambre. Quand il fut au bord, afin d'embrasser sa femme, il se pencha sur l'oreiller où les deux têtes reposaient l'une près de l'autre. Alors, il sentit contre sa bouche l'impression d'une barbe.</p>
+            <p>Il se recula, croyant devenir fou ; mais il revint près du lit, et ses doigts, en palpant, rencontrèrent des cheveux, qui étaient très longs. Pour se convaincre de son erreur, il repassa lentement sa main sur l'oreiller. C'était bien une barbe, cette fois, et un homme ! un homme couché avec sa femme !</p>
+            <p>Éclatant d'une colère démesurée, il bondit sur eux, à coups de poignard ; et il trépignait, écumait, avec des hurlements de bête fauve. Puis il s'arrêta. Les morts, percés au cœur, n'avaient pas même bougé. Il écoutait attentivement leurs deux râles presque égaux, et, à mesure qu'ils s'affaiblissaient, un autre, tout au loin, les continuait. Incertaine d'abord, cette voix plaintive, longuement poussée, se rapprochait, s'enfla, devint cruelle, et il reconnut, terrifié, le bramement du grand cerf noir.</p>
+            <p>Et comme il se retournait, il crut voir, dans l'encadrure de la porte, le fantôme de sa femme, une lumière à la main.</p>
+            <p>Le tapage du meurtre l'avait attirée. D'un large coup d'œil, elle comprit tout, et s'enfuyant d'horreur laissa tomber son flambeau.</p>
+            <p>Il le ramassa.</p>
+            <p>Son <hi rend="b">père</hi> et sa <hi rend="b">mère</hi> étaient devant lui, étendus sur le dos, avec un trou dans la poitrine ; et leurs visages, d'une majestueuse douceur, avaient l'air de garder comme un secret éternel. Des éclaboussures et des flaques de sang s'étalaient au milieu de leur peau blanche, sur les draps du lit, par terre, le long d'un Christ d'ivoire suspendu dans l'alcôve. Le reflet écarlate du vitrail, alors frappé par le soleil, éclairait ces taches rouges, et en jetait de plus nombreuses dans tout l'appartement. <hi rend="b">Julien</hi> marcha vers les deux morts en se disant, en voulant croire que cela n'était pas possible, qu'il s'était trompé, qu'il y a parfois des ressemblances inexplicables. Enfin, il se baissa légèrement pour voir de tout près le vieillard ; et il aperçut, entre ses paupières mal fermées, une prunelle éteinte, qui le brûla comme du feu. Puis il se porta de l'autre côté de la couche, occupé par l'autre corps, dont les cheveux blancs masquaient une partie de la figure. <hi rend="b">Julien</hi> lui passa les doigts sous ses bandeaux, leva sa tête ; — et il la regardait, en la tenant au bout de son bras roidi, pendant que de l'autre main, il s'éclairait avec le flambeau. Des gouttes, suintant du matelas, tombaient une à une sur le plancher.</p>
+            <p>À la fin du jour, il se présenta devant sa femme ; et, d'une voix différente de la sienne, il lui commande premièrement de ne pas lui répondre, de ne pas l'approcher, de ne plus même le regarder, et qu'elle eût à suivre, sous peine de damnation, tous ses ordres qui étaient irrévocables.</p>
+            <p>Les funérailles seraient faites selon les instructions qu'il avait laissées par écrit, sur un prie-Dieu, dans la chambre des morts. Il lui abandonnait son palais, ses vassaux, tous ses biens, sans même retenir les vêtements de son corps, et ses sandales, que l'on trouverait au haut de l'escalier.</p>
+            <p>Elle avait obéi à la volonté de Dieu, en occasionnant son crime, et devait prier pour son âme, puisque désormais il n'existait plus.</p>
+            <p>On enterra les morts avec magnificence, dans l'église d'un monastère à trois journées du château. Un moine en cagoule rabattue suivit le cortège, loin de tous les autres, sans que personne osât lui parler.</p>
+            <p>Il resta, pendant la messe, à plat ventre au milieu du portail, les bras en croix, et le front dans la poussière.</p>
+            <p>Après l'ensevelissement, on le vit prendre le chemin qui menait aux montagnes. Il se retourna plusieurs fois et finit par disparaître.</p>
+         </div>
+      </body>
+   </text>
+</TEI>
