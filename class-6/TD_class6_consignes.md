@@ -5,7 +5,7 @@
 # Environnement de travail
 
 - Document XML : `class6_st_julien_hospitalier.xml`.
-- **Un exemple des documents de sortie se trouve dans le dossier `/class-6/out`**.
+- **Un exemple des documents de sortie se trouve dans le dossier `/class-6/out`. Vous pouvez à tout moment regarder le résultat attendu en utilisant la fonction `Code source de la page` de votre navigateur.**
 
 # Consigne générale
 
@@ -87,12 +87,12 @@ Utiliser pour chaque chapitre la procédure appliquée pour la page Home afin de
 3. Regarder les corrections des TD précédents pour constituer un index des noms de lieux et un index des noms de personnes. **Le code ne doit pas être repris tel quel : vous devez enlever certains éléments (création des `@corresp`) et en ajouter d'autres :**
   - L'index doit sous la forme `<p><i>dauphin de France</i> : <a href="./st_julien_chap2.html">2</a>.</p>`.
   - Utiliser des conditions XSL afin de créer les liens vers les pages où aparraissent les entrées d'index (balise `<a>` de l'exemple ce-dessus).
-4. Regarder les corrections des TD précédents afin d'ajouter la template qui permet de transformer les `<hi>` en `<persName>` ou `<placename>` selon le cas.
+4. Transformer l'ensemble des `<hi>` en `<span>`.
 5. Ajouter dans une balise `<footer/>` le contenu de la balise `<edition>`.
 
 # Étape 5. CSS
 
-- Proposer un habillage CSS pour vos documents.
+- Proposer un habillage CSS pour les documents.
 
 
 
