@@ -1,0 +1,59 @@
+\documentclass{beamer}
+\usepackage[french]{babel}
+\usepackage{inputenc}
+\usetheme{metropolis}
+\usecolortheme{cormorant}
+\usepackage{minted}
+\usepackage {ifthen}
+\newboolean{printCode}
+\setboolean{printCode}{true}
+% \usemintedstyle{trac}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ulem}  % texte barré
+
+% texte surligné
+\usepackage{soul}
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
+
+\title{Technique et chaîne de publication électronique avec XSLT (7/7)}
+\date{2023, 9 janv. - 20 fev.}
+\author{Jean-Damien Généro}
+\institute{École nationale des chartes -- M2 TNAH}
+
+\begin{document}
+    \maketitle
+
+    \section{XSLT. Transformation vers \LaTeX}
+
+    \begin{frame}{XSLT/ Méthode texte (1/2)}
+        \Large
+        \begin{itemize}
+            \item Même en-tête XSL que pour la transformation vers HTML.
+            \bigskip
+            \item Transformation directe de XML à \LaTeX{} non-prise en charge par XSLT \textbf{$\rightarrow$ utiliser la méthode \texttt{text} dans le \texttt{<xsl:output/>}}.
+            \bigskip
+            \item Conséquence $\rightarrow$ les commandes \LaTeX{} ne sont pas reconnues comme telles et traitées comme du texte.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{XSLT/ Méthode texte (2/2). Template \LaTeX{} basique}
+        \begin{minted}{tex}
+\documentclass[]{book}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+% votre texte
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table des matières}
+\end{document}
+        \end{minted}
+    \end{frame}
+\end{document}
