@@ -76,7 +76,7 @@
 
 # Étape 3 : contexte de publication
 
-- Ourvir le PDF du dossier `/class-7/out` et reproduire le paragraphe de la page 2 à partir du contenu des balises `<title level="m"/>`, `<title level="a"/>`, `<author/>`, `<edition/>`.
+- Ouvrir le PDF du dossier `/class-7/out` et reproduire le paragraphe de la page 2 à partir du contenu des balises `<titleStmt/>` et `<editionStmt/>`.
 
 # Étape 4 : les chapitres
 
