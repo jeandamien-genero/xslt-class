@@ -11,8 +11,8 @@
 | 19 dec.   | 3. XSLT : variables et paramètres. XPath : fonctions.   |
 | 8 janv.   | 4. XSLT : conditions, boucles et tri.                   |
 | 9 janv.   | Contrôle continu + 5. Transformation de XML vers XML.   |
-| 17 janv.  | 6. Transformation de XML vers HTML.                     |
-| 23 janv.  | 7. Transformation de XML vers LaTeX.                    |
+| 17 janv.  | 6. Transformation de XML vers LaTeX.                     |
+| 23 janv.  | 7. Transformation de XML vers HTML.                    |
 
 ## Ressources
 
