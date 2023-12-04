@@ -1,6 +1,6 @@
 # Cours de XSLT
 
-École nationale des chartes, Master TNAH, 2024.
+École nationale des chartes, Master TNAH, 2023-2024.
 
 ## Programme
 

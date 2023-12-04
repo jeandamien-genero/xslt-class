@@ -1,15 +1,15 @@
 % __ENC/ XSLT/ Évaluation__
 % Jean-Damien Généro
-% 2023
+% 2024
 
-**À rendre le 31 mars 2023.**
+**À rendre le 29 mars 2024.**
 
 # Consignes générales
 - Faire un projet individuel ;
 - Rédiger une feuille de style XSL permettant de transformer votre projet XML-TEI en HTML ou en LaTeX.
   - La transformation HTML devra aboutir à plusieurs fichiers HTML ;
   - La transformation LaTeX devra aboutir à un seul fichier `.tex`.
-- Déposer l'ensemble des documents dans un repository GitHub, _de préférence celui dans lequel vous aviez rendu votre projet TEI_. Confirmer le dépôt **au plus tard le 31 mars 2023** à <jean-damien.genero@cnrs.fr>.
+- Déposer l'ensemble des documents dans un repository GitHub, _de préférence celui dans lequel vous aviez rendu votre projet TEI_. Confirmer le dépôt *en indiquant son lien* **au plus tard le 29 mars 2024** à <jean-damien.genero@cnrs.fr>.
 
 # Modalités d'évalution
 
