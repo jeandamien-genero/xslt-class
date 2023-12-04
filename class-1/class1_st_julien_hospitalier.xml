@@ -3,7 +3,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title level="m">Trois Comtes</title>
+            <title level="m">Trois Contes</title>
             <title level="a">La Légende de Saint Julien l'Hospitalier</title>
             <author>Gustave Flaubert</author>
          </titleStmt>
@@ -14,7 +14,7 @@
             <biblStruct xml:lang="fr">
                <monogr>
                   <author>Gustave Flaubert</author>
-                  <title level="m">Trois Comtes</title>
+                  <title level="m">Trois Contes</title>
                   <title level="a">La Légende de Saint Julien l'Hospitalier</title>
                   <imprint>
                      <pubPlace>Paris</pubPlace>
