@@ -243,7 +243,7 @@
     \begin{frame}{XPath/ Prédicats : exemples}
         \Large
         \begin{itemize}
-            \item \texttt{//tag[position()=1]} ou \texttt{//tag[2]} $\rightarrow$ condition de position (\texttt{<tag>} n°2) ;
+            \item \texttt{//tag[position()=2]} ou \texttt{//tag[2]} $\rightarrow$ condition de position (\texttt{<tag>} n°2) ;
             \bigskip
             \item \texttt{//tag[last()]} $\rightarrow$ dernier \texttt{<tag>} ;
             \bigskip
@@ -303,36 +303,62 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (1/2)}
+    \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (1/4)}
     \Large
     Noms de domaine et attributs présents de base dans Oxygen :
         \begin{itemize}
-            \item \texttt{@xmlns:xsl} : espace de nom (\textit{namespace}) XSL ;
-            \item \texttt{@xmlns:xs} : espace de nom XML ;
+            \item \texttt{@xmlns:xsl} : espace de noms (\textit{namespace}) XSL ;
+            \item \texttt{@xmlns:xs} : espace de noms XML ;
             \item \texttt{@exclude-result-prefixes} : liste des préfixes qui ne seront pas copiés dans l'output ;
             \item \texttt{@version} : version de XSL (1, 2 ou 3).
         \end{itemize}
     \end{frame}
 
-    \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (2/2)}
-    \Large Attributs à remplacer/ajouter dans Oxygen :
+    \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (2/4)}
+    \Large Attributs à remplacer dans Oxygen \textit{pour une transformation vers XML-TEI}:
         \begin{itemize}
-            \item remplacer \texttt{@xmlns:xs} par \texttt{@xmlns:tei} : espace de nom de l'élément racine de l'output ;
+            \item remplacer \texttt{@xmlns:xs} par \texttt{@xmlns:tei} $\rightarrow$ espace de noms de l'élément racine de l'output.
             \begin{itemize}
             \large
                 \item évite l'ajout de \texttt{tei:} à chaque élément "matché" par une règle (\texttt{@match}).
             \end{itemize}
             \bigskip
             \item remplacer \texttt{xs} par \texttt{tei} dans \texttt{@exclude-result-prefixes}.
-            \bigskip
-            \item \texttt{@xpath-default-namespace} :  espace de nom des chemins XPath.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (3/4)}
+    \Large Attributs à ajouter dans Oxygen \textit{pour une transformation vers XML-TEI}:
+        \begin{itemize}
+            \item \texttt{@xpath-default-namespace} :  espace de noms des chemins XPath de la feuille de style (http://www.tei-c.org/ns/1.0).
             \begin{itemize}
             \large
                 \item évite de devoir écrire le préfixe \texttt{tei:} devant chaque n\oe ud d'une expression XPath.
             \end{itemize}
+            \bigskip
+            \item \texttt{@xmlns} avec l'adresse de l'espace de noms TEI.
+            \begin{itemize}
+            \large
+                \item détermine l'espace de noms de l'ensemble du document de sortie.
+            \end{itemize}
         \end{itemize}
     \end{frame}
 
+    \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (4/4)}
+    \Large
+        \begin{itemize}
+            \item \textbf{attention} : TEI est un standard XML parmi d'autres ! Pour EAD, changer l'espace de noms TEI par celui d'EAD et le préfixe \texttt{tei:} par \texttt{ead:}.
+            \bigskip
+            \item Atributs pour la transformation vers HTML ou LaTeX : 
+            \begin{itemize}
+            \Large
+                \item \texttt{@xmlns:xsl} (adresse de l'espace de noms XSLT)
+                \item \texttt{@xpath-default-namespace} (adresse de l'espace de noms TEI)
+                \item \texttt{@version} (version de XSL utilisée)
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+    
     \begin{frame}[fragile]{XSLT/ Instruction de 1\up{er} niveau : \texttt{<xsl:output>}}
     \Large
         \begin{itemize}
@@ -350,7 +376,7 @@
         \end{minted}
     \end{frame}
 
-    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (1/3)}
+    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (1/4)}
         \Large
         \begin{itemize}
             \item une règle peut être écrite de plusieurs manières ;
@@ -358,20 +384,22 @@
             \item \texttt{<xsl:template>} $\rightarrow$ définir une règle ;
             \bigskip
             \item Possède un \texttt{@match} avec pour valeur un chemin XPath qui donne l'emplacement du n\oe ud sur lequel sera appliquée la règle.
-            \bigskip
-            \item Appliquer une règle vide sur la racine :
         \end{itemize}
+    \end{frame}
 
+    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (2/4)}
+        \Large
+        \begin{itemize}
+            \item 1. Appliquer une règle vide sur la racine :
+        \end{itemize}
+        
         \begin{minted}{xslt}
     <xsl:template match="/">
     </xsl:template>
         \end{minted}
-    \end{frame}
-
-    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (2/3)}
-        \Large
+        
         \begin{itemize}
-            \item Appliquer la règle \texttt{copy-of} sur la racine :
+            \item 2. Appliquer la règle \texttt{copy-of} sur la racine :
         \end{itemize}
 
         \begin{minted}{xslt}
@@ -379,13 +407,21 @@
         <xsl:copy-of select="."/>
     </xsl:template>
         \end{minted}
+    \end{frame}
 
+    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (3/4)}
+        \Large
         \begin{itemize}
-            \item Comment copier le \texttt{<body>} dans l'output, mais sans le \texttt{<teiHeader>} ?
+            \item Effet d'une règle vide $\rightarrow$ la partie de l'arbre d'entrée sélectionnée n'est pas copiée dans l'arbre de sortie.
+            \bigskip
+            \item Effet de \texttt{<xsl:copy-of/>} $\rightarrow$ copie à l'identique la balise matchée par
+le @select et ses n\oe uds enfants ;
+            \bigskip
+            \item \textbf{Comment copier le \texttt{<body>} dans l'output, mais sans le \texttt{<teiHeader>} ?}
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (3/3)}
+    \begin{frame}[fragile]{XSLT/ Écriture d'une règle : \texttt{<xsl:template>} (4/4)}
     \Large
         \begin{itemize}
             \item Comment obtenir cet arbre en output ?
@@ -416,7 +452,7 @@
             \bigskip
             \item Manipulation de XSL avec Oxygen ;
             \bigskip
-            \item Élément racine : \texttt{<xsl:stylesheet>} et ses attributs ;
+            \item Élément racine : \texttt{<xsl:stylesheet>} et ses attributs (en-tête XSL) ;
             \bigskip
             \item Instructions de premier niveau :
             \begin{itemize}
