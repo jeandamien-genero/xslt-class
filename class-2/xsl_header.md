@@ -49,4 +49,4 @@ La déclaration de plusieurs espaces de nom dans `<xsl:stylesheet/>` est nécess
 ## 3. L'espace de nom du document de sortie
 
 - La déclaration de l'espace de nom du document de sortie est une bonne pratique ; elle se fait via l'attribut `@xmlns` : `xmlns="http://www.tei-c.org/ns/1.0"`.
-- Cette déclaration est à adapter en fonction du type du document de sortie : _elle n'est en général pas nécessaire lorsqu'il s'agit d'un document html ou texte_.
+- Cette déclaration est à adapter en fonction du type du document de sortie : _elle n'est pas nécessaire lorsqu'il s'agit d'un document html ou texte_.
