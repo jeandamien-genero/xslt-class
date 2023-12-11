@@ -11,7 +11,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs"
     version="2.0">
-    
+    <!-- contenu de la feuille de style -->
 </xsl:stylesheet>
 ```
 
@@ -50,3 +50,16 @@ La déclaration de plusieurs espaces de nom dans `<xsl:stylesheet/>` est nécess
 
 - La déclaration de l'espace de nom du document de sortie est une bonne pratique ; elle se fait via l'attribut `@xmlns` : `xmlns="http://www.tei-c.org/ns/1.0"`.
 - Cette déclaration est à adapter en fonction du type du document de sortie : _elle n'est pas nécessaire lorsqu'il s'agit d'un document html ou texte_.
+
+## 4. Exemple d'en-tête pour une transformation XML-TEI vers XML-TEI
+
+```xml
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    exclude-result-prefixes="tei"
+    xmlns="http://www.tei-c.org/ns/1.0"
+    version="2.0">
+    <!-- contenu de la feuille de style -->
+</xsl:stylesheet>
+```
