@@ -37,7 +37,7 @@
             <xsl:copy-of select="//titleStmt"/>
             <editionStmt>
                 <edition>
-                    Édition dans le cadre du M2 TNAH 2023.
+                    Édition dans le cadre du M2 TNAH 2024.
                 </edition>
                 <respStmt>
                     <name>Jean-Damien Généro</name>

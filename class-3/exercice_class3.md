@@ -1,6 +1,6 @@
 % __ENC/ XSLT/ Exercice (séance 3)__
 % Jean-Damien Généro
-% 2023
+% 2024
 
 # Environnement de travail
 - Document XML : `class3_st_julien_hospitalier.xml`.
@@ -11,7 +11,7 @@
 
 # Consignes
 ## 1/ Les variables
-- écrire le "Trois comtes" du premier `<title>` en majuscule. Stocker cette balise dans une variable `$booktitle`.
+- écrire le "Trois contes" du premier `<title>` en majuscule. Stocker cette balise dans une variable `$booktitle`.
 - enlever la majuscule à "Saint" dans le deuxième `<title>`. Stocker cette balise dans une variable `$chaptitle`.
 
 ## 2/ Le `<teiHeader>`
