@@ -171,7 +171,7 @@ Sélection de fonctions :
   - `a` remplacé par `A` ;
   - `b` remplacé par `B` ;
   - `c` remplacé par `c`.
-  - _NB : le troisième paramètre n'a pas besoin d'être de la même taille que le deuxième. Avec `translate(string, 'abc', '')`, tous les  `a`, les `b` et les `c` seront enlevés de `string`._ABC
+  - *NB :* le troisième paramètre n'a pas besoin d'être de la même taille que le deuxième. Avec `translate(string, 'abc', '')`, tous les  `a`, les `b` et les `c` seront enlevés de `string`.
   - Ce n'est pas l'équivalent d'un "rechercher/remplacer".
 
 - `replace(string, 'abc', 'ABC')` : retourne `string` avec `abc` remplacé par `ABC`.
