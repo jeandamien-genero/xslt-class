@@ -7,7 +7,6 @@
 - Document XSL :
   - Ouvrir une feuille de style XSLT dans Oxygen.
   - Compléter son en-tête et ajouter l'instruction d'output avec XML comme méthode.
-- Penser à utiliser le bon processeur Saxon.
 
 # Consignes
 ## 1/ Les variables
@@ -16,12 +15,11 @@
 
 ## 2/ Le `<teiHeader>`
 - Dans le `<titleStmt>` : reproduire les balises `<title>`, mais en changeant leurs textes par le contenu des variables définies précédemment.
-- Dans le `<listBibl>` : reproduire tout sauf les commentaires (proposer une règle utilisant le noeud `comment()`).
 - Ajouter un `<editionStmt/>` (avec `<edition/>` et `<respStmt/>`).
 - Reproduire les autres balises sans changement.
 
 ## 3/ Le `<text>`
-- Ajouter dans le `<body>` une balise `<head>` avec pour contenu : `$booktitle`, `$sectiontitle`.
+- Ajouter dans le `<body>` une balise `<head>` avec pour contenu : `$booktitle`, `$chaptitle`.
 - Changer le format de numérotation des `<div>`.
 - Numéroter les paragraphes en continu.
 - Appliquer une condition aux `<hi>` pour :
