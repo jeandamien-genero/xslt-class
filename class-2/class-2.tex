@@ -64,9 +64,9 @@
          \Large
          \begin{itemize}
             \item Ouvrir Oxygen.
-             \item Ouvrir \texttt{/class-2/class2\_teiAll\_oxygen.xml}.
-             \item Ouvrir une feuille de style XSLT vide.
-             \item Compléter l'en-tête XSLT et ajouter l'instruction \texttt{<xsl:output/>} (\textit{cf.} fiche xsl\_header).
+            \item Désactiver le paramètre par défaut : \textit{Preferences} > \textit{XML} > \textit{XML Parser} > \textit{RELAX NG}, décocher \textit{Add default attributes}  % https://stackoverflow.com/questions/74825370/xslt-unwanted-part-adds-in-transformation
+             \item Ouvrir \texttt{class2\_teiAll\_oxygen.xml}.
+             \item Ouvrir une feuille de style XSLT vide, compléter l'en-tête XSLT et ajouter l'instruction \texttt{<xsl:output/>} (\textit{cf.} fiche xsl\_header).
          \end{itemize}
      \end{frame}
 
@@ -242,15 +242,9 @@
     \begin{frame}{XSLT/ Principales instructions (4/4) : \texttt{<xsl:apply-templates/>}}
          \Large
          \begin{itemize}
+            \item Ouvrir les fichiers \texttt{class2\_st\_julien\_hospitalier.xml} et \texttt{att\_apply\_templates\_class2.xsl}.
+            \bigskip
              \item \texttt{<xsl:apply-templates/>} est une \textbf{instruction récursive} : le processeur va \textbf{examiner les n\oe uds enfants} de la balise  matchée par le \texttt{@match} dans l’ordre et \textbf{appliquer les règles} qui leur sont associées.
-            % pour faire deux règles différentes :
-            % (1) reproduire la balise <TEI>
-            % (2) appliquer les règles sur body des slides précédentes :
-            % <xsl:template match="/">
-            %   <TEI>
-            %       <xsl:apply-templates/> --> permet de dire "applique des règles aux éléments enfants"
-            %   </TEI>
-            % </xsl:template>
          \end{itemize}
      \end{frame}
 
@@ -293,7 +287,7 @@
     \begin{frame}{XSLT/ L'élément \texttt{<xsl:apply-templates/>} : \texttt{@mode} (3/4)}
         \Large
         \begin{itemize}
-            \item \texttt{@mode} permet d'appliquer des règles différentes \textbf{à un même élément XML} en fonction de son emplacement ou de son contenu (= son \og mode \fg).
+            \item \texttt{@mode} permet d'appliquer des règles différentes \textbf{à un même élément XML} en fonction de son emplacement ou de son contenu (= son \og mode \fg) \textit{sans avoir à mettre ces règles dans un seul} \texttt{<xsl:template/>}.
             \bigskip
             \item Le \texttt{@mode} doit être présent et dans le \texttt{<xsl:apply-templates/>} et dans le \texttt{<xsl:template/>} avec la même valeur (= le nom du mode).
         \end{itemize}
