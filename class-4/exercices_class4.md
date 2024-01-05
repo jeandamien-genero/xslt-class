@@ -1,6 +1,6 @@
 % __ENC/ XSLT/ Exercices (séance 4)__
 % Jean-Damien Généro
-% 2023
+% 2024
 
 ## Exercice 4.1 : `<xsl:for-each/>`
 
@@ -34,9 +34,7 @@
 
 - Faire une boucle sur les deux références dans `<listBibl>` :
 	- Reproduire les `<biblStruct>` sans changement ;
-	- Mais les trier :
-	  - Une première fois par date de parution ;
-	  - Une deuxième fois par ordre alphabétique (en vous basant sur le nom de famille).
+	- Mais les trier par ordre alphabétique (en vous basant sur le nom de famille).
 
 ## Exercice 4.3 : `<xsl:for-each-group/>`
 
