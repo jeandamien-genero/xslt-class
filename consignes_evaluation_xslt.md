@@ -17,7 +17,7 @@
 
 - Rédiger des règles simples avec un XPath valide pour insérer le maximum d'informations du document source dans le ou les document(s) de sortie (/5);
 - Utiliser plusieurs fonctions et prédicats XPath (/2);
-- Utiliser au moins une variable XSL (/1) ;
+- Utiliser au moins une variable XSL, autre que celles contenant les noms de votre/vos fichier(s) de sortie (/1) ;
 - Utiliser au moins une règle avec une ou plusieurs condition(s) et, _si nécessaire_, une ou plusieurs boucles (/3);
 - Organiser votre feuille de style de manière claire et commenter votre code de manière à ce qu'il soit facile à lire (/4).
 
