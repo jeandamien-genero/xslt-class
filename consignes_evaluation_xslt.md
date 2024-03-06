@@ -27,5 +27,5 @@
 - Proposer un habillage CSS pour vos documents (/1,5).
 
 # XML vers LaTeX
-- Le fichier `.tex` doit pouvoir être compilé sans erreur avec la commande `pdflatex` (et tout autre commande _que vous indiquerez_, par exemple `splitindex`) (/2,5). 
+- Le fichier `.tex` doit pouvoir être compilé sans erreur avec la commande `pdflatex` ou `xelatex` (et tout autre commande _que vous indiquerez_, par exemple `splitindex`) (/2,5). 
 - Il doit contenir une page de titre et une table des matières cliquable (/2,5).
