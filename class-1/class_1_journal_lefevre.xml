@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Journal de Jean Le Fèvre. Extrait encodé des folios 33v-34r</title>
+            <author>Jean Le Fèvre</author>
+            <editor>
+               <name>Michel Hébert</name>
+            </editor>
+            <editor>
+               <name>Jean-Michel Matz</name>
+            </editor>
+         </titleStmt>
+         <editionStmt>
+            <edition>Édition établie et encodée d'un extrait tiré de "Journal de Jean Le Fèvre", BnF, ms fr. 5016, folios 33v-34r.</edition>
+            <respStmt>
+               <resp>Encodage pour un usage pédagogique</resp>
+               <name>Jean-Damien Généro</name>
+            </respStmt>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>École nationale des chartes</publisher>
+            <date>2024</date>
+            <availability>
+               <licence>Utilisation à des fins pédagogiques uniquement, conformément aux droits d'auteur.</licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <settlement>Paris</settlement>
+                  <repository>Bibliothèque nationale de France</repository>
+                  <idno source="bnf">ms fr. 5015</idno>
+                  <idno source="gallica">btv1b9007462z</idno>
+                  <msName>Journal de Jean Le Fèvre, évêque de Chartres, chancelier des rois de Sicile Louis I et Louis II d'Anjou, allant de 1381 à 1388</msName>
+               </msIdentifier>
+            </msDesc>
+            <biblStruct>
+               <monogr>
+                  <title>Journal de Jean Le Fèvre. Chancelier des ducs d'Anjou et comtes de Provence (1381-1388)</title>
+                  <editor>
+                     <name>Michel Hébert</name>
+                  </editor>
+                  <editor>
+                     <name>Jean-Michel Matz</name>
+                  </editor>
+                  <imprint>
+                     <pubPlace>Rennes</pubPlace>
+                     <publisher>Presses universitaires de Rennes</publisher>
+                     <date>2020</date>
+                  </imprint>
+                  <extent>526 pages</extent>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Fichier encodé pour un cours de XSLT dans le cadre du Master TNAH 2024-2025 de l'École nationale des chartes.</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="frm">Moyen français</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <change when="2024-12-03">Création du fichier et encodage initial par Jean-Damien Généro.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text xml:lang="frm">
+      <body>
+         <div n="1">
+            <head>La mort du roy Loys</head>
+            <p><pb n="33v"/>Le XXVI jour dudit mois assés pres d'Angiers en venant, je encontré Guillaume de Nades qui me dit la mort de monsegneur le roy Loys, laquelle fu le XX jour du mois precedent, a Bar; et l'avoit monseigneur de Berri envoié au conseil de Madame pour leur dire qu'il ne le feissent savoir a Madame jusques a ce que il fust devers elle. Moi venu a Angiers au vespre, trouvé que verité estoit, et ne alé point devers Madame pour l'eure qu'il estoit trop tart.</p>
+            <p><pb n="34r"/>Jeudi vegile saint Symon et saint Jude, je porté le seel de feu monseigneur en la chambre des comptes en la maison des Predicateurs, et le dit seel je enclos en un sac de toile et le lié tres bien et y fis mettre les signés du sire de Chasteaufromont, de messire J. Pelerin, du doyen d'Angiers, de maistre J. le Begut, et de Thiebault Levraut. Et ledit seel ainsi enfermé je emporté: ce fu fait a matin.</p>
+            <p>Aprés disner je alé veoir Madame, et li fis la reverence, et dissimulé comme les aultres sanz li reveler la mort de monsegneur pour doubte du duc de Berry.</p>
+            <p>Samedi ensuivant Madame tint requestes, ignorant la mort de monsegneur et y fu messire Guillaume de Craon; et fu deliberé que les gens des trois pays qui estoient mandés au VI jour de novembre seroient contremandés par le conseil; et Madame en fu sachant et consentant.</p>
+            <p>La vegile de Toussains vint un messagé nommé Gastelet apportant lettres de par monsegneur de Berri adressans aus genz du conseil de Madame et me apporta les dictes lettres. Je les ouvri present le sire de la Ferté et messire Regnaut Bresille.</p>
+            <p>Et puis m'en alé en la chambre des comptes; et y fu le sire de Chasteaufromont et les autres du conseil et furent leues les lettres et en ladicte chambre laissiées. Comme devant fu deliberé de attendre le duc de Berry.</p>
+         </div>
+         <div n="2">
+            <head>Segond de novembre. Merquedi. Nouvelle de la mort du roy Loys</head>
+            <p>Le jour des Mors aprés disner, Madame la royne sceut la mort de monsegneur le roy Loys; moy et messire Guillaume de Craon et maistre J. le Begu et l'abbé de Saint Aubin, l'evesque d'Angiers, le chantre et Thibauld Levraut la confortasmes ce que nous peusmes. Le sire de Chasteaufromont vint veoir Madame et ploura comme une commere tres nicement sanz dire mot de reconfort.</p>
+            <p>Aprés fu deliberé que monsegneur de la Fierté escriroit a monsegneur de Berri comment Madame savoit ces nouvelles et li recommendoit soi et son estat.</p>
+            <p>Vendredi quart jour de novembre vint l'arcediacre de Chasteau de Ler de Paris; rapporta que conseil avoit esté tenu a Paris pour Madame ou avoient esté messire P. d'Orgemont, messire Ernault de Corbic, maistre J. Canard, maistre Oudart de Molins; conclus fu par eulx que a Madame de droit et de coustume apartient la garde de messegneurs ses enfans et le bail de leur terres se elle le veult prendre.</p>
+         </div>
+      </body>
+   </text>
+</TEI>
