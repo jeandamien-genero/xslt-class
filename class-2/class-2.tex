@@ -19,7 +19,7 @@
 \newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
 
 \title{Technique et chaîne de publication électronique avec XSLT (2/7)}
-\date{2023, 5 dec. - 2024, 23 janv.}
+\date{2024, 3 dec. - 2025, 22 janv.}    
 \author{Jean-Damien Généro}
 \institute{École nationale des chartes -- M2 TNAH}
 
@@ -97,7 +97,6 @@
             \item Les balises XML ou HTML peuvent être écrites dans des \texttt{<xsl:element name="tag">} et les attributs dans des \texttt{<xsl:attribute name="@tt">} :
         \end{itemize}
         \normalsize
-        % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
          \begin{minted}{xml}
 <xsl:template match="//body">
     <xsl:element name="div">
@@ -115,10 +114,8 @@
      \Large
         \begin{itemize}
             \item Du texte peut être mis dans une règle : pour remplacer le contenu d'une balise, pour écrire le préambule d'un doc \LaTeX.
-            \item (Dans le fichier d'exemple : remplacer tout.)
         \end{itemize}
         \normalsize
-        % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
          \begin{minted}{xml}
         <xsl:template match="/">
             \documentclass[a4paper]{book}
@@ -328,15 +325,16 @@
      \end{frame}
 
      \begin{frame}[fragile]{XSLT/ Une autre instruction : \texttt{<xsl:number/> (2/2)}}
+     % dans le fichier att_apply_templates_class2.xsl, remplacer la template <xsl:template match="//body//p"> par celle ci:
          \Large
          \begin{minted}{xml}
 <xsl:template match="//body//p">
         <xsl:copy>
             <xsl:attribute name="n">
                 <xsl:number
-                    count="//div[@n]/p" 
-                    level="any" 
-                    format="1"/>
+                   count="//div[@n]/p" 
+                   level="any" 
+                   format="1"/>
             </xsl:attribute>
             <xsl:value-of select="."/>
         </xsl:copy>
@@ -351,22 +349,21 @@
             \item Cette règle fait appel à d'autres avec \texttt{apply-templates} (avec ou sans @tt), elles sont appliquées dans l'ordre ;
             \item S'il n'y a pas de règle, il passe au suivant.
             \bigskip
-            \item Donc : l'ordre d'écriture des règles n'a aucune importance ;
+            \item Donc : l'ordre d'écriture des règles n'a pas importance ;
             \item \textbf{Attention  $\rightarrow$ restez lisible + commentez votre code !}
         \end{itemize}
     \end{frame}
 
      \begin{frame}{XSLT/ Exercice}
         \Large
-         $\rightarrow$ Écrire une feuille de style XSL avec le fichier de \textit{St Julien l'Hospitalier} :
+         $\rightarrow$ Écrire une feuille de style XSL avec le fichier du \textit{Journal de Jean le Fèvre} :
          \normalsize
          \begin{itemize}
          \large
              \item Constituer un fichier XML-TEI valide ;
              \item Ajouter un \texttt{<editionStmt/>} (avec \texttt{<edition/>} et \texttt{<respStmt/>}) ;
              \item Numéroter dans des formats différents les \texttt{<head>} et les \texttt{<p>} ;
-             \item Transformer les \texttt{<hi rend="b"/>} en des \texttt{<persName>} et les \texttt{<hi rend="i"/>} en des \texttt{<placename>} ;
-             \item Bonus : ajouter le début du chap. 3 (lien dans le \texttt{<teiHeader/>}).
+             \item Transformer les \texttt{<hi rend="b"/>} en des \texttt{<persName>} et les \texttt{<hi rend="i"/>} en des \texttt{<placename>}.
          \end{itemize}
      \end{frame}
      

@@ -264,9 +264,9 @@
     \begin{frame}{XPath/ Exercice. \textit{Journal de Jean Le Fèvre}.}
         \Large
         \begin{itemize}
-            \item Donner le chemin de la racine vers \texttt{<author>} dans le \texttt{<sourceDesc>}.
+            \item Donner le chemin de la racine vers \texttt{<msName>} dans le \texttt{<sourceDesc>}.
             \bigskip
-            \item Utiliser un prédicat pour sélectionner les \texttt{<title>} ayant un \texttt{@level="m"}.
+            \item Utiliser un prédicat pour sélectionner le \texttt{<idno>} avec le \texttt{@source="gallica"}.
         \end{itemize}
     \end{frame}
 
@@ -429,16 +429,13 @@ le @select et ses n\oe uds enfants ;
         \normalsize
         \begin{minted}{xml}
     <div>
-        <head>Trois contes</head>
-        <!-- copie de la div n°1 de l'input -->
+        <head>Extrait du Journal de
+              Jean Le Fèvre</head>
         <div n="1">
-            <head>I.</head>
-            ...
+            <!-- copie de la div n°1 de l'input -->
         </div>
-        <!-- copie de la div n°2 de l'input -->
         <div n="2">
-            <head>II.</head>
-            ...
+            <!-- copie de la div n°2 de l'input -->
         </div>
     </div>
         \end{minted}
