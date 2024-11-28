@@ -1,108 +1,79 @@
 % __ENC/ XSLT/ Exercices (séance 4)__
 % Jean-Damien Généro
-% 2024
+% 2025
 
-## Exercice 4.1 : `<xsl:for-each/>`
+Écrire une feuille de style XSLT pour transformer le document XML-TEI extrait du *Journal de Jean Le Fèvre*. La transformation conservera le format XML-TEI en sortie.
 
-- Faire une boucle sur les deux `<title>` du `<titleStmt>` pour 
-	- les reproduire à l'identitque (avec leur attribut) ;
-	- ajouter leur texte dans une sous balise `<title>` ;
-	- ajouter les prénoms et noms de l'auteur dans une balise `<persName>` juste après ;
-	- ajouter la date de publication entre paranthèse après `<persName>` ;
-	- mettre `par` entre le nouveau `<title>` et le `<persName>`.
+## Question 4.1
 
-- Résultat attentu :
+- Reproduire sans changement les parties suivantes du document: `<fileDesc/>` et `<profileDesc/>`.
 
-```xml
-<titleStmt>
-	<title level="m">
-		<title>Trois Comtes</title>
-		par
-		<persName>Gustave Flaubert</persName>
-		(1877)
-	</title>
-	<title level="a">
-		<title>La Légende de Saint Julien l'Hospitalier</title>
-		par
-		<persName>Gustave Flaubert</persName>
-		(1877)
-	</title>
-</titleStmt>
-```
+## Question 4.2
 
-## Exercice 4.2 : `<xsl:sort/>`
+- Stocker dans une variable `$today` la date du jour grâce à une fonction XPath.
+- Ajouter une balise `<change>` au `<revisionDesc>` avec un attribut `@when` contenant `$today`, et pour contenu "Modifications effectuées au cours de la quatrième séance par [votre nom]".
 
-- Faire une boucle sur les deux références dans `<listBibl>` :
-	- Reproduire les `<biblStruct>` sans changement ;
-	- Mais les trier par ordre alphabétique (en vous basant sur le nom de famille).
+## Question 4.3
 
-## Exercice 4.3 : `<xsl:for-each-group/>`
+- Reproduire sans changement le `<msDesc/>`
+- Trier les références bibliographiques (`<biblStruct>`) par date dans la section `<sourceDesc>`. Pour cela, vous pouvez utiliser:
+  - `<xsl:apply-templates/>` et son attribut `@mode`.
+  - `<<xsl:sort/>`.
 
-- Sélectionner le `<text/>` et reproduire les balises `<text>`.
-- Reproduire les balises `<body>` ;
-- Reproduire les deux `<div>` des chapitres sans changement ;
-- Ajouter un index des noms de personnes et un index des noms de lieux dans une nouvelle `<div>` après celles des chapitres.
-	- Ajouter un `<head>Index</head>` ;
-	- Utiliser plusieurs `<xsl:for-each-group/>` :
-	  1. Un premier `<xsl:for-each-group/>` pour sélectionner les `<hi>` et les grouper en fonction de leur attribut. À l'intérieur, créer une `<div>` avec un `@type`. Utiliser une condition pour spécifier la valeur de l'`@type` : `name` si l'itération est sur les `<hi rend="b"/>` et `place` si elle est sur les `<hi rend="i"/>` ;
-	  2. Un deuxième `<xsl:for-each-group/>` pour créer **un seul** `<p/>` par entrée d'index (attention, il y a un doublon : `Julien`). Ajouter le nom de l'individu ou du lieu dans le `<p>` et deux points (`:`) devant. Exemple : `<p>Julien :</p>` ;
-	  3. Un troisième `<xsl:for-each-group/>` pour ajouter devant les deux points le numéro des chapitres où apparaissent les entrées d'index. Exemple : `<p>Julien : 1, 2.</p>`.
-- Résultat attentu : _cf._ 4.2.
+## Question 4.4
 
-## Exercice 4.4
+- Mettre les titres des chapitres (`<head>`) en majuscule.
 
-- Utiliser la feuille de style écrite avec les exercices précédents. Retirer le code de l'exercice 4.2.
+## Question 4.5
 
-### 4.4.1. La bibliographie
-- Dans `<listBibl>`, remplacer chaque référence contenue dans `<biblStruct>` par un `<bibl>` reproduisant le contenu des commentaires.
-	- Utiliser des boucles et conditions ;
-	- Trier les reférences par ordre alphabétique ;
-	- Les guillemets français correspondent aux entités `&#171;` et `&#187;`.
+- Numéroter les paragraphes dans chaque `<div>` en ajoutant un attribut `@n` aux balises `<p>`, avec un numéro correspondant à leur position dans le `<div>`.
 
-- Résultat attendu :
-```xml
-<listBibl>
-	<bibl>DORD-CROUSLÉ Stéphanie, « Établir le texte de Trois contes », 
-		<hi rend="i">Flaubert. Revue critique et génétique</hi> 
-		[<ref target="https://journals.openedition.org/flaubert/4143">
-		en ligne</ref>], n°24, 2020.</bibl>
-	<bibl>NARR Sabine, « Le Saint Julien de Flaubert – une poétique
-		du vitrail narrativisé », <hi rend="i">Les Dossiers du Grihl</hi>
-		[<ref target="http://journals.openedition.org/dossiersgrihl/6447">
-		en ligne</ref>, DOI : <ref target="htpps://doi.org/10.4000/
-		dossiersgrihl.6447">10.4000/dossiersgrihl.6447</ref>], n°9-1,
-		2015.</bibl>
-	<bibl>SAMSON Véronique, « Le roman après la fin », dans 
-		<hi rend="i">Après la fin. Gustave Flaubert et le temps du 
-		roman</hi>, chap. 2, 2021, p. 105-190.</bibl>
-</listBibl>
-```
+## Question 4.6
 
-### 4.4.2. Le `<text>`
-- Reproduire les balises `<text>`, `<body>`, `<head>` et `<div>`.
-- Numéroter en continu les `<p>`.
-- Transformer les `<hi rend="b">` en `<persName ana="">` et les `<hi rend="i">` en `<placeName ana="">`, le `@ana` devant à chaque fois avoir pour valeur le texte contenu dans la balise, mais sans les apostrophes et avec les espaces remplacés par des tirets bas (`_`).
-	- Exemple : `<hi rend="b">empereur d'Occitanie</hi>` est transformé en `<persName ana="empereur_doccitanie">empereur d'Occitanie</persName>`.
-	- Pour éviter une erreur de validation ("`Unmatched quote in expression`"), créer une variable nommée `apos` et contenant une apostrophe (`'`).
-- Reprendre l'index de l'exercice 4.3 et :
-  - Écrire en majuscule les entrées d'index ;
-  - Ajouter aux `<p>` un `@corresp` avec pour valeur : `#` suivi du contenu des `@ana` créés plus haut.
+- Dans un nouvel élément `<div n="table-of-contents"/>`, créer une table des matières avec les titres des sections, et une numérotation en chiffres romains. Pour cela, vous pouvez utiliser:
+  - `<xsl:apply-templates/>` et son attribut `@mode`.
+  - `<xsl:for-each/>`.
+  - `<xsl:number/>`.
 
-- Résultat attendu (dans le `<body>`, après les `<div>` des chapitres) :
+Exemple:
 
 ```xml
-<div>
-	<head>Index</head>
-	<div type="name">
-		<p corresp="#père">père : 1.</p>
-		<p corresp="#mère">mère : 1.</p>
-		<p corresp="#julien">Julien : 1, 2.</p>
-		<p corresp="#dauphin_de_france">dauphin de France : 2.</p>
-		(...)
-	</div>
-	<div type="place">
-		<p corresp="#milan">Milan : 2.</p>
-		<p corresp="#oberbirbach">Oberbirbach : 2.</p>
-	</div>
+<div n="table-of-contents">
+    <head>Table des matières</head>
+    <p>I. Annonce de la mort de Louis Ier d'Anjou</p>
+    <p>II. Marie de Blois apprend la mort de son mari</p>
 </div>
 ```
+## Question 4.7
+
+- Dans un nouvel élément `<div n="index-noms"/>`, lister dans des balises `<p/>` tous les noms propres. Les noms propres qui doivent appraître correspondent au contenu des `@ref` des `<persName>`, dépourvu des signes `#` et où les `_` sont remplacés par des espaces. Chaque entrée d'index doit apparaître une seule fois.
+  - `<xsl:apply-templates/>` et son attribut `@mode`.
+  - `<xsl:for-each-group/>`.
+  - `<xsl:sort/>`.
+
+Exemple:
+
+```xml
+         <div type="index-noms">
+            <head>Index des noms propres</head>
+            <p>Begut (Jean le)</p>
+            <p>Berry (Jean de)</p>
+            <p>Blois (Marie de)</p>
+            <p>Bresille (Regnaut)</p>
+            <p>Carnard (Jean)</p>
+            <p>Corbic (Ernault de)</p>
+            <p>Gastelet (Messager)</p>
+            <p>Levraut (Thibaut)</p>
+            <p>Orgemont (Pierre d')</p>
+            <p>Pelerin (Jean)</p>
+            <p>Anjou (Louis Ier)</p>
+            <p>Avoir (Pierre, sg. de Chateaufromont)</p>
+            <p>Craon (Guillaume de, sg. de la Ferté)</p>
+            <p>Molins (Oudart de)</p>
+            <p>Nades (Guillaume de)</p>
+         </div>
+```
+
+## Question 4.8
+
+- Faire de même avec les `<placeName>`, dans un nouvel élément `<div n="index-lieux"/>`, et avec `<head>Index des noms de lieux</head>`.
