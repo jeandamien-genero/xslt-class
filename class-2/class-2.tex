@@ -354,6 +354,25 @@
         \end{itemize}
     \end{frame}
 
+     \begin{frame}{XSLT/ Mécanisme de résolution des conflits}
+    \Large
+        \begin{itemize}
+            \item Si plusieurs règles s'appliquent à un même n\oe ud $\rightarrow$ \textbf{une seule règle est exécutée}.
+            \bigskip
+            \item XSLT examine la \textbf{priorité} de chaque règle: plus un match est spécifique, plus il a de chances d’être choisi:
+            \begin{itemize}
+                \item Priorité par défaut : \texttt{node()}, \texttt{text()} et \texttt{*} à -0.5 (générique); les balises à 0.5 (spécifique). 
+                \item Priorité explicite: \texttt{@priority}.
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    % <xsl:template match="node()|@*">
+    %     <xsl:copy>
+    %         <xsl:apply-templates select="@*|node()" />
+    %     </xsl:copy>
+    % </xsl:template>
+
      \begin{frame}{XSLT/ Exercice}
         \Large
          $\rightarrow$ Écrire une feuille de style XSL avec le fichier du \textit{Journal de Jean le Fèvre} :
