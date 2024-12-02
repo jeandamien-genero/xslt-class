@@ -1,6 +1,6 @@
 % __ENC/ XSLT/ En-tête XSL__
 % Jean-Damien Généro
-% 2024
+% 2025
 
 À l'ouverture du fichier `XSLT Stylesheet` dans Oxygen, l'en-tête de la feuille de style se présente ainsi :
 
