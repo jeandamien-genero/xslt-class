@@ -48,13 +48,18 @@
             <xsl:apply-templates />
         </div>
     </xsl:template>
+    <xsl:template match="//body//head">
+        <xsl:copy>
+            <xsl:value-of select="."/>
+        </xsl:copy>
+    </xsl:template>
     <xsl:template match="//body//p">
         <xsl:copy>
             <xsl:value-of select="."/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="//body/div[@n]" mode="toc">
-        <p>Chapitre <xsl:value-of select="./head"/></p>
+        <p><xsl:value-of select="./@n"/>. <xsl:value-of select="./head"/></p>
     </xsl:template>-->
     
 </xsl:stylesheet>

@@ -1,6 +1,6 @@
 % __ENC/ XSLT/ En-tête XSL__
 % Jean-Damien Généro
-% 2024
+% 2025
 
 À l'ouverture du fichier `XSLT Stylesheet` dans Oxygen, l'en-tête de la feuille de style se présente ainsi :
 
@@ -26,7 +26,7 @@ La déclaration de plusieurs espaces de nom dans `<xsl:stylesheet/>` est nécess
 
 ## 2. À déclarer : l'espace de nom du document source
 
-### 2.1 Dcoument source XML basique
+### 2.1 Document source XML basique
 
 - Le document de base `XSLT Stylesheet` de Oxygen est paramétré pour transformer un document XML sans standard particulier (TEI, EAD, etc.).
 - C'est la raison pour laquelle l'en-tête de ce document contient l'espace de nom XML `xmlns:xs="http://www.w3.org/2001/XMLSchema"` et l'exlusion de son préfixe `xs:` (`exclude-result-prefixes="xs"`).

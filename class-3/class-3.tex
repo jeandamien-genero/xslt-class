@@ -19,7 +19,7 @@
 \newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
 
 \title{Technique et chaîne de publication électronique avec XSLT (3/7)}
-\date{2023, 5 dec. - 2024, 23 janv.}
+\date{2024, 3 dec. - 2025, 22 janv.} 
 \author{Jean-Damien Généro}
 \institute{École nationale des chartes -- M2 TNAH}
 
@@ -124,14 +124,14 @@
 
     \begin{frame}[fragile]{XSLT/ \texttt{<xsl:if/>} (2/2)}
         \Large
-        Exemple : dans \textit{St Julien}, ajouter un \texttt{@n} aux \texttt{<p/>} \textbf{si ces derniers sont dans la \texttt{<div/>} \no 2} :
+        Exemple : dans le \textit{Journal}, ajouter un \texttt{@n} aux \texttt{<p/>} \textbf{si ces derniers sont dans la \texttt{<div/>} \no 2} :
         \normalsize
         \begin{minted}{xml}
-<xsl:template match="//div[@n]/p">
+<xsl:template match="//text//div/p">
     <p>
         <xsl:if test="parent::div/@n = 2">
             <xsl:attribute name="n">
-                ...
+                <!-- à vous de compléter -->
             </xsl:attribute>
         </xsl:if>
         <xsl:value-of select="."/>

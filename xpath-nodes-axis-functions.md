@@ -1,6 +1,6 @@
 % __ENC/ XSLT/ Fiche XPath__
 % Jean-Damien Généro
-% 2023-2024
+% 2025
 
 ---
 
@@ -210,3 +210,9 @@ Sélection de fonctions :
 - `count(arg)` : évalue le nombre de `node` et retourne ce nombre.
   - Le résultat est identique à `last()`, la différence étant que `count()` prend une expression XPath en argument.
   - Exemple d'utilisation : connaître le nombre total d'élément au sein d'un parent (comme le nombre de `<p>` au sein d'une `<div>`).
+
+### 3.8 `tokenize()`
+
+- `tokenize(string, delimiter)` : divise la chaîne `string` en fonction d'un `delimiter`. 
+  - Nouveauté de XSLT 2.
+  - Exemple d'utilisation : manipuler les valeurs multiples d'un attribut. Si `@type="maison campagne"`, `tokenize(@type, ' ')` retour `maison` et `campagne`.
