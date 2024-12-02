@@ -384,6 +384,8 @@
             \item \texttt{<xsl:template>} $\rightarrow$ définir une règle ;
             \bigskip
             \item Possède un \texttt{@match} avec pour valeur un chemin XPath qui donne l'emplacement du n\oe ud sur lequel sera appliquée la règle.
+            \bigskip
+            \item Un doc peut être composé d'une seule règle ou d'une succession de règle. Important $\rightarrow$ \textbf{cohérence des XPath}.
         \end{itemize}
     \end{frame}
 
@@ -417,7 +419,7 @@
             \item Effet de \texttt{<xsl:copy-of/>} $\rightarrow$ copie à l'identique la balise matchée par
 le @select et ses n\oe uds enfants ;
             \bigskip
-            \item \textbf{Comment copier le \texttt{<body>} dans l'output, mais sans le \texttt{<teiHeader>} ?}
+            \item \textbf{Comment copier le \texttt{<text>} dans l'output, mais sans le \texttt{<teiHeader>} ?}
         \end{itemize}
     \end{frame}
 
