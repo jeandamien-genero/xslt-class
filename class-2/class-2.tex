@@ -65,8 +65,9 @@
          \begin{itemize}
             \item Ouvrir Oxygen.
             \item Désactiver le paramètre par défaut : \textit{Preferences} > \textit{XML} > \textit{XML Parser} > \textit{RELAX NG}, décocher \textit{Add default attributes}  % https://stackoverflow.com/questions/74825370/xslt-unwanted-part-adds-in-transformation
-             \item Ouvrir \texttt{class2\_teiAll\_oxygen.xml}.
-             \item Ouvrir une feuille de style XSLT vide, compléter l'en-tête XSLT et ajouter l'instruction \texttt{<xsl:output/>} (\textit{cf.} fiche xsl\_header).
+            \bigskip
+             \item Ouvrir \texttt{class\_2\_journal\_lefevre.xml}
+             \item Ouvrir \texttt{class\_2\_ex\_instructions.xsl}
          \end{itemize}
      \end{frame}
 
@@ -76,15 +77,14 @@
             \item Des balises peuvent être écrites directement dans un \texttt{<xsl:template>} :
         \end{itemize}
         \normalsize
-        % reprendre saint julien en enlevant les balises <head> dans les titres des chapitres ?
          \begin{minted}{xml}
-<xsl:template match="//body">
+<xsl:template match="//text/body/div[1]">
     <body>
         <div>
             <head type="chap">
-                <xsl:value-of select="./p[1]"/>
+                 <xsl:value-of select="./head"/>
             </head>
-            <xsl:copy-of select="./p[2]"/>
+            <xsl:copy-of select="./p"/>
         </div>
     </body>
 </xsl:template>
@@ -113,7 +113,7 @@
      \begin{frame}[fragile]{XSLT/ Contenu d'un \texttt{<xsl:template>} : du texte (1/2)}
      \Large
         \begin{itemize}
-            \item Du texte peut être mis dans une règle : pour remplacer le contenu d'une balise, pour écrire le préambule d'un doc \LaTeX.
+            \item Du texte peut être mis directement dans une règle : remplacer le contenu d'une balise, écrire le préambule d'un doc \LaTeX.
         \end{itemize}
         \normalsize
          \begin{minted}{xml}
@@ -136,16 +136,16 @@
         \end{itemize}
         \normalsize
          \begin{minted}{xml}
-<xsl:template match="/TEI/text/body">
-    <xsl:element name="body">
-        <xsl:element name="head">
-            <xsl:attribute name="type">chap</xsl:attribute>
-            <xsl:value-of select="./p[1]"/>
-        </xsl:element>
-        <xsl:element name="p">
-            <xsl:text>nouveau texte</xsl:text>
-        </xsl:element>
-    </xsl:element>
+<xsl:template match="/TEI/text/body/div[1]">
+    <body>
+        <div>
+            <head type="chap">
+                <xsl:text>Chapitre n°1. </xsl:text>
+                <xsl:value-of select="./head"/>
+            </head>
+            <xsl:copy-of select="./p"/>
+        </div>
+    </body>
 </xsl:template>
          \end{minted}
      \end{frame}
@@ -153,9 +153,9 @@
      \begin{frame}{Règles basiques : notions essentielles}
          \Large
          \begin{itemize}
-             \item Les balises XML et HTML peuvent être écrites en clair dans un \texttt{<xsl:template>} ;
+             \item Les balises XML et HTML peuvent être écrites directement dans un \texttt{<xsl:template>} ;
              \item Les balises XML et HTML peuvent aussi être écrites dans un \texttt{<xsl:element name="tag">} et un attribut dans un \texttt{<xsl:attribute name="@att">}.
-             \item Le texte (commandes \LaTeX{}) peut être mis soit en clair soit dans un \texttt{<xsl:text>}.
+             \item Le texte (commandes \LaTeX{}) peut être mis soit directement soit dans un \texttt{<xsl:text>}.
          \end{itemize}
      \end{frame}
 
@@ -239,7 +239,8 @@
     \begin{frame}{XSLT/ Principales instructions (4/4) : \texttt{<xsl:apply-templates/>}}
          \Large
          \begin{itemize}
-            \item Ouvrir les fichiers \texttt{class2\_st\_julien\_hospitalier.xml} et \texttt{att\_apply\_templates\_class2.xsl}.
+            \item Ouvrir \texttt{att\_apply\_templates\_class2}
+            \texttt{.xsl}
             \bigskip
              \item \texttt{<xsl:apply-templates/>} est une \textbf{instruction récursive} : le processeur va \textbf{examiner les n\oe uds enfants} de la balise  matchée par le \texttt{@match} dans l’ordre et \textbf{appliquer les règles} qui leur sont associées.
          \end{itemize}
@@ -250,7 +251,7 @@
         \Large
         \begin{itemize}
             \item Sans elle, le processeur s'arrête à l'emplacement désigné par le \texttt{@match} du \texttt{<xsl:template/>} et ne traite pas les éléments enfants.
-            \item Exemple : la balise \texttt{<TEI/>}.
+            \item Exemple : la balise \texttt{<TEI/>}  (\textit{cf.} fichier).
         \end{itemize}
         % noeud courant = celui dans @select (fixe)
         % noeud de contexte = celui sur le quel opère la règle (variable)
@@ -303,7 +304,7 @@
         <div>
             <head>Table des matières</head>
             <xsl:apply-templates mode="toc"/>
-        </div>
+         </div>
     </xsl:copy>
 </xsl:template>
         \end{minted}
