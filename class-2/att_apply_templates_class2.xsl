@@ -8,9 +8,9 @@
     version="2.0">
     <xsl:output indent="yes" method="xml"/>
     
-    <!-- EXEMPLE D'UTILISATION D'XSL:APPLY-TEMPLATES ET XSL:NUMBER -->
+    <!-- EXEMPLES D'UTILISATION D'XSL:APPLY-TEMPLATES ET XSL:NUMBER -->
     
-    <!-- 1. UTILISATION BASIQUE DE XSL:APPLY-TEMPLATES-->
+    <!-- A. UTILISATION BASIQUE DE XSL:APPLY-TEMPLATES-->
     <xsl:template match="/">
         <TEI>
             <xsl:apply-templates/>
@@ -23,7 +23,7 @@
         <xsl:copy-of select="."/>
     </xsl:template>
     
-    <!-- 2. XSL:APPLY-TEMPLATES ET @SELECT -->
+    <!-- B. XSL:APPLY-TEMPLATES ET @SELECT -->
     <!--<xsl:template match="/">
         <TEI>
             <xsl:apply-templates select="//text"/>
@@ -37,7 +37,7 @@
         <xsl:copy-of select="."/>
     </xsl:template>-->
     
-    <!-- 3. XSL:APPLY-TEMPLATES ET @MODE -->
+    <!-- C. XSL:APPLY-TEMPLATES ET @MODE -->
     <!--<xsl:template match="/TEI">
         <xsl:copy>
             <xsl:apply-templates/>
@@ -79,7 +79,7 @@
         <p><xsl:value-of select="./@n"/>. <xsl:value-of select="./head"/></p>
     </xsl:template>-->
     
-    <!-- EXEMPLE 4 : XSL:NUMBER -->
+    <!-- EXEMPLE D : XSL:NUMBER -->
     <!--<xsl:template match="//body//p">
         <xsl:copy>
             <xsl:attribute name="n">
