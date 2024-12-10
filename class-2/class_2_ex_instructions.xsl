@@ -8,7 +8,7 @@
     
     <!-- EXEMPLE 1 -->
     <!-- Des balises peuvent être écrites directement dans un <xsl:template/> -->
-    <xsl:template match="/TEI/teiHeader"/>
+    <!--<xsl:template match="/TEI/teiHeader"/>
     <xsl:template match="/TEI/text/body/div[1]">
         <body>
             <div>
@@ -19,18 +19,19 @@
             </div>
         </body>
     </xsl:template>
-    <xsl:template match="/TEI/text/body/div[2]"/>
+    <xsl:template match="/TEI/text/body/div[2]"/>-->
     
     <!-- EXEMPLE 2 -->
     <!-- Les balises XML ou HTML peuvent être écrites dans des <xsl:element name="tag"/> et les attributs dans des <xsl:attribute name="@tt"/> -->
     
     <!--<xsl:template match="/TEI/teiHeader"/>
     <xsl:template match="/TEI/text/body/div[1]"/>
-    <xsl:template match="/TEI/text/body/div[2]">
+    <xsl:template match="//body/div[2]">
         <xsl:element name="div">
             <xsl:element name="head">
                 <xsl:attribute name="type">chap</xsl:attribute>
-                <xsl:value-of select="./head"/>
+                <xsl:attribute name="n">2</xsl:attribute>
+                Chapitre . <xsl:value-of select="./head"/>
             </xsl:element>
             <xsl:copy-of select="./p"/>
         </xsl:element>
@@ -43,8 +44,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage{fontspec}
+\author{Jean-Damien Généro}
 \begin{document}
-    <xsl:apply-templates/>
+        \textbf{<xsl:value-of select="./TEI/text/body/div[1]/head"/>}
 \end{document}
     </xsl:template>-->
     
@@ -82,9 +84,23 @@
     
     <!-- EXEMPLE 7 : <xsl:value-of/> -->
     
-    <!--<xsl:template match="/TEI/teiHeader"/>
+    <xsl:template match="/TEI/teiHeader"/>
     <xsl:template match="/TEI/text/body/div">
         <xsl:value-of select="."/>
-    </xsl:template>-->
+    </xsl:template>
     
 </xsl:stylesheet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

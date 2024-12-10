@@ -80,16 +80,52 @@
     </xsl:template>-->
     
     <!-- EXEMPLE D : XSL:NUMBER -->
-    <!--<xsl:template match="//body//p">
+    <!-- NB: ces règles sont les mêmes que celles de l'exemple C, -->
+    <!-- avec <xsl:number> dans celle qui match //body//p -->
+    <!--<xsl:template match="/TEI">
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="//teiHeader">
+        <xsl:copy-of select="."/>
+    </xsl:template>
+    <xsl:template match="//text">
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="//body">
+        <xsl:copy>
+            <xsl:apply-templates />
+            <div>
+                <head>Table des matières</head>
+                <xsl:apply-templates mode="toc"/>
+            </div>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="//body/div[@n]">
+        <div>
+            <xsl:apply-templates />
+        </div>
+    </xsl:template>
+    <xsl:template match="//body//head">
+        <xsl:copy>
+            <xsl:value-of select="."/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="//body//p">
         <xsl:copy>
             <xsl:attribute name="n">
                 <xsl:number
-                    count="//div[@n]/p" 
-                    level="any" 
+                    count="." 
+                    level="multiple" 
                     format="1"/>
             </xsl:attribute>
             <xsl:value-of select="."/>
         </xsl:copy>
+    </xsl:template>
+    <xsl:template match="//body/div[@n]" mode="toc">
+        <p><xsl:value-of select="./@n"/>. <xsl:value-of select="./head"/></p>
     </xsl:template>-->
-    
 </xsl:stylesheet>
