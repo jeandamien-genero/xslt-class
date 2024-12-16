@@ -6,7 +6,7 @@
     exclude-result-prefixes="tei"
     version="2.0">
     <!-- 1. INSTRUCTION D'OUTPUT : XML -->
-    <xsl:output method="xml" indent="yes" omit-xml-declaration="no"/>
+    <xsl:output method="xml" indent="yes"/>
     
     <!-- 2. VARIABLES ET PARAMÈTRES -->
     <xsl:param name="booktitle" select="//titleStmt/title"/>
@@ -29,7 +29,8 @@
             <xsl:apply-templates select="//fileDesc"/>
             <xsl:copy-of select="//encodingDesc"/>
             <xsl:copy-of select="//profileDesc"/>
-            <xsl:apply-templates select="//revisionDesc"/>
+            <xsl:copy-of select="//revisionDesc"/>
+            <!--<xsl:copy-of select="//fileDesc/following-sibling::*"/>-->
         </xsl:copy>
     </xsl:template>
     
@@ -45,15 +46,6 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- 4.3 ajout d'un <change> dans le <revisionDesc> -->
-    <xsl:template match="//revisionDesc">
-        <revisionDesc>
-            <xsl:copy-of select="./change"/>
-            <change when="{$today}">Modification effectuée au cours de la troisième séance par [VOTRE NOM].</change>
-        </revisionDesc>
-    </xsl:template>
-    
-    
     <!-- 5. Reproduction à l'identique du <text> -->
     <xsl:template match="//text">
         <xsl:element name="text">
@@ -64,7 +56,7 @@
     </xsl:template>
     <xsl:template match="//text//div">
         <xsl:copy>
-                <xsl:apply-templates/>
+            <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="//text//div/head">

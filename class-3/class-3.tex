@@ -78,16 +78,24 @@
         \end{minted}
     \end{frame}
 
-    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:variable/>} (3/3)}
-        \Large
+    \begin{frame}[fragile]{XSLT/ \texttt{<xsl:variable/>} (2/3)}
+        \large
         \begin{itemize}
             \item  Pour appeler une variable : \texttt{\$} + \texttt{@name} dans le \texttt{@select} d'un \texttt{<xsl:value-of/>} (uniquement le texte) ou d'un \texttt{<xsl:copy-of/>} (texte + balises).
+        \end{itemize}
+        \begin{minted}{xml}
+<xsl:template math="/">
+    <xsl:value-of select="$x"/>
+    <xsl:copy-of select="$y"/>
+</xsl:template>
+        \end{minted}
+        \begin{itemize}
+            \item  Possibilité de les ajouter directement comme valeur d'attribut avec des \texttt{\{ \}}.
         \end{itemize}
         \large
         \begin{minted}{xml}
 <xsl:template math="/">
-    <xsl:value-of select="$x"/>
-    <xsl:value-of select="$y"/>
+    <TEI xml:lang="{$language}">...</TEI>
 </xsl:template>
         \end{minted}
     \end{frame}
@@ -151,3 +159,4 @@
         \end{itemize}
     \end{frame}
 \end{document}
+
