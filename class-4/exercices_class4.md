@@ -6,7 +6,7 @@
 
 ## Question 4.1
 
-- Reproduire sans changement les parties suivantes du document: `<fileDesc/>` et `<profileDesc/>`.
+- Reproduire sans changement les parties suivantes du document: `<titleStmt/>`, `<publicationStmt/>`, `<encodingDesc/>` et `<profileDesc/>`.
 
 ## Question 4.2
 
@@ -17,8 +17,8 @@
 
 - Reproduire sans changement le `<msDesc/>`
 - Trier les références bibliographiques (`<biblStruct>`) par date dans la section `<sourceDesc>`. Pour cela, vous pouvez utiliser:
-  - `<xsl:apply-templates/>` et son attribut `@mode`.
-  - `<<xsl:sort/>`.
+  - `<xsl:for-each/>`.
+  - `<xsl:sort/>`.
 
 ## Question 4.4
 
@@ -26,7 +26,7 @@
 
 ## Question 4.5
 
-- Numéroter les paragraphes dans chaque `<div>` en ajoutant un attribut `@n` aux balises `<p>`, avec un numéro correspondant à leur position dans le `<div>`.
+- Numéroter les paragraphes dans chaque `<div>` en ajoutant un attribut `@n` aux balises `<p>`.
 
 ## Question 4.6
 
@@ -40,15 +40,15 @@ Exemple:
 ```xml
 <div n="table-of-contents">
     <head>Table des matières</head>
-    <p>I. Annonce de la mort de Louis Ier d'Anjou</p>
-    <p>II. Marie de Blois apprend la mort de son mari</p>
+    <p>I. Jean Le Fèvre apprend la mort de Louis Ier</p>
+    <p>II. Marie de Blois apprend la mort de Louis Ier</p>
 </div>
 ```
 ## Question 4.7
 
 - Dans un nouvel élément `<div n="index-noms"/>`, lister dans des balises `<p/>` tous les noms propres. Les noms propres qui doivent appraître correspondent au contenu des `@ref` des `<persName>`, dépourvu des signes `#` et où les `_` sont remplacés par des espaces. Chaque entrée d'index doit apparaître une seule fois.
   - `<xsl:apply-templates/>` et son attribut `@mode`.
-  - `<xsl:for-each-group/>`.
+  - `<xsl:for-each-group/>` et `current-grouping-key()`.
   - `<xsl:sort/>`.
 
 Exemple:
