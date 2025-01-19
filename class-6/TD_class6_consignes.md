@@ -1,99 +1,78 @@
 % __ENC/ XSLT/ TD XML vers HTML (séance 6)__
 % Jean-Damien Généro
-% 2023
+% 2025
 
 # Environnement de travail
 
-- Document XML : `class6_st_julien_hospitalier.xml`.
-- **Un exemple des documents de sortie se trouve dans le dossier `/class-6/out`. Vous pouvez à tout moment regarder le résultat attendu en utilisant la fonction `Code source de la page` de votre navigateur.**
+- Document XML : `class_6_journal_lefevre.xml`.
 
-# Consigne générale
+- Document XSL : `class_6_journal_lefevre.xsl`.
 
-- Transformer le fichier `class6_st_julien_hospitalier.xml` en quatre documents HTML : `st_julien_home.html`, `st_julien_chap1.html`, `st_julien_chap2.html` et `st_julien_index.html`.
+- Vous travaillez avec un document XML-TEI contenant une édition de plusieurs chapitres du *Journal du chancelier Le Fèvre*. Cet exercice a pour objectif de manipuler les données de ce document et de le transformer en plusieurs fichiers HTML contenant des hyperliens pour circuler entre les fichiers.
 
-# Étape 1
+- La sortie est composée de six fichiers HTML qui s'enregistrent dans un dossier `out/`:
+  - `home.html`, qui contient des éléments du `<teiHeader/>`, une visioneuse IIIF constituée à partir des `<facsimile/>` et la liste des chapitres.
+  - `chapitre1.html`, qui contient la `<div/>` du premier chapitre.
+  - `chapitre2.html`, qui contient la `<div/>` du deuxième chapitre.
+  - `chapitre3.html`, qui contient la `<div/>` du troisième chapitre.
+  - `chapitre4.html`, qui contient la `<div/>` du quatrième chapitre.
+  - `index.html`, qui contient un index cliquable des noms de personne.
+- Les `<head/>`, barre de navigation et `<footer/>` des six documents HTML sont identiques.
 
-- Paramétrer l'en-tête XSL et l'instruction `output` pour une transformation vers HTML.
-- Écrire quatre variables contenant les noms des quatre fichiers HTML.
-- Écrire une variable `$header` contenant :
+## 1. Le `home.html`
 
-```html
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title><!-- valeur du <title> de niveau a--></title>
-    <meta name="description"
-    	  content="
-    	  <!-- valeur du title de niveau a--> 
-    	  par <!-- valeur de author -->
-    	  " />
-    <meta name="author" content="<!-- vos prénom et nom -->"/>
-</head>
-```
+### 1.1 La navbar
 
-- Écrire des variables avec les liens (balise HTML `<a href="#"/>`) vers chaque fichier. Le but est de pouvoir naviguer entre chaque fichier directement dans votre navigateur.
-  - `$return_home`, qui doit contenir le lien `./st_julien_home.html` et le texte `Revenir à l'accueil` _en italique_ (balise HTML `<i>`).
-  - `$return_chap1` : sur le même modèle que la précédente ;
-  - `$return_chap2` : sur le même modèle que la précédente ;
-  - `$return_index` : sur le même modèle que la précédente.
+- À partir du modèle du lien vers le fichier `home.html`, compléter la variable `$navbar`:
+  - Utiliser une boucle pour ajouter quatre `<li>` contenant les liens vers les chapitres.
+  - Ajouter un lien vers le fichier d'index.
 
-# Étape 2. Page Home
+### 1.2 Présentation du site
 
-1. Écrire une template qui matche la racine.
-  - Cette template contiendra les ``<xsl:call-template/>`` sous cette forme :
-```xml
-<xsl:call-template name="home"/>
-<xsl:call-template name="chapter1"/>
-<xsl:call-template name="chapter2"/>
-<xsl:call-template name="index_st_julien"/>
-```
-  - Commencer par ajouter le premier sur le home.
-2. Écrire une template avec un `@name="home"` pour la lier à ce premier ``<xsl:call-template/>``.
-3. À l'intérieur de cette template, écrire un `<xsl:result-document/>` pour le fichier `home` (_regarder le cours précédent pour se remémorer le fonctionnement de cette instruction_).
-4. Écrire un code HTML valide à l'intérieur avec :
-	- La balise racine `html` ;
-	- Le `<header/>` HTML (appeler la variable `$header` définie plus haut)
-5. Dans le `<body/>`, ouvrir une première `<div>` avec les éléments de titre sous cette forme :
+- Dans la première `<div>`, ajouter cette phrase: `<p>Ce site propose un édition de plusieurs chapitres tirés du livre <em>Journal de Jean Le Fèvre. Chancelier des ducs d'Anjou et comtes de Provence (1381-1388)</em> de Michel Hébert et Jean-Michel Matz (Presses universitaires de Rennes, 2020).</p>` à partir de ces éléments tirés du `<biblStruct/>` du XML:
+  - Le `<title/>` (`Journal de Jean Le Fèvre. Chancelier des ducs d'Anjou et comtes de Provence (1381-1388)`.
+  - Les `<name/>` (`Michel Hébert` et `Jean-Michel Matz`).
+  - Le `<publisher/>` et la `<date/>` (`Presses universitaires de Rennes` et `2020`).
 
-```html
-<h1>Édition en ligne de <!-- titre de niveau m en italique --></h1>
-<h2>Comte n°2, <!-- titre de niveau a en italique --></i></h2>
-<p><!-- auteur --></p>
-```
+### 1.3 Informations sur le manuscrit
 
-7. Dans une deuxième `<div>`, ajouter dans des `<p>` : 
-	- `Résumé :` en gras, suivi du résumé (balise `<abstract>`) ;
-	- Des liens vers les chapitres et l'index (utiliser les variables définies plus haut).
-8. Ajouter dans une balise `<footer/>` le contenu de la balise `<edition>`.
+- Compléter la section `Informations sur le manuscrit` avec des éléments tirés du `<msIdentifier/>`.
+- Le lien vers la numérisation sur Gallica doit être composé en concaténant `https://gallica.bnf.fr/ark:/` et le contenu de la balise `<idno/>`.
 
-# Étape 3. Les chapitres.
+### 1.4 Visionneuse IIIF
 
-_Regarder la correction du TD de la séance 5 pour savoir comment envoyer les textes des deux chapitres dans deux documents de sortie différents._
+- Dans le code javascript, effacer le contenu du champ `tileSources` et recréer les adresses qu'il contient à partir du contenu des `<facsimile/>`.
+- Les adresses sont composées à partir de la concaténation de `https://gallica.bnf.fr/iiif/ark:/`, le `@url` de `<graphic/>` et `/info.json`.
+- Vous pouvez utiliser `<xsl:for-each/>`.
 
-Utiliser pour chaque chapitre la procédure appliquée pour la page Home afin de :
+### 1.5 Liste des chapitres
 
-1. Ajouter le `<xsl:call-template/>` du chapitre à votre feuille de style.
-2. Lier ce `<xsl:call-template/>` à un `<xsl:template/>`.
-3. Écrire un `<xsl:result-document/>` avec la variable correspondant au chemin du chapitre.
-4. Ajouter le code HTML basique (`<html>`, `<header>`, `<body>`).
-5. Dans le `<body>`, créer une `<div>` contenant :
-  - Un `<h3>` avec le numéro du chapitre ;
-  - Les paragraphes du chapitre (utiliser une boucle `for-each`).
-6. Ajouter dans une balise `<footer/>` le contenu de la balise `<edition>`.
+- Compléter la section `Liste des chapitres` avec des liens vers chaque fichier de chapitre, et le titre de ceux-ci.
+- Vous pouvez utiliser `<xsl:for-each/>`.
 
-# Étape 4. Les index
+**Vous devriez maintenant obtenir un fichier `home.html` identique au modèle.**
 
-1. Comme aux étapes précédentes, ajouter un `<xsl:call-template/>` pour l'index et le lier à un `<xsl:template/>`.
-2. Écrire un `<xsl:result-document/>` et le code HTML basique.
-3. Regarder les corrections des TD précédents pour constituer un index des noms de lieux et un index des noms de personnes. **Le code ne doit pas être repris tel quel : vous devez enlever certains éléments (création des `@corresp`) et en ajouter d'autres :**
-  - L'index doit sous la forme `<p><i>dauphin de France</i> : <a href="./st_julien_chap2.html">2</a>.</p>`.
-  - Utiliser des conditions XSL afin de créer les liens vers les pages où aparraissent les entrées d'index (balise `<a>` de l'exemple ce-dessus).
-4. Transformer l'ensemble des `<hi>` en `<span>`.
-5. Ajouter dans une balise `<footer/>` le contenu de la balise `<edition>`.
+## 2. Les chapitres
 
-# Étape 5. CSS
+- Observer le code HTML du fichier `chapitre1.html`.
+- Créer une template nommée `chapitres` et le `<xsl:call-template/>` correspondant.
+- La nouvelle template doit contenir les variables `$head`, `$navbar` et `$footer`.
+- À l'aide d'une boucle, compléter la nouvelle template avec:
+  - En titre `<h1/>` le titre du chapitre.
+  - Une `<div>` contenant les paragraphes des chapitres (`<p>`).
+- Laisser la possibilité d'appliquer des règles aux enfants des `<p>`.
+
+## 3. L'index
+
+- Observer le code HTML du fichier d'exemple `index.html`.
+- Créer une template nommée `index` et le `<xsl:call-template/>` correspondant.
+- La nouvelle template doit contenir les variables `$head`, `$navbar` et `$footer`.
+- À l'aide d'une boucle, compléter la nouvelle template avec:
+  - Une première boucle groupée pour créer un seul `<p>` par nom propre.
+  - Une deuxième boucle groupée (à l'intérieur de la première) créant un lien vers chaque chapitre où le nom propre apparaît.
+
+## 5. CSS
 
 - Proposer un habillage CSS pour les documents.
 
-
-
-_**Reprenez l'ensemble de l'exercice chez vous jusqu'à pouvoir naviguer correctement entre les quatre documents HTML. Cela vous sera utile pour le projet à rendre pour l'évaluation finale !**_
+**_Reprenez l'ensemble de l'exercice chez vous jusqu'à pouvoir naviguer correctement entre les quatre documents HTML. Cela vous sera utile pour le projet à rendre pour l'évaluation finale!_**

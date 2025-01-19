@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script><script src="https://openseadragon.github.io/openseadragon/openseadragon.min.js"></script><title>Journal de Jean Le Fèvre</title>
+      <style>
+                #navbar > ul > li {
+                    display: inline-block;
+                    list-style: none;
+                }
+            </style>
+   </head>
+   <body style="margin: 2em 20em 5em 20em; font-family: 'Roboto', serif;">
+      <div style="text-align: center;" id="navbar">
+         <ul>
+            <li><a href="home.html">Accueil</a> - </li>
+            <li><a href="chapitre1.html">Chapitre 1</a> - </li>
+            <li><a href="chapitre2.html">Chapitre 2</a> - </li>
+            <li><a href="chapitre3.html">Chapitre 3</a> - </li>
+            <li><a href="chapitre4.html">Chapitre 4</a> - </li>
+            <li><a href="index.html">Index</a></li>
+         </ul>
+      </div>
+      <h1 style="text-align: center;">Édition numérique du <em>Journal</em> de Jean Le Fèvre</h1>
+      <div style="margin: 2em 0 2em 0;">
+         <p>Ce site propose un édition de plusieurs chapitres tirés du livre <em>Journal de Jean Le Fèvre. Chancelier des ducs d'Anjou et comtes de Provence (1381-1388)</em> de Michel Hébert et Jean-Michel Matz (Presses universitaires de Rennes, 2020).</p>
+      </div>
+      <div style="margin: 2em 0 2em 0;">
+         <h2>Informations sur le manuscrit:</h2>
+         <ul>
+            <li>Institution: Bibliothèque nationale de France</li>
+            <li>Cote: ms fr. 5015</li>
+            <li>Numérisation: <a href="https://gallica.bnf.fr/ark:/12148/btv1b9007462z" target="_blank">lien</a></li>
+         </ul>
+      </div>
+      <div id="visioneuse">
+         <div id="_viewer" style="width: 100%; height: 800px;"></div><script type="text/javascript">
+                            var _viewer = OpenSeadragon({
+                            id: "_viewer",
+                            prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+                            sequenceMode: true,
+                            tileSources:[
+                            'https://gallica.bnf.fr/iiif/ark:/12148/btv1b9007462z/f39/info.json', 'https://gallica.bnf.fr/iiif/ark:/12148/btv1b9007462z/f40/info.json', 'https://gallica.bnf.fr/iiif/ark:/12148/btv1b9007462z/f41/info.json', 
+                            ],
+                            });
+                        </script></div>
+      <div>
+         <h2>Chapitres disponibles:</h2>
+         <ul>
+            <li><a href="chapitre1.html" target="_blank">Jean Le Fèvre apprend la mort de Louis Ier</a></li>
+            <li><a href="chapitre2.html" target="_blank">Marie de Blois apprend la mort de Louis Ier</a></li>
+            <li><a href="chapitre3.html" target="_blank">Jean Le Fèvre nommé chancelier de Marie de Blois</a></li>
+            <li><a href="chapitre4.html" target="_blank">La lettre du duc de Berry</a></li>
+         </ul>
+      </div>
+   </body>
+   <footer style="margin: 5em 0 0 0;">
+      <hr>
+      <p>Site réalisé dans le cadre du cours de XSLT du Master TNAH de l'École nationale des
+         chartes.</p>
+   </footer>
+</html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Journal</title>
+                <author>Jean Le Fèvre</author>
+                <editor>
+                    <name>Michel Hébert</name>
+                </editor>
+                <editor>
+                    <name>Jean-Michel Matz</name>
+                </editor>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>École nationale des chartes</publisher>
+                <date>2024</date>
+                <availability>
+                    <licence>Utilisation à des fins pédagogiques uniquement, conformément aux droits d'auteur.</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <settlement>Paris</settlement>
+                        <repository>Bibliothèque nationale de France</repository>
+                        <idno source="bnf">ms fr. 5015</idno>
+                        <idno source="gallica">12148/btv1b9007462z</idno>
+                        <msName>Journal de Jean Le Fèvre, évêque de Chartres, chancelier des rois de Sicile Louis I et Louis II d'Anjou, allant de 1381 à 1388</msName>
+                    </msIdentifier>
+                </msDesc>
+                <biblStruct>
+                    <monogr>
+                        <title>Journal de Jean Le Fèvre. Chancelier des ducs d'Anjou et comtes de Provence (1381-1388)</title>
+                        <editor>
+                            <name>Michel Hébert</name>
+                        </editor>
+                        <editor>
+                            <name>Jean-Michel Matz</name>
+                        </editor>
+                        <imprint>
+                            <pubPlace>Rennes</pubPlace>
+                            <publisher>Presses universitaires de Rennes</publisher>
+                            <date>2020</date>
+                        </imprint>
+                        <extent>526 pages</extent>
+                    </monogr>
+                </biblStruct>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>Fichier encodé pour un cours de XSLT dans le cadre du Master TNAH 2024-2025 de l'École nationale des chartes.</p>
+            </projectDesc>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="frm">Moyen français</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc>
+            <change when="2024-12-03">Création du fichier et encodage initial.</change>
+        </revisionDesc>
+    </teiHeader>
+    <facsimile xml:id="facs_33v_34r">
+        <graphic url="12148/btv1b9007462z/f39" resp="gallica"/>
+    </facsimile>
+    <facsimile xml:id="facs_34v_35r">
+        <graphic url="12148/btv1b9007462z/f40" resp="gallica"/>
+    </facsimile>
+    <facsimile xml:id="facs_35v_36r">
+        <graphic url="12148/btv1b9007462z/f41" resp="gallica"/>
+    </facsimile>
+    <text xml:lang="frm">
+        <body>
+            <div n="1">
+                <head>Jean Le Fèvre apprend la mort de Louis Ier</head>
+                <p><pb facs="#facs_33v" n="33v"/>Le XXVI jour dudit mois assés pres d'<placeName ref="#Angers">Angiers</placeName> en venant, je encontré <persName ref="#Nades_(Guillaume_de)">Guillaume de Nades</persName> qui me dit la mort de monsegneur le <persName ref="#Anjou_(Louis_Ier)">roy Loys</persName>, laquelle fu le XX jour du mois precedent, a <placeName ref="#Bari">Bar</placeName>; et l'avoit <persName ref="#Berry_(Jean_de)">monseigneur de Berri</persName> envoié au conseil de <persName ref="#Blois_(Marie_de)">Madame</persName> pour leur dire qu'il ne le feissent savoir a <persName ref="#Blois_(Marie_de)">Madame</persName> jusques a ce que il fust devers elle. Moi venu a Angiers au vespre, trouvé que verité estoit, et ne alé point devers <persName ref="#Blois_(Marie_de)">Madame</persName> pour l'eure qu'il estoit trop tart.</p>
+                <p><pb facs="#facs_33v" n="34r"/>Jeudi vegile saint Symon et saint Jude, je porté le seel de feu monseigneur en la chambre des comptes en la maison des Predicateurs, et le dit seel je enclos en un sac de toile et le lié tres bien et y fis mettre les signés du <persName ref="#Avoir_(Pierre,_sg._de_Chateaufromont)">sire de Chasteaufromont</persName>, de messire <persName ref="#Pelerin_(Jean)">J. Pelerin</persName>, du doyen d'<placeName ref="#Angers">Angiers</placeName>, de maistre <persName ref="#Begut_(Jean_le)">J. le Begut</persName>, et de <persName ref="#Levraut_(Thibaut)">Thiebault Levraut</persName>. Et ledit seel ainsi enfermé je emporté: ce fu fait a matin.</p>
+                <p>Aprés disner je alé veoir <persName ref="#Blois_(Marie_de)">Madame</persName>, et li fis la reverence, et dissimulé comme les aultres sanz li reveler la mort de monsegneur pour doubte du <persName ref="#Berry_(Jean_de)">duc de Berry</persName>.</p>
+                <p>Samedi ensuivant <persName ref="#Blois_(Marie_de)">Madame</persName> tint requestes, ignorant la mort de monsegneur et y fu messire <persName ref="#Craon_(Guillaume_de,_sg._de_la_Ferté)">Guillaume de Craon</persName>; et fu deliberé que les gens des trois pays qui estoient mandés au VI jour de novembre seroient contremandés par le conseil; et <persName ref="#Blois_(Marie_de)">Madame</persName> en fu sachant et consentant.</p>
+                <p>La vegile de Toussains vint un messagé nommé <persName ref="#Gastelet_(Messager)">Gastelet</persName> apportant lettres de par <persName ref="#Berry_(Jean_de)">monsegneur de Berri</persName> adressans aus genz du conseil de <persName ref="#Blois_(Marie_de)">Madame</persName> et me apporta les dictes lettres. Je les ouvri present le <persName ref="#Craon_(Guillaume_de,_sg._de_la_Ferté)">sire de la Ferté</persName> et messire <persName ref="#Bresille_(Regnaut)">Regnaut Bresille</persName>.</p>
+                <p>Et puis m'en alé en la chambre des comptes; et y fu le <persName ref="#Avoir_(Pierre,_sg._de_Chateaufromont)">sire de Chasteaufromont</persName> et les autres du conseil et furent leues les lettres et en ladicte chambre laissiées. Comme devant fu deliberé de attendre le <persName ref="#Berry_(Jean_de)">duc de Berry</persName>.</p>
+            </div>
+            <div n="2">
+                <head>Marie de Blois apprend la mort de Louis Ier</head>
+                <p>Le jour des Mors aprés disner, <persName ref="#Blois_(Marie_de)">Madame</persName> la royne sceut la mort de monsegneur le <persName ref="#Anjou_(Louis_Ier)">roy Loys</persName>; moy et messire <persName ref="#Craon_(Guillaume_de,_sg._de_la_Ferté)">Guillaume de Craon</persName> et maistre <persName ref="#Begut_(Jean_le)">J. le Begu</persName> et l'abbé de Saint Aubin, l'evesque d'<placeName ref="#Angers">Angiers</placeName>, le chantre et <persName ref="#Levraut_(Thibaut)">Thibauld Levraut</persName> la confortasmes ce que nous peusmes. Le <persName ref="Avoir_(Pierre,_sg._de_Chateaufromont)">sire de Chasteaufromont</persName> vint veoir <persName ref="#Blois_(Marie_de)">Madame</persName> et ploura comme une commere tres nicement sanz dire mot de reconfort.</p>
+                <p>Aprés fu deliberé que <persName ref="#Craon_(Guillaume_de,_sg._de_la_Ferté)">monsegneur de la Fierté</persName> escriroit a <persName ref="#Berry_(Jean_de)">monsegneur de Berri</persName> comment Madame savoit ces nouvelles et li recommendoit soi et son estat.</p>
+                <p>Vendredi quart jour de novembre vint l'arcediacre de Chasteau de Ler de <placeName ref="#Paris">Paris</placeName>; rapporta que conseil avoit esté tenu a Paris pour <persName ref="#Blois_(Marie_de)">Madame</persName> ou avoient esté messire <persName ref="#Orgemont_(Pierre_d')">P. d'Orgemont</persName>, messire <persName ref="#Corbic_(Ernault_de)">Ernault de Corbic</persName>, maistre <persName ref="#Carnard_(Jean)">J. Canard</persName>, maistre <persName ref="#Molins_(Oudart_de)">Oudart de Molins</persName>; conclus fu par eulx que a <persName ref="#Blois_(Marie_de)">Madame</persName> de droit et de coustume apartient la garde de messegneurs ses enfans et le bail de leur terres se elle le veult prendre.</p>
+            </div>
+            <div n="3">
+                <head>Jean Le Fèvre nommé chancelier de Marie de Blois</head>
+                <p><pb facs="#facs_34v_35r" n="34v"/>Samedi ensuivant, V jour de novembre, <persName ref="#Blois_(Marie_de)">Madame</persName> me retint son chancelier, present messire <persName ref="#Craon_(Guillaume_de,_sg._de_la_Ferté)">Guillaume de Craon segneur de la Ferté Bernard</persName>, et maistre <persName ref="Haucepié_(Jean)">Jehan Haucepié</persName> a qui lettre en fu commandée. Et fis serment in verbo pontificis et sacerdotis, de la servir loyalment en office de chancelier, et la conseiller contre toulx exceptés le pape et le roy, et son honneur et pourfit garder et son blasme et damage eschever; mais elle ne me bailla point son seel encore.</p>
+            </div>
+            <div n="4">
+                <head>La lettre du duc de Berry</head>
+                <p>Lundi VIIe jour de novembre <persName ref="#Berry_(Jean_de)">monsegneur de Berri</persName> escript au conseil que <persName ref="#Bourgogne_(Philippe_le_Hardi)">monsegneur de Bourgongne</persName> se estoit excusé de venir devers <persName ref="#Blois_(Marie_de)">Madame</persName>; mes li <persName ref="#Berry_(Jean_de)">monsegneur de Berri</persName> y seroit le samedi ensuivant.</p>
+            </div>
+        </body>
+    </text>
+</TEI>
