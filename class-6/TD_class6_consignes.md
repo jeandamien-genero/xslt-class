@@ -54,6 +54,12 @@
 
 ## 2. Les chapitres
 
+### 2.1 Les fichiers
+
+- À l'aide d'une boucle `<xsl:for-each/>`, créer quatre fichiers nommés `chapitreX.html` où `X` est le contenu de l'attribut `@n` des `<div/>` des chapitres.
+
+### 2.2 Le contenu des chapitres
+
 - Observer le code HTML du fichier `chapitre1.html`.
 - Créer une template nommée `chapitres` et le `<xsl:call-template/>` correspondant.
 - La nouvelle template doit contenir les variables `$head`, `$navbar` et `$footer`.
@@ -69,7 +75,7 @@
 - La nouvelle template doit contenir les variables `$head`, `$navbar` et `$footer`.
 - À l'aide d'une boucle, compléter la nouvelle template avec:
   - Une première boucle groupée pour créer un seul `<p>` par nom propre.
-  - Une deuxième boucle groupée (à l'intérieur de la première) créant un lien vers chaque chapitre où le nom propre apparaît.
+  - Une deuxième boucle groupée (à l'intérieur de la première) pour créer un lien vers chaque chapitre où le nom propre apparaît.
 
 ## 5. CSS
 
