@@ -1,18 +1,18 @@
 # Cours de XSLT
 
-École nationale des chartes, Master TNAH, 2024-2025.
+École nationale des chartes, Master TNAH, 2025-2026.
 
 ## Programme
 
-| Date      | Cours                                                   |
-|-----------|---------------------------------------------------------|
-| 3 dec.    | 1. Introduction. Premières notions de XPath et de XSLT. |
-| 10 dec.   | 2. XSLT : règles basiques.                              |
-| 17 dec.   | 3. XSLT : variables et paramètres. XPath : fonctions.   |
-| 6 janv.   | 4. XSLT : conditions, boucles et tri.                   |
-| 14 janv.  | Contrôle continu + 5. Transformation de XML vers XML.   |
-| 21 janv.  | 6. Transformation de XML vers HTML.                     |
-| 22 janv.  | 7. Transformation de XML vers LaTeX.                    |
+| Date          |Cours                                                    |
+|---------------|---------------------------------------------------------|
+| 1 dec. (2h)   | 1. Introduction. Premières notions de XPath et de XSLT. |
+| 8 dec. (3h)   | 2. XSLT : règles basiques.                              |
+| 9 dec. (3h)   | 3. XSLT : variables et paramètres. XPath : fonctions.   |
+| 16 dec. (3h)  | 4. XSLT : conditions, boucles et tri.                   |
+| 5 janv. (3h)  | 5. Transformation de XML vers HTML.                     |
+| 6 janv. (3h)  | 6. Contrôle continu + Transformation de XML vers LaTeX. |
+| 20 janv. (3h) | 7. Python et XSLT: chaîne de publication d'électronique |
 
 ## Ressources
 
