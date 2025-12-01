@@ -38,7 +38,7 @@ Pour XPath, un document XML est un "_tree of nodes_" ("arbre avec des noeuds"). 
 ### 1.6 _Namespace nodes_
 
 - Notation : _via_ l'axe `namespace::`.
-- Sélection : les noms de domaine, généralement stockés dans des `xmlns:`. On y accède par l'expression `/tag/namespace::*`.
+- Sélection : les espaces de nom, généralement stockés dans des `xmlns:`. On y accède par l'expression `/tag/namespace::*`.
 - Attention : 
   - Dans `<TEI xmlns="http://www.tei-c.org/ns/1.0">`, `xmlns` n'est pas un `attribute node` mais un `namespace node`.
   - Très peu utilisés en XSLT.
