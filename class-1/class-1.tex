@@ -19,7 +19,7 @@
 \newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
 
 \title{Technique et chaîne de publication électronique avec XSLT}
-\date{2024, 3 dec. - 2025, 22 janv.}
+\date{2025, 1\textsuperscript{er} dec. - 2026, 20 janv.}
 \author{Jean-Damien Généro}
 \institute{École nationale des chartes -- M2 TNAH}
 
@@ -53,6 +53,7 @@
               \item Transformer un document XML en un autre document XML
               \item Transformer un document XML en un document HTML
               \item Transformer un document XML en un document \LaTeX
+              \item Coder une chaîne de publication électronique utilisant XSLT avec Python
           \end{itemize}
       \end{itemize}
   \end{frame}
@@ -103,8 +104,9 @@
       \end{itemize}
       \bigskip
       \item \textbf{Utilisation avec d'autres langages}
-      
-      \normalsize (\texttt{Python} :  \texttt{lxml}).
+      \begin{itemize}
+          \item \texttt{Python}: librairie \texttt{lxml}.
+      \end{itemize}
   \end{itemize}
    
   \end{frame}
@@ -305,10 +307,11 @@
 
     \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (1/4)}
     \Large
-    Noms de domaine et attributs présents de base dans Oxygen :
+    Espaces de nom (\textit{namespace}) et attributs présents de base dans Oxygen :
         \begin{itemize}
-            \item \texttt{@xmlns:xsl} : espace de noms (\textit{namespace}) XSL ;
-            \item \texttt{@xmlns:xs} : espace de noms XML ;
+            \item \texttt{@xmlns:xsl} : espace de nom XSL ;
+            \item \texttt{@xmlns:xs} : espace de nom XML ;
+            \item \texttt{@xmlns:math} : espace de nom math (XPath 3) ;
             \item \texttt{@exclude-result-prefixes} : liste des préfixes qui ne seront pas copiés dans l'output ;
             \item \texttt{@version} : version de XSL (1, 2 ou 3).
         \end{itemize}

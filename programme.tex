@@ -1,6 +1,10 @@
-\documentclass[a4paper]{article}
-\usepackage[french]{babel}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
 
 \title{\textsc{École nationale des chartes}
 
@@ -8,7 +12,7 @@
 
 Technique et chaîne de publication électronique avec XSLT}
 \author{Jean-Damien Généro}
-\date{2024, 3 dec. - 2025, 22 janv.}
+\date{2025, 1\textsuperscript{er} dec. - 2026, 20 janv.}
 
 \begin{document}
 \maketitle
@@ -20,8 +24,8 @@ Technique et chaîne de publication électronique avec XSLT}
     \item Contact : jean-damien.genero [at] cnrs [.] fr
     \item Évaluations :
     \begin{itemize}
-        \item Contrôle continu le 14 janvier 2025.
-        \item Devoir final à rendre le 31 mars 2025.
+        \item Contrôle continu le 6 janvier 2026.
+        \item Devoir final à rendre le 31 mars 2026.
     \end{itemize}
 \end{itemize}
 
@@ -32,15 +36,15 @@ Technique et chaîne de publication électronique avec XSLT}
 \renewcommand{\arraystretch}{1.5}
 \begin{center}
     \begin{tabular}[h]{|p{1.5cm} p{9.6cm}}
-        \textbf{3 dec.} & \textbf{1.} Introduction. Premières notions de \texttt{XPath} et de \texttt{XSLT}.\\
-        \textbf{10 dec.} & \textbf{2.} \texttt{XSLT} : règles basiques.  \\
-        \textbf{17 dec.} & \textbf{3.} \texttt{XSLT} : variables, paramètres et boucles. \texttt{XPath} : fonctions. \\
-        \textbf{6 janv.} & \textbf{4.} \texttt{XSLT} :  boucles, tri. Génération de plusieurs output. \\
-        \textbf{14 janv.} & \textbf{!}  Contrôle continu.
+        \textbf{1\textsuperscript{er} dec.} & \textbf{1.} Introduction. Premières notions de \texttt{XPath} et de \texttt{XSLT}.\\
+        \textbf{8 dec.} & \textbf{2.} \texttt{XSLT} : règles basiques.  \\
+        \textbf{9 dec.} & \textbf{3.} \texttt{XSLT} : variables, paramètres et boucles. \texttt{XPath} : fonctions. \\
+        \textbf{16 dec.} & \textbf{4.} \texttt{XSLT} :  boucles, tri. Génération de plusieurs output. \\
+        \textbf{5 janv.} & \textbf{5.} Transformation de \texttt{XML}  vers \texttt{HTML}. \\
+        \textbf{6 janv.} & \textbf{!}  Contrôle continu.
         
-        \textbf{5.} Transformation de \texttt{XML}  vers \texttt{XML}. \\
-        \textbf{21 janv.} & \textbf{6.} Transformation de \texttt{XML}  vers \texttt{HTML}. \\
-        \textbf{22 janv.} & \textbf{7.} Transformation de \texttt{XML}  vers \texttt{LaTeX}. \\
+        \textbf{6.} Transformation de \texttt{XML}  vers \LaTeX \\
+        \textbf{20 janv.} & \textbf{7.} Python et \texttt{XSLT}: chaîne de publication électronique. \\
     \end{tabular}
 \end{center}
 
@@ -62,7 +66,8 @@ Technique et chaîne de publication électronique avec XSLT}
           \begin{itemize}
               \item Transformer un document \texttt{XML} en un autre document \texttt{XML}
               \item Transformer un document \texttt{XML} en un document \texttt{HTML}
-              \item Transformer un document \texttt{XML} en un document \texttt{LaTeX}
+              \item Transformer un document \texttt{XML} en un document \LaTeX
+              \item Utiliser \texttt{XSLT} en synergie avec Python
           \end{itemize}
       \end{itemize}
 
