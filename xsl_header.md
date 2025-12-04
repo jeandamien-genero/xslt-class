@@ -1,16 +1,16 @@
 % __ENC/ XSLT/ En-tête XSL__
 % Jean-Damien Généro
-% 2025
+% 2026
 
 À l'ouverture du fichier `XSLT Stylesheet` dans Oxygen, l'en-tête de la feuille de style se présente ainsi :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xs"
-    version="2.0">
+    xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+    exclude-result-prefixes="xs math"
+    version="3.0">
     <!-- contenu de la feuille de style -->
 </xsl:stylesheet>
 ```

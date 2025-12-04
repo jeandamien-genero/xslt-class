@@ -1,6 +1,6 @@
 % __ENC/ XSLT/ Fiche XPath__
 % Jean-Damien Généro
-% 2025
+% 2025-2026
 
 ---
 
@@ -167,16 +167,19 @@ Sélection de fonctions :
 
 ### 3.3 `translate()` et `replace()`
 
-- `translate(string, 'abc', 'ABC')` : retourne `string` avec :
-  - `a` remplacé par `A` ;
-  - `b` remplacé par `B` ;
-  - `c` remplacé par `c`.
-  - *NB :* le troisième paramètre n'a pas besoin d'être de la même taille que le deuxième. Avec `translate(string, 'abc', '')`, tous les  `a`, les `b` et les `c` seront enlevés de `string`.
+- `translate()` prend une liste de caractères en entrée et remplace chaque caractère par son équivalent dans une deuxième liste (= remplace caractère par caractère).
+  - `translate(string, 'abc', 'ABC')` : retourne `string` avec :
+    - `a` remplacé par `A` ;
+    - `b` remplacé par `B` ;
+    - `c` remplacé par `c`.
+  - *NB:* le troisième paramètre n'a pas besoin d'être de la même taille que le deuxième. Avec `translate(string, 'abc', '')`, tous les  `a`, les `b` et les `c` seront enlevés de `string`.
+  - *NB:* ne fonctionne pas avec des regex.
   - Ce n'est pas l'équivalent d'un "rechercher/remplacer".
 
 - `replace(string, 'abc', 'ABC')` : retourne `string` avec `abc` remplacé par `ABC`.
   - Peut être considéré comme l'équivalent d'un "rechercher/remplacer".
-  - Attention : ne fonctionne qu'à partir de XSLT version 2.
+  - *NB:* fonctionne avec des regex.
+  - Attention: ne fonctionne qu'à partir de XSLT version 2.
 
 ### 3.4 `contains()`
 
@@ -215,4 +218,4 @@ Sélection de fonctions :
 
 - `tokenize(string, delimiter)` : divise la chaîne `string` en fonction d'un `delimiter`. 
   - Nouveauté de XSLT 2.
-  - Exemple d'utilisation : manipuler les valeurs multiples d'un attribut. Si `@type="maison campagne"`, `tokenize(@type, ' ')` retour `maison` et `campagne`.
+  - Exemple d'utilisation : manipuler les valeurs multiples d'un attribut. Si `@type="foo bar"`, `tokenize(@type, ' ')` retour `foo` et `bar`.
