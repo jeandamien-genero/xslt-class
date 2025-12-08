@@ -149,7 +149,7 @@
         \end{itemize}
         \bigskip
         \begin{minted}{xslt}
-        <xsl:template match="/TEI/text/body/p">
+        <xsl:template match="/TEI/text/body/div/p">
             <xsl:copy-of select="."/>
         </xsl:template>
         \end{minted}
@@ -320,7 +320,7 @@
     \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (2/4)}
     \Large Attributs à remplacer dans Oxygen \textit{pour une transformation vers XML-TEI}:
         \begin{itemize}
-            \item remplacer \texttt{@xmlns:xs} par \texttt{@xmlns:tei} $\rightarrow$ espace de noms de l'élément racine de l'output.
+            \item remplacer \texttt{@xmlns:xs} par \texttt{@xmlns:tei} $\rightarrow$ espace de nom de l'élément racine de l'output.
             \begin{itemize}
             \large
                 \item évite l'ajout de \texttt{tei:} à chaque élément "matché" par une règle (\texttt{@match}).
@@ -333,16 +333,16 @@
     \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (3/4)}
     \Large Attributs à ajouter dans Oxygen \textit{pour une transformation vers XML-TEI}:
         \begin{itemize}
-            \item \texttt{@xpath-default-namespace} :  espace de noms des chemins XPath de la feuille de style (http://www.tei-c.org/ns/1.0).
+            \item \texttt{@xpath-default-namespace} :  espace de nom des chemins XPath de la feuille de style (http://www.tei-c.org/ns/1.0).
             \begin{itemize}
             \large
                 \item évite de devoir écrire le préfixe \texttt{tei:} devant chaque n\oe ud d'une expression XPath.
             \end{itemize}
             \bigskip
-            \item \texttt{@xmlns} avec l'adresse de l'espace de noms TEI.
+            \item \texttt{@xmlns} avec l'adresse de l'espace de nom TEI.
             \begin{itemize}
             \large
-                \item détermine l'espace de noms de l'ensemble du document de sortie.
+                \item détermine l'espace de nom de l'ensemble du document de sortie.
             \end{itemize}
         \end{itemize}
     \end{frame}
@@ -350,13 +350,13 @@
     \begin{frame}{XSLT/ Élément racine : \texttt{<xsl:stylesheet>} (4/4)}
     \Large
         \begin{itemize}
-            \item \textbf{attention} : TEI est un standard XML parmi d'autres ! Pour EAD, changer l'espace de noms TEI par celui d'EAD et le préfixe \texttt{tei:} par \texttt{ead:}.
+            \item \textbf{attention} : TEI est un standard XML parmi d'autres ! Pour EAD, changer l'espace de nom TEI par celui d'EAD et le préfixe \texttt{tei:} par \texttt{ead:}.
             \bigskip
             \item Atributs pour la transformation vers HTML ou LaTeX : 
             \begin{itemize}
             \Large
-                \item \texttt{@xmlns:xsl} (adresse de l'espace de noms XSLT)
-                \item \texttt{@xpath-default-namespace} (adresse de l'espace de noms TEI)
+                \item \texttt{@xmlns:xsl} (adresse de l'espace de nom XSLT)
+                \item \texttt{@xpath-default-namespace} (adresse de l'espace de nom TEI)
                 \item \texttt{@version} (version de XSL utilisée)
             \end{itemize}
         \end{itemize}

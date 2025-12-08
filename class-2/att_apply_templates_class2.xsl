@@ -11,7 +11,7 @@
     <!-- EXEMPLES D'UTILISATION D'XSL:APPLY-TEMPLATES ET XSL:NUMBER -->
     
     <!-- A. UTILISATION BASIQUE DE XSL:APPLY-TEMPLATES-->
-    <xsl:template match="/">
+    <!--<xsl:template match="/">
         <TEI>
             <xsl:apply-templates/>
         </TEI>
@@ -21,7 +21,7 @@
     </xsl:template>
     <xsl:template match="//text">
         <xsl:copy-of select="."/>
-    </xsl:template>
+    </xsl:template>-->
     
     <!-- B. XSL:APPLY-TEMPLATES ET @SELECT -->
     <!--<xsl:template match="/">
@@ -114,12 +114,12 @@
             <xsl:value-of select="."/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="//body//p">
+    <xsl:template match="//body/div/p">
         <xsl:copy>
             <xsl:attribute name="n">
                 <xsl:number
-                    count="." 
-                    level="multiple" 
+                    count="//body/div/p" 
+                    level="any" 
                     format="1"/>
             </xsl:attribute>
             <xsl:value-of select="."/>
