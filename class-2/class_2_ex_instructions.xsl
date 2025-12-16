@@ -8,7 +8,7 @@
     
     <!-- EXEMPLE 1 -->
     <!-- Des balises peuvent être écrites directement dans un <xsl:template/> -->
-    <xsl:template match="/TEI/teiHeader"/>
+    <xsl:template match="/tei:TEI/tei:teiHeader"/>
     <xsl:template match="/TEI/text/body/div[1]">
         <body>
             <div>

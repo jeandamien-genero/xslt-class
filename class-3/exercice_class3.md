@@ -1,6 +1,6 @@
 % __ENC/ XSLT/ Exercice (séance 3)__
 % Jean-Damien Généro
-% 2024-2025
+% 2025-2026
 
 # Environnement de travail
 - Document XML : `class_3_journal_lefevre.xml`.

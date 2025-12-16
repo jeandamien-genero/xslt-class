@@ -1,6 +1,6 @@
 % __ENC/ XSLT/ Exercices (séance 4)__
 % Jean-Damien Généro
-% 2025
+% 2025-2026
 
 Écrire une feuille de style XSLT pour transformer le document XML-TEI extrait du *Journal de Jean Le Fèvre*. La transformation conservera le format XML-TEI en sortie.
 
