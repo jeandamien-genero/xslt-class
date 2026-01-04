@@ -1,84 +1,118 @@
-% __ENC/ XSLT/ TD XML vers HTML (séance 6)__
+% __ENC/ XSLT/ TD XML vers LaTeX (séance 7)__
 % Jean-Damien Généro
 % 2025
 
 # Environnement de travail
 
-- Document XML : `class_6_journal_lefevre.xml`.
+- Document XML : `class_7_journal_lefevre.xml`.
+- Document XSL: `class_7_journal_lefevre.xsl`.
+- **Un exemple du document de sortie se trouve dans le dossier `/class-7/out`, avec sa compilation en PDF.**
 
-- Document XSL : `class_6_journal_lefevre.xsl`.
+# Consigne générale
 
-- Vous travaillez avec un document XML-TEI contenant une édition de plusieurs chapitres du *Journal du chancelier Le Fèvre*. Cet exercice a pour objectif de manipuler les données de ce document et de le transformer en plusieurs fichiers HTML contenant des hyperliens pour circuler entre les fichiers.
+- Transformer le fichier `class_7_journal_lefevre.xml` en un fichier LaTeX (`.tex`) pouvant être compilé _avec le terminal_ à l'aide des commandes `xelatex journal-lefevre.tex` et `splitindex journal-lefevre.idx`.
+- Le fichier de sortie devra contenir :
+  - une page de titre ;
+  - une page avec des informations sur le manuscrit ;
+  - les quatres chapitres du _Journal_ ;
+  - un index des noms de personnes et un index des noms de lieux ;
+  - une table des matières.
+- Faire attention aux espaces et sauts de ligne dans votre document de sortie.
 
-- La sortie est composée de six fichiers HTML qui s'enregistrent dans un dossier `out/`:
-  - `home.html`, qui contient des éléments du `<teiHeader/>`, une visioneuse IIIF constituée à partir des `<facsimile/>` et la liste des chapitres.
-  - `chapitre1.html`, qui contient la `<div/>` du premier chapitre.
-  - `chapitre2.html`, qui contient la `<div/>` du deuxième chapitre.
-  - `chapitre3.html`, qui contient la `<div/>` du troisième chapitre.
-  - `chapitre4.html`, qui contient la `<div/>` du quatrième chapitre.
-  - `index.html`, qui contient un index cliquable des noms de personne.
-- Les `<head/>`, barre de navigation et `<footer/>` des six documents HTML sont identiques.
+# Compilation
 
-## 1. Le `home.html`
+- Compiler une première fois le `.tex` avec `xelatex` ;
+- Compiler deux fois le fichier d'index (`.idx`) avec `splitindex` ;
+- Compiler une deuxième fois le `.tex` avec `xelatex`.
 
-### 1.1 La navbar
+# Template LaTeX
 
-- À partir du modèle du lien vers le fichier `home.html`, compléter la variable `$navbar`:
-  - Utiliser une boucle pour ajouter quatre `<li>` contenant les liens vers les chapitres.
-  - Ajouter un lien vers le fichier d'index.
+- En-tête :
+```tex
+\documentclass[]{book}
+        \usepackage[utf8]{inputenc}
+        \usepackage[T1]{fontenc}
+        \usepackage[a4paper]{geometry}
+        \usepackage[french]{babel}
+        
+        \usepackage{titlesec}
+        \titleformat{\chapter}[block]{\Large\bfseries}{}{1em}{}
+        
+        \usepackage[splitindex]{imakeidx}
+        \makeindex[name=indiv,title=Index des noms de personnes]
+        \makeindex[name=lieux,title=Index des noms de lieux]
+        
+        \usepackage[hidelinks, pdfstartview=FitH, plainpages=false]{hyperref}
+     
+        \title{...} % <msName/>
+        \author{...} % <author/>
+        \date{...} % <origDate/>
+        
+        \begin{document}
+        \maketitle
+        
+        %% Votre code ici
+        
+        \chapter*{Informations sur le manuscrit}
+        \addcontentsline{toc}{chapter}{Informations sur le manuscrit}
+        
+        \section*{Institution de conservation}
+        \addcontentsline{toc}{section}{Institution de conservation}
+        
+        \begin{itemize}
+            \item Institution: % <repository/>
+            \item Cote: % <idno/> (bnf)
+            \item Numérisation: % <idno/> (gallica)
+        \end{itemize}
+        
+        \section*{Description du manuscrit}
+        \addcontentsline{toc}{section}{Description du manuscrit}
+        
+        \begin{itemize}
+            \item Support: % <support/>
+            \item Feuillet: % <extent/>
+            \item Note: % <collation/>
+        \end{itemize}
+        
+        % code pour les chapitres
+        
+        \printindex[indiv]
+        \addcontentsline{toc}{chapter}{Index des noms de personnes}
+        \printindex[lieux]
+        \addcontentsline{toc}{chapter}{Index des noms de lieux}
+        
+        %% Table des matières
+        
+        \tableofcontents
+        
+        \end{document}
+```
 
-### 1.2 Présentation du site
+# Étape 1
 
-- Dans la première `<div>`, ajouter cette phrase: `<p>Ce site propose un édition de plusieurs chapitres tirés du livre <em>Journal de Jean Le Fèvre. Chancelier des ducs d'Anjou et comtes de Provence (1381-1388)</em> de Michel Hébert et Jean-Michel Matz (Presses universitaires de Rennes, 2020).</p>` à partir de ces éléments tirés du `<biblStruct/>` du XML:
-  - Le `<title/>` (`Journal de Jean Le Fèvre. Chancelier des ducs d'Anjou et comtes de Provence (1381-1388)`.
-  - Les `<name/>` (`Michel Hébert` et `Jean-Michel Matz`).
-  - Le `<publisher/>` et la `<date/>` (`Presses universitaires de Rennes` et `2020`).
+- Paramétrer l'en-tête XSL et l'instruction `output` pour une transformation vers LaTeX.
 
-### 1.3 Informations sur le manuscrit
+# Étape 2 : titre du document
 
-- Compléter la section `Informations sur le manuscrit` avec des éléments tirés du `<msIdentifier/>`.
-- Le lien vers la numérisation sur Gallica doit être composé en concaténant `https://gallica.bnf.fr/ark:/` et le contenu de la balise `<idno/>`.
+- Compléter les commandes de titre :
+  - Dans `\title{}`, ajouter le contenu du `<msName/>` ;
+  - Dans `\author{}`, ajouter le contenu de `<author/>` ; 
+  - Dans `\date{}`, ajouter le contenu de `<origDate/>`.
 
-### 1.4 Visionneuse IIIF
+# Étape 3 : contexte de publication
 
-- Dans le code javascript, effacer le contenu du champ `tileSources` et recréer les adresses qu'il contient à partir du contenu des `<facsimile/>`.
-- Les adresses sont composées à partir de la concaténation de `https://gallica.bnf.fr/iiif/ark:/`, le `@url` de `<graphic/>` et `/info.json`.
-- Vous pouvez utiliser `<xsl:for-each/>`.
+- Ouvrir le PDF du dossier `/class-7/out` et compléter les informations de la section `Informations sur le manuscrit` (les balises correspondantes sont indiquées en commentaire dans le code LaTeX).
 
-### 1.5 Liste des chapitres
+# Étape 4 : les chapitres
 
-- Compléter la section `Liste des chapitres` avec des liens vers chaque fichier de chapitre, et le titre de ceux-ci.
-- Vous pouvez utiliser `<xsl:for-each/>`.
+- Pour chaque chapitre :
+  - Dans une commande `\chapter{}`, écrire son numéro (`@n` de la `<div/>`) suivi du contenu du `<head/>` du chapitre.
+  - Reproduire chaque paragraphe en laissant la possibilité d'appliquer des règles aux enfants.
 
-**Vous devriez maintenant obtenir un fichier `home.html` identique au modèle.**
+# Étape 5 : les index
 
-## 2. Les chapitres
+- Transformer les `<persName/>` et les `<placeName/>` en `\index[indiv/lieux]{contenu du @ref}`.
+  - Exemple pour un nom de personne : `\index[indiv]{Blois (Marie de)}` ;
+  - Exemple pour un nom de lieu : `\index[lieux]{Angiers}`.
 
-### 2.1 Les fichiers
-
-- À l'aide d'une boucle `<xsl:for-each/>`, créer quatre fichiers nommés `chapitreX.html` où `X` est le contenu de l'attribut `@n` des `<div/>` des chapitres.
-
-### 2.2 Le contenu des chapitres
-
-- Observer le code HTML du fichier `chapitre1.html`.
-- Créer une template nommée `chapitres` et le `<xsl:call-template/>` correspondant.
-- La nouvelle template doit contenir les variables `$head`, `$navbar` et `$footer`.
-- À l'aide d'une boucle, compléter la nouvelle template avec:
-  - En titre `<h1/>` le titre du chapitre.
-  - Une `<div>` contenant les paragraphes des chapitres (`<p>`).
-- Laisser la possibilité d'appliquer des règles aux enfants des `<p>`.
-
-## 3. L'index
-
-- Observer le code HTML du fichier d'exemple `index.html`.
-- Créer une template nommée `index` et le `<xsl:call-template/>` correspondant.
-- La nouvelle template doit contenir les variables `$head`, `$navbar` et `$footer`.
-- À l'aide d'une boucle, compléter la nouvelle template avec:
-  - Une première boucle groupée pour créer un seul `<p>` par nom propre.
-  - Une deuxième boucle groupée (à l'intérieur de la première) pour créer un lien vers chaque chapitre où le nom propre apparaît.
-
-## 5. CSS
-
-- Proposer un habillage CSS pour les documents.
-
-**_Reprenez l'ensemble de l'exercice chez vous jusqu'à pouvoir naviguer correctement entre les quatre documents HTML. Cela vous sera utile pour le projet à rendre pour l'évaluation finale!_**
+_**Reprenez l'ensemble de l'exercice chez vous jusqu'à obtenir un document PDF similaire au modèle. Cela vous sera utile pour le projet à rendre pour l'évaluation finale !**_

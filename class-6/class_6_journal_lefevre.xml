@@ -26,8 +26,22 @@
                         <repository>Bibliothèque nationale de France</repository>
                         <idno source="bnf">ms fr. 5015</idno>
                         <idno source="gallica">12148/btv1b9007462z</idno>
-                        <msName>Journal de Jean Le Fèvre, évêque de Chartres, chancelier des rois de Sicile Louis I et Louis II d'Anjou, allant de 1381 à 1388</msName>
+                        <msName>Journal de Jean Le Fèvre, évêque de Chartres, chancelier des rois de Sicile Louis I et Louis II d'Anjou</msName>
                     </msIdentifier>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>papier</support>
+                                <extent>218 feuillets</extent>
+                                <collation>Le premier feuillet a été, par suite d'une erreur de reliure, placé à la fin du volume. Le texte commence, sur ce feuillet, mutilé dans le haut, par : "<hi rend="i">L'an mil CCC quatre vins et un, le mecredi derrenier jour de juillet...</hi>", et se continue au fol. 2, placé en tête du volume, par : "<hi rend="i">De par le duc d'Anjou et de Touraine. Chancellier, savoir vous faisons...</hi>". Il finit (fol. 218 v°) par : "<hi rend="i">... cui domino concedit officium jumelle, alias dictum la publicane civitatis neapolitane</hi>". Les premiers mots que nous avons donnés pour le fol. 2, sont ceux d'une pièce transcrite dans le journal. Le texte même du journal commence au bas du feuillet par : "<hi rend="i">Lundi, XXII jour de septembre, l'an IIII<hi rend="sup">xx</hi> et un...</hi>". La majeure partie de ce manuscrit paraît autographe.</collation>
+                            </supportDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate>1381-1388</origDate>
+                        </origin>
+                    </history>
                 </msDesc>
                 <biblStruct>
                     <monogr>
