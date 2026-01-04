@@ -19,7 +19,7 @@
 \newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
 
 \title{Technique et chaîne de publication électronique avec XSLT (4/7)}
-\date{2024, 3 dec. - 2025, 22 janv.} 
+\date{2025, 1\textsuperscript{er} dec. - 2026, 20 janv.}
 \author{Jean-Damien Généro}
 \institute{École nationale des chartes -- M2 TNAH}
 
@@ -79,22 +79,30 @@
         \end{minted}
     \end{frame}
 
-    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (1/3)}
+    \begin{frame}[fragile]{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (1/4)}
         \Large
         \begin{itemize}
-            % \item "Nouveauté" de XSLT 2.0 ;
             \item Rassemble les n\oe uds (\texttt{@select}) en groupe selon un critère donné (\texttt{@group-by}) et leur applique les règles définies à l'intérieur de \texttt{<xsl:for-each-group/>}.
-            \bigskip
+        \end{itemize}
+        \begin{minted}{xml}
+<xsl:for-each-group select="//tag"
+        group-by="@att">
+        <!-- règles -->
+</xsl:for-each-group>
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (2/4)}
+        \Large
             \begin{enumerate}
             \Large
                 \item Itère sur les n\oe uds désignés dans le \texttt{@select} ;
                 \item Regroupe ces n\oe uds selon le critère défini dans le \texttt{@group-by} ;
                 \item Applique les règles indiquées dans le contenu de la balise.
             \end{enumerate}
-        \end{itemize}
     \end{frame}
 
-    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (2/3)}
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (3/4)}
         \Large
         \begin{itemize}
             \item Plusieurs \texttt{<xsl:for-each-group/>} sont souvent utilisés ensemble (boucles dans une boucle) ;
@@ -105,7 +113,7 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (3/3)}
+    \begin{frame}{XSLT/ Itération sur des groupes : \texttt{<xsl:for-each-group/>} (4/4)}
         \Large
         \begin{itemize}
             \item \texttt{current-group()} retourne la liste des nœuds du groupe de l'itération en cours d'exécution ;
@@ -136,7 +144,7 @@
             \begin{enumerate}
             \large
                 \item Simple : \texttt{<xsl:for-each/>} (\texttt{@select}) ;
-                \item Sur des groupes : \texttt{<xsl:for-each-group/>} (\texttt{@select}, \texttt{@group-by}).
+                \item Sur des groupes : \texttt{<xsl:for-each-group/>} (\texttt{@select}, \texttt{@group-by}, \texttt{current-group()}, \texttt{current-grouping-key()}).
             \end{enumerate}
             \bigskip
             \item Tri XSL : \texttt{<xsl:sort/>} (\texttt{@select}).

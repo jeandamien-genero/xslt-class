@@ -32,10 +32,10 @@
             <biblStruct>
                <monogr>
                   <title>Journal de Jean Le Fèvre, évêque de Chartres, chancelier des rois de Sicile Louis Ier et Louis II d'Anjou</title>
-                  <author>Jean Le Fèvre</author>
-                  <editor>
-                     <name>Henri Moranvillé</name>
-                  </editor>
+                  <author>
+                     <forename>Henri</forename>
+                     <surname>Moranvillé</surname>
+                  </author>
                   <imprint>
                      <pubPlace>Paris</pubPlace>
                      <publisher>Picard</publisher>
@@ -46,12 +46,14 @@
             <biblStruct>
                <monogr>
                   <title>Journal de Jean Le Fèvre. Chancelier des ducs d'Anjou et comtes de Provence (1381-1388)</title>
-                  <editor>
-                     <name>Michel Hébert</name>
-                  </editor>
-                  <editor>
-                     <name>Jean-Michel Matz</name>
-                  </editor>
+                  <author>
+                     <forename>Michel</forename>
+                     <surname>Hébert</surname>
+                  </author>
+                  <author>
+                     <forename>Jean-Michel</forename>
+                     <surname>Matz</surname>
+                  </author>
                   <imprint>
                      <pubPlace>Rennes</pubPlace>
                      <publisher>Presses universitaires de Rennes</publisher>
@@ -63,7 +65,10 @@
             <biblStruct>
                <analytic>
                   <title>Une nouvelle source pour l'histoire bas-alpine. Le journal de Jean Le Fèvre (8 septembre 1380-1388)</title>
-                  <author>Victor Lieutaud</author>
+                  <author>
+                     <forename>Victor</forename>
+                     <surname>Lieutaud</surname>
+                  </author>
                </analytic>
                <monogr>
                   <title>Bulletin de la Société scientifique et littéraire des Basse-Alpes</title>
@@ -74,6 +79,113 @@
                   </imprint>
                   <biblScope unit="volume">6</biblScope>
                   <biblScope unit="pages">11-28</biblScope>
+               </monogr>
+            </biblStruct>
+            <biblStruct>
+               <analytic>
+                  <title>Une nouvelle source pour l'histoire bas-alpine. Le journal de Jean Le Fèvre (8 septembre 1380-1388)</title>
+                  <author>
+                     <forename>Victor</forename>
+                     <surname>Lieutaud</surname>
+                  </author>
+               </analytic>
+               <monogr>
+                  <title>Bulletin de la Société scientifique et littéraire des Basse-Alpes</title>
+                  <imprint>
+                     <pubPlace>Basse-Alpes</pubPlace>
+                     <publisher>Société scientifique et littéraire des Basse-Alpes</publisher>
+                     <date>1903</date>
+                  </imprint>
+                  <biblScope unit="volume">11</biblScope>
+                  <biblScope unit="pages">174-187</biblScope>
+               </monogr>
+            </biblStruct>
+            <biblStruct>
+               <analytic>
+                  <title>Le fonctionnement financier de la chancellerie d’Anjou-Provence d’après le Journal de Jean le Fèvre (1381-1388)</title>
+                  <author>
+                     <forename>Jean-Michel</forename>
+                     <surname>Matz</surname>
+                  </author>
+               </analytic>
+               <monogr>
+                  <title>Périphéries financières angevines. Institutions et pratiques de l’administration de territoires composites (XIIIe-XVe siècle)</title>
+                  <editor>
+                     <forename>Serena</forename>
+                     <surname>Morelli</surname>
+                  </editor>
+                  <imprint>
+                     <pubPlace>Rome</pubPlace>
+                     <publisher>Publications de l’École française de Rome</publisher>
+                     <date>2018</date>
+                  </imprint>
+                  <biblScope unit="pages">63-76</biblScope>
+               </monogr>
+            </biblStruct>
+            <biblStruct>
+               <analytic>
+                  <title>La chancellerie d’Anjou-Provence d’après le journal de Jean Le Fèvre (1381-1388)</title>
+                  <author>
+                     <forename>Jean-Michel</forename>
+                     <surname>Matz</surname>
+                  </author>
+               </analytic>
+               <monogr>
+                  <title>Jean de Berry et l’écrit</title>
+                  <editor>
+                     <forename>Olivier</forename>
+                     <surname>Guyotjeannin</surname>
+                  </editor>
+                  <editor>
+                     <forename>Olivier</forename>
+                     <surname>Mattéoni</surname>
+                  </editor>
+                  <imprint>
+                     <pubPlace>Paris</pubPlace>
+                     <publisher>Éditions de la Sorbonne et École nationale des chartes</publisher>
+                     <date>2019</date>
+                  </imprint>
+                  <biblScope unit="pages">187-209</biblScope>
+               </monogr>
+            </biblStruct>
+            <biblStruct>
+               <analytic>
+                  <title>Jean Le Fèvre, chancelier des ducs d'Anjou, rois de Sicile Louis I et Louis II</title>
+                  <author>
+                     <forename>Alfred</forename>
+                     <surname>Coville</surname>
+                  </author>
+               </analytic>
+               <monogr>
+                  <title>La vie intellectuelle dans les domaines d'Anjou-Provence de 1380 à 1435</title>
+                  <editor>
+                     <forename>Alfred</forename>
+                     <surname>Coville</surname>
+                  </editor>
+                  <imprint>
+                     <pubPlace>Paris</pubPlace>
+                     <publisher>Droz</publisher>
+                     <date>1941</date>
+                  </imprint>
+                  <biblScope unit="pages">95-139</biblScope>
+               </monogr>
+            </biblStruct>
+            <biblStruct>
+               <analytic>
+                  <title>« Pays de par-deçà, pays de par-delà »: les relations entre Angevins et Napolitains sous le regard de Jean le Fèvre, chancelier de la seconde Maison d’Anjou (1380-1388)</title>
+                  <author>
+                     <forename>Marion</forename>
+                     <surname>Chaigne-Legouy</surname>
+                  </author>
+               </analytic>
+               <monogr>
+                  <title>Circulation des idées et des pratiques politiques: France et Italie (XIIIe-XVIe siècle)</title>
+                  <imprint>
+                     <pubPlace>Rome</pubPlace>
+                     <publisher>Publications de l'École Française de Rome</publisher>
+                     <date>2013</date>
+                  </imprint>
+                  <biblScope unit="pages">149-186</biblScope>
                </monogr>
             </biblStruct>
          </sourceDesc>
