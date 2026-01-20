@@ -1,25 +1,23 @@
-% __ENC/ XSLT/ Évaluation__
-% Jean-Damien Généro
-% 2025
+# ENC/ XSLT/ Évaluation
 
-**À rendre le 31 mars 2025.**
+**À rendre le 31 mars 2026.**
 
 # Consignes générales
 - Faire un projet individuel ;
 - Rédiger une feuille de style XSL permettant de transformer votre projet XML-TEI en HTML ou en LaTeX.
   - La transformation HTML devra aboutir à plusieurs fichiers HTML ;
   - La transformation LaTeX devra aboutir à un seul fichier `.tex`.
-- Déposer l'ensemble des documents dans un repository GitHub. Confirmer le dépôt *en indiquant son lien* **au plus tard le 31 mars 2025** à `jean-damien.genero[at]cnrs[.]fr`.
+- Déposer l'ensemble des documents dans un repository GitHub. Confirmer le dépôt *en indiquant son lien* **au plus tard le 31 mars 2026** à `jean-damien.genero[at]cnrs[.]fr`.
 
 # Modalités d'évalution
 
 # Feuille de style XSL (/16)
 
 - Rédiger des règles simples avec un XPath valide pour insérer le maximum d'informations du document source dans le ou les document(s) de sortie (/5);
-- Utiliser plusieurs fonctions XPath (/2);
-- Utiliser plusieurs prédicats XPath (/2);
-- Utiliser au moins une variable XSL, autre que celles contenant les noms de votre/vos fichier(s) de sortie (/1) ;
-- Utiliser au moins une règle avec une ou plusieurs conditions (/2);
+- Utiliser au moins 4 fonctions XPath différentes (/2);
+- Utiliser au moins 2 prédicats XPath différents (/2);
+- Utiliser au moins 2 variables XSL, autres que celles contenant les noms de votre/vos fichier(s) de sortie (/1) ;
+- Utiliser au moins 2 règles avec une ou plusieurs conditions (/2);
 - Utiliser au moins une règle avec une ou plusieurs boucles (/2);
 - Organiser votre feuille de style de manière claire et commenter votre code de manière à ce qu'il soit aisé à lire (/2).
 
